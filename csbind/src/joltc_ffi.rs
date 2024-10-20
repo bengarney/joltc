@@ -3,11 +3,11 @@
 #[allow(unused)]
 use ::std::os::raw::*;
 
-
+use crate::joltc::*;
 
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Init(
+pub unsafe extern "C" fn jpc_JPH_Init(
 
 ) -> bool
 {
@@ -17,7 +17,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Init(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shutdown(
+pub unsafe extern "C" fn jpc_JPH_Shutdown(
 
 )
 {
@@ -27,7 +27,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shutdown(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SetTraceHandler(
+pub unsafe extern "C" fn jpc_JPH_SetTraceHandler(
     handler: JPH_TraceFunc
 )
 {
@@ -37,7 +37,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SetTraceHandler(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SetAssertFailureHandler(
+pub unsafe extern "C" fn jpc_JPH_SetAssertFailureHandler(
     handler: JPH_AssertFailureFunc
 )
 {
@@ -47,7 +47,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SetAssertFailureHandler(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceMask_Create(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerInterfaceMask_Create(
     numBroadPhaseLayers: u32
 ) -> *mut JPH_BroadPhaseLayerInterface
 {
@@ -57,7 +57,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceMask_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer(
     bpInterface: *mut JPH_BroadPhaseLayerInterface,
     broadPhaseLayer: JPH_BroadPhaseLayer,
     groupsToInclude: u32,
@@ -73,7 +73,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceMask_Configur
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceTable_Create(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerInterfaceTable_Create(
     numObjectLayers: u32,
     numBroadPhaseLayers: u32
 ) -> *mut JPH_BroadPhaseLayerInterface
@@ -85,7 +85,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceTable_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
     bpInterface: *mut JPH_BroadPhaseLayerInterface,
     objectLayer: JPH_ObjectLayer,
     broadPhaseLayer: JPH_BroadPhaseLayer
@@ -99,7 +99,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerInterfaceTable_MapObje
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_Create(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterMask_Create(
 
 ) -> *mut JPH_ObjectLayerPairFilter
 {
@@ -109,7 +109,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetObjectLayer(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterMask_GetObjectLayer(
     group: u32,
     mask: u32
 ) -> JPH_ObjectLayer
@@ -121,7 +121,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetObjectLa
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetGroup(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterMask_GetGroup(
     layer: JPH_ObjectLayer
 ) -> u32
 {
@@ -131,7 +131,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetGroup(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetMask(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterMask_GetMask(
     layer: JPH_ObjectLayer
 ) -> u32
 {
@@ -141,7 +141,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterMask_GetMask(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_Create(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterTable_Create(
     numObjectLayers: u32
 ) -> *mut JPH_ObjectLayerPairFilter
 {
@@ -151,7 +151,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_DisableCollision(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterTable_DisableCollision(
     objectFilter: *mut JPH_ObjectLayerPairFilter,
     layer1: JPH_ObjectLayer,
     layer2: JPH_ObjectLayer
@@ -165,7 +165,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_DisableCol
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_EnableCollision(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterTable_EnableCollision(
     objectFilter: *mut JPH_ObjectLayerPairFilter,
     layer1: JPH_ObjectLayer,
     layer2: JPH_ObjectLayer
@@ -179,7 +179,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_EnableColl
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_ShouldCollide(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerPairFilterTable_ShouldCollide(
     objectFilter: *mut JPH_ObjectLayerPairFilter,
     layer1: JPH_ObjectLayer,
     layer2: JPH_ObjectLayer
@@ -193,7 +193,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerPairFilterTable_ShouldColl
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectVsBroadPhaseLayerFilterMask_Create(
+pub unsafe extern "C" fn jpc_JPH_ObjectVsBroadPhaseLayerFilterMask_Create(
     broadPhaseLayerInterface: *const JPH_BroadPhaseLayerInterface
 ) -> *mut JPH_ObjectVsBroadPhaseLayerFilter
 {
@@ -203,7 +203,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectVsBroadPhaseLayerFilterMask_Cre
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectVsBroadPhaseLayerFilterTable_Create(
+pub unsafe extern "C" fn jpc_JPH_ObjectVsBroadPhaseLayerFilterTable_Create(
     broadPhaseLayerInterface: *mut JPH_BroadPhaseLayerInterface,
     numBroadPhaseLayers: u32,
     objectLayerPairFilter: *mut JPH_ObjectLayerPairFilter,
@@ -219,7 +219,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectVsBroadPhaseLayerFilterTable_Cr
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DrawSettings_InitDefault(
+pub unsafe extern "C" fn jpc_JPH_DrawSettings_InitDefault(
     settings: *mut JPH_DrawSettings
 )
 {
@@ -229,7 +229,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DrawSettings_InitDefault(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Create(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_Create(
     settings: *const JPH_PhysicsSystemSettings
 ) -> *mut JPH_PhysicsSystem
 {
@@ -239,7 +239,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Destroy(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_Destroy(
     system: *mut JPH_PhysicsSystem
 )
 {
@@ -249,7 +249,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetPhysicsSettings(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_SetPhysicsSettings(
     system: *mut JPH_PhysicsSystem,
     settings: *mut JPH_PhysicsSettings
 )
@@ -261,7 +261,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetPhysicsSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetPhysicsSettings(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetPhysicsSettings(
     system: *mut JPH_PhysicsSystem,
     result: *mut JPH_PhysicsSettings
 )
@@ -273,7 +273,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetPhysicsSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_OptimizeBroadPhase(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_OptimizeBroadPhase(
     system: *mut JPH_PhysicsSystem
 )
 {
@@ -283,7 +283,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_OptimizeBroadPhase(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Update(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_Update(
     system: *mut JPH_PhysicsSystem,
     deltaTime: f32,
     collisionSteps: c_int
@@ -297,7 +297,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Update(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Step(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_Step(
     system: *mut JPH_PhysicsSystem,
     deltaTime: f32,
     collisionSteps: c_int
@@ -311,7 +311,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_Step(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyInterface(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBodyInterface(
     system: *mut JPH_PhysicsSystem
 ) -> *mut JPH_BodyInterface
 {
@@ -321,7 +321,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyInterface(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyInterfaceNoLock(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBodyInterfaceNoLock(
     system: *mut JPH_PhysicsSystem
 ) -> *mut JPH_BodyInterface
 {
@@ -331,7 +331,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyInterfaceNoLock(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyLockInterface(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBodyLockInterface(
     system: *const JPH_PhysicsSystem
 ) -> *const JPH_BodyLockInterface
 {
@@ -341,7 +341,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyLockInterface(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyLockInterfaceNoLock(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBodyLockInterfaceNoLock(
     system: *const JPH_PhysicsSystem
 ) -> *const JPH_BodyLockInterface
 {
@@ -351,7 +351,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodyLockInterfaceNoL
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBroadPhaseQuery(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBroadPhaseQuery(
     system: *const JPH_PhysicsSystem
 ) -> *const JPH_BroadPhaseQuery
 {
@@ -361,7 +361,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBroadPhaseQuery(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNarrowPhaseQuery(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetNarrowPhaseQuery(
     system: *const JPH_PhysicsSystem
 ) -> *const JPH_NarrowPhaseQuery
 {
@@ -371,7 +371,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNarrowPhaseQuery(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock(
     system: *const JPH_PhysicsSystem
 ) -> *const JPH_NarrowPhaseQuery
 {
@@ -381,7 +381,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNarrowPhaseQueryNoLo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetContactListener(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_SetContactListener(
     system: *mut JPH_PhysicsSystem,
     listener: *mut JPH_ContactListener
 )
@@ -393,7 +393,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetContactListener(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetBodyActivationListener(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_SetBodyActivationListener(
     system: *mut JPH_PhysicsSystem,
     listener: *mut JPH_BodyActivationListener
 )
@@ -405,7 +405,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetBodyActivationListen
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_WereBodiesInContact(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_WereBodiesInContact(
     system: *const JPH_PhysicsSystem,
     body1: JPH_BodyID,
     body2: JPH_BodyID
@@ -419,7 +419,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_WereBodiesInContact(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumBodies(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetNumBodies(
     system: *const JPH_PhysicsSystem
 ) -> u32
 {
@@ -429,7 +429,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumBodies(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumActiveBodies(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetNumActiveBodies(
     system: *const JPH_PhysicsSystem,
     type_: JPH_BodyType
 ) -> u32
@@ -441,7 +441,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumActiveBodies(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetMaxBodies(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetMaxBodies(
     system: *const JPH_PhysicsSystem
 ) -> u32
 {
@@ -451,7 +451,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetMaxBodies(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumConstraints(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetNumConstraints(
     system: *const JPH_PhysicsSystem
 ) -> u32
 {
@@ -461,7 +461,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetNumConstraints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetGravity(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_SetGravity(
     system: *mut JPH_PhysicsSystem,
     value: *const JPH_Vec3
 )
@@ -473,7 +473,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_SetGravity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetGravity(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetGravity(
     system: *mut JPH_PhysicsSystem,
     result: *mut JPH_Vec3
 )
@@ -485,7 +485,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetGravity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_AddConstraint(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_AddConstraint(
     system: *mut JPH_PhysicsSystem,
     constraint: *mut JPH_Constraint
 )
@@ -497,7 +497,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_AddConstraint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_RemoveConstraint(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_RemoveConstraint(
     system: *mut JPH_PhysicsSystem,
     constraint: *mut JPH_Constraint
 )
@@ -509,7 +509,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_RemoveConstraint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_AddConstraints(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_AddConstraints(
     system: *mut JPH_PhysicsSystem,
     constraints: *mut *mut JPH_Constraint,
     count: u32
@@ -523,7 +523,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_AddConstraints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_RemoveConstraints(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_RemoveConstraints(
     system: *mut JPH_PhysicsSystem,
     constraints: *mut *mut JPH_Constraint,
     count: u32
@@ -537,7 +537,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_RemoveConstraints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodies(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetBodies(
     system: *const JPH_PhysicsSystem,
     ids: *mut JPH_BodyID,
     count: u32
@@ -551,7 +551,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetBodies(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetConstraints(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_GetConstraints(
     system: *const JPH_PhysicsSystem,
     constraints: *mut *const JPH_Constraint,
     count: u32
@@ -565,7 +565,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_GetConstraints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawBodies(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_DrawBodies(
     system: *mut JPH_PhysicsSystem,
     settings: *const JPH_DrawSettings,
     renderer: *mut JPH_DebugRenderer,
@@ -581,7 +581,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawBodies(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraints(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_DrawConstraints(
     system: *mut JPH_PhysicsSystem,
     renderer: *mut JPH_DebugRenderer
 )
@@ -593,7 +593,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraintLimits(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_DrawConstraintLimits(
     system: *mut JPH_PhysicsSystem,
     renderer: *mut JPH_DebugRenderer
 )
@@ -605,7 +605,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraintLimits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraintReferenceFrame(
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_DrawConstraintReferenceFrame(
     system: *mut JPH_PhysicsSystem,
     renderer: *mut JPH_DebugRenderer
 )
@@ -617,7 +617,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsSystem_DrawConstraintReference
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Quaternion_FromTo(
+pub unsafe extern "C" fn jpc_JPH_Quaternion_FromTo(
     from: *const JPH_Vec3,
     to: *const JPH_Vec3,
     quat: *mut JPH_Quat
@@ -631,7 +631,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Quaternion_FromTo(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsMaterial_Create(
+pub unsafe extern "C" fn jpc_JPH_PhysicsMaterial_Create(
 
 ) -> *mut JPH_PhysicsMaterial
 {
@@ -641,7 +641,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsMaterial_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsMaterial_Destroy(
+pub unsafe extern "C" fn jpc_JPH_PhysicsMaterial_Destroy(
     material: *mut JPH_PhysicsMaterial
 )
 {
@@ -651,7 +651,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PhysicsMaterial_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_Destroy(
+pub unsafe extern "C" fn jpc_JPH_ShapeSettings_Destroy(
     settings: *mut JPH_ShapeSettings
 )
 {
@@ -661,7 +661,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_ShapeSettings_GetUserData(
     settings: *const JPH_ShapeSettings
 ) -> u64
 {
@@ -671,7 +671,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_ShapeSettings_SetUserData(
     settings: *mut JPH_ShapeSettings,
     userData: u64
 )
@@ -683,7 +683,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeSettings_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_Destroy(
+pub unsafe extern "C" fn jpc_JPH_Shape_Destroy(
     shape: *mut JPH_Shape
 )
 {
@@ -693,7 +693,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetType(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetType(
     shape: *const JPH_Shape
 ) -> JPH_ShapeType
 {
@@ -703,7 +703,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSubType(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetSubType(
     shape: *const JPH_Shape
 ) -> JPH_ShapeSubType
 {
@@ -713,7 +713,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSubType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetUserData(
     shape: *const JPH_Shape
 ) -> u64
 {
@@ -723,7 +723,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_Shape_SetUserData(
     shape: *mut JPH_Shape,
     userData: u64
 )
@@ -735,7 +735,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_MustBeStatic(
+pub unsafe extern "C" fn jpc_JPH_Shape_MustBeStatic(
     shape: *const JPH_Shape
 ) -> bool
 {
@@ -745,7 +745,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_MustBeStatic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetCenterOfMass(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetCenterOfMass(
     shape: *const JPH_Shape,
     result: *mut JPH_Vec3
 )
@@ -757,7 +757,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetCenterOfMass(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetLocalBounds(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetLocalBounds(
     shape: *const JPH_Shape,
     result: *mut JPH_AABox
 )
@@ -769,7 +769,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetLocalBounds(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSubShapeIDBitsRecursive(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetSubShapeIDBitsRecursive(
     shape: *const JPH_Shape
 ) -> u32
 {
@@ -779,7 +779,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSubShapeIDBitsRecursive(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetWorldSpaceBounds(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetWorldSpaceBounds(
     shape: *const JPH_Shape,
     centerOfMassTransform: *mut JPH_RMatrix4x4,
     scale: *mut JPH_Vec3,
@@ -795,7 +795,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetWorldSpaceBounds(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetInnerRadius(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetInnerRadius(
     shape: *const JPH_Shape
 ) -> f32
 {
@@ -805,7 +805,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetInnerRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetMassProperties(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetMassProperties(
     shape: *const JPH_Shape,
     result: *mut JPH_MassProperties
 )
@@ -817,7 +817,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetMassProperties(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetLeafShape(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetLeafShape(
     shape: *const JPH_Shape,
     subShapeID: JPH_SubShapeID,
     remainder: *mut JPH_SubShapeID
@@ -831,7 +831,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetLeafShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetMaterial(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetMaterial(
     shape: *const JPH_Shape,
     subShapeID: JPH_SubShapeID
 ) -> *const JPH_PhysicsMaterial
@@ -843,7 +843,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetMaterial(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSurfaceNormal(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetSurfaceNormal(
     shape: *const JPH_Shape,
     subShapeID: JPH_SubShapeID,
     localPosition: *mut JPH_Vec3,
@@ -859,7 +859,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetSurfaceNormal(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetVolume(
+pub unsafe extern "C" fn jpc_JPH_Shape_GetVolume(
     shape: *const JPH_Shape
 ) -> f32
 {
@@ -869,7 +869,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_GetVolume(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CastRay(
+pub unsafe extern "C" fn jpc_JPH_Shape_CastRay(
     shape: *const JPH_Shape,
     origin: *const JPH_Vec3,
     direction: *const JPH_Vec3,
@@ -885,7 +885,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CastRay(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CastRay2(
+pub unsafe extern "C" fn jpc_JPH_Shape_CastRay2(
     shape: *const JPH_Shape,
     origin: *const JPH_Vec3,
     direction: *const JPH_Vec3,
@@ -907,7 +907,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CastRay2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CollidePoint(
+pub unsafe extern "C" fn jpc_JPH_Shape_CollidePoint(
     shape: *const JPH_Shape,
     point: *const JPH_Vec3
 ) -> bool
@@ -919,7 +919,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CollidePoint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CollidePoint2(
+pub unsafe extern "C" fn jpc_JPH_Shape_CollidePoint2(
     shape: *const JPH_Shape,
     point: *const JPH_Vec3,
     collectorType: JPH_CollisionCollectorType,
@@ -937,7 +937,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Shape_CollidePoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShapeSettings_GetDensity(
+pub unsafe extern "C" fn jpc_JPH_ConvexShapeSettings_GetDensity(
     shape: *const JPH_ConvexShapeSettings
 ) -> f32
 {
@@ -947,7 +947,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShapeSettings_GetDensity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShapeSettings_SetDensity(
+pub unsafe extern "C" fn jpc_JPH_ConvexShapeSettings_SetDensity(
     shape: *mut JPH_ConvexShapeSettings,
     value: f32
 )
@@ -959,7 +959,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShapeSettings_SetDensity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShape_GetDensity(
+pub unsafe extern "C" fn jpc_JPH_ConvexShape_GetDensity(
     shape: *const JPH_ConvexShape
 ) -> f32
 {
@@ -969,7 +969,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShape_GetDensity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShape_SetDensity(
+pub unsafe extern "C" fn jpc_JPH_ConvexShape_SetDensity(
     shape: *mut JPH_ConvexShape,
     inDensity: f32
 )
@@ -981,7 +981,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexShape_SetDensity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BoxShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_BoxShapeSettings_Create(
     halfExtent: *const JPH_Vec3,
     convexRadius: f32
 ) -> *mut JPH_BoxShapeSettings
@@ -993,7 +993,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BoxShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BoxShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_BoxShapeSettings_CreateShape(
     settings: *const JPH_BoxShapeSettings
 ) -> *mut JPH_BoxShape
 {
@@ -1003,7 +1003,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BoxShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_Create(
+pub unsafe extern "C" fn jpc_JPH_BoxShape_Create(
     halfExtent: *const JPH_Vec3,
     convexRadius: f32
 ) -> *mut JPH_BoxShape
@@ -1015,7 +1015,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_GetHalfExtent(
+pub unsafe extern "C" fn jpc_JPH_BoxShape_GetHalfExtent(
     shape: *const JPH_BoxShape,
     halfExtent: *mut JPH_Vec3
 )
@@ -1027,7 +1027,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_GetHalfExtent(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_GetConvexRadius(
+pub unsafe extern "C" fn jpc_JPH_BoxShape_GetConvexRadius(
     shape: *const JPH_BoxShape
 ) -> f32
 {
@@ -1037,7 +1037,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BoxShape_GetConvexRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_SphereShapeSettings_Create(
     radius: f32
 ) -> *mut JPH_SphereShapeSettings
 {
@@ -1047,7 +1047,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_SphereShapeSettings_CreateShape(
     settings: *const JPH_SphereShapeSettings
 ) -> *mut JPH_SphereShape
 {
@@ -1057,7 +1057,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_GetRadius(
+pub unsafe extern "C" fn jpc_JPH_SphereShapeSettings_GetRadius(
     settings: *const JPH_SphereShapeSettings
 ) -> f32
 {
@@ -1067,7 +1067,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_GetRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_SetRadius(
+pub unsafe extern "C" fn jpc_JPH_SphereShapeSettings_SetRadius(
     settings: *mut JPH_SphereShapeSettings,
     radius: f32
 )
@@ -1079,7 +1079,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShapeSettings_SetRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShape_Create(
+pub unsafe extern "C" fn jpc_JPH_SphereShape_Create(
     radius: f32
 ) -> *mut JPH_SphereShape
 {
@@ -1089,7 +1089,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SphereShape_GetRadius(
+pub unsafe extern "C" fn jpc_JPH_SphereShape_GetRadius(
     shape: *const JPH_SphereShape
 ) -> f32
 {
@@ -1099,7 +1099,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SphereShape_GetRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_PlaneShapeSettings_Create(
     plane: *const JPH_Plane,
     material: *const JPH_PhysicsMaterial,
     halfExtent: f32
@@ -1113,7 +1113,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_PlaneShapeSettings_CreateShape(
     settings: *const JPH_PlaneShapeSettings
 ) -> *mut JPH_PlaneShape
 {
@@ -1123,7 +1123,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_Create(
+pub unsafe extern "C" fn jpc_JPH_PlaneShape_Create(
     plane: *const JPH_Plane,
     material: *const JPH_PhysicsMaterial,
     halfExtent: f32
@@ -1137,7 +1137,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_GetPlane(
+pub unsafe extern "C" fn jpc_JPH_PlaneShape_GetPlane(
     shape: *const JPH_PlaneShape,
     result: *mut JPH_Plane
 )
@@ -1149,7 +1149,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_GetPlane(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_GetHalfExtent(
+pub unsafe extern "C" fn jpc_JPH_PlaneShape_GetHalfExtent(
     shape: *const JPH_PlaneShape
 ) -> f32
 {
@@ -1159,7 +1159,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PlaneShape_GetHalfExtent(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_TriangleShapeSettings_Create(
     v1: *const JPH_Vec3,
     v2: *const JPH_Vec3,
     v3: *const JPH_Vec3,
@@ -1175,7 +1175,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_TriangleShapeSettings_CreateShape(
     settings: *const JPH_TriangleShapeSettings
 ) -> *mut JPH_TriangleShape
 {
@@ -1185,7 +1185,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_Create(
+pub unsafe extern "C" fn jpc_JPH_TriangleShape_Create(
     v1: *const JPH_Vec3,
     v2: *const JPH_Vec3,
     v3: *const JPH_Vec3,
@@ -1201,7 +1201,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetConvexRadius(
+pub unsafe extern "C" fn jpc_JPH_TriangleShape_GetConvexRadius(
     shape: *const JPH_TriangleShape
 ) -> f32
 {
@@ -1211,7 +1211,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetConvexRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex1(
+pub unsafe extern "C" fn jpc_JPH_TriangleShape_GetVertex1(
     shape: *const JPH_TriangleShape,
     result: *mut JPH_Vec3
 )
@@ -1223,7 +1223,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex2(
+pub unsafe extern "C" fn jpc_JPH_TriangleShape_GetVertex2(
     shape: *const JPH_TriangleShape,
     result: *mut JPH_Vec3
 )
@@ -1235,7 +1235,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex3(
+pub unsafe extern "C" fn jpc_JPH_TriangleShape_GetVertex3(
     shape: *const JPH_TriangleShape,
     result: *mut JPH_Vec3
 )
@@ -1247,7 +1247,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TriangleShape_GetVertex3(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_CapsuleShapeSettings_Create(
     halfHeightOfCylinder: f32,
     radius: f32
 ) -> *mut JPH_CapsuleShapeSettings
@@ -1259,7 +1259,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_CapsuleShapeSettings_CreateShape(
     settings: *const JPH_CapsuleShapeSettings
 ) -> *mut JPH_CapsuleShape
 {
@@ -1269,7 +1269,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_Create(
+pub unsafe extern "C" fn jpc_JPH_CapsuleShape_Create(
     halfHeightOfCylinder: f32,
     radius: f32
 ) -> *mut JPH_CapsuleShape
@@ -1281,7 +1281,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_GetRadius(
+pub unsafe extern "C" fn jpc_JPH_CapsuleShape_GetRadius(
     shape: *const JPH_CapsuleShape
 ) -> f32
 {
@@ -1291,7 +1291,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_GetRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_GetHalfHeightOfCylinder(
+pub unsafe extern "C" fn jpc_JPH_CapsuleShape_GetHalfHeightOfCylinder(
     shape: *const JPH_CapsuleShape
 ) -> f32
 {
@@ -1301,7 +1301,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CapsuleShape_GetHalfHeightOfCylinder(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_CylinderShapeSettings_Create(
     halfHeight: f32,
     radius: f32,
     convexRadius: f32
@@ -1315,7 +1315,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_CylinderShapeSettings_CreateShape(
     settings: *const JPH_CylinderShapeSettings
 ) -> *mut JPH_CylinderShape
 {
@@ -1325,7 +1325,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_Create(
+pub unsafe extern "C" fn jpc_JPH_CylinderShape_Create(
     halfHeight: f32,
     radius: f32
 ) -> *mut JPH_CylinderShape
@@ -1337,7 +1337,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_GetRadius(
+pub unsafe extern "C" fn jpc_JPH_CylinderShape_GetRadius(
     shape: *const JPH_CylinderShape
 ) -> f32
 {
@@ -1347,7 +1347,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_GetRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_GetHalfHeight(
+pub unsafe extern "C" fn jpc_JPH_CylinderShape_GetHalfHeight(
     shape: *const JPH_CylinderShape
 ) -> f32
 {
@@ -1357,7 +1357,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CylinderShape_GetHalfHeight(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShapeSettings_Create(
     halfHeightOfTaperedCylinder: f32,
     topRadius: f32,
     bottomRadius: f32,
@@ -1375,7 +1375,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShapeSettings_CreateShape(
     settings: *const JPH_TaperedCylinderShapeSettings
 ) -> *mut JPH_TaperedCylinderShape
 {
@@ -1385,7 +1385,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShapeSettings_CreateSh
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetTopRadius(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShape_GetTopRadius(
     shape: *const JPH_TaperedCylinderShape
 ) -> f32
 {
@@ -1395,7 +1395,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetTopRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetBottomRadius(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShape_GetBottomRadius(
     shape: *const JPH_TaperedCylinderShape
 ) -> f32
 {
@@ -1405,7 +1405,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetBottomRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetConvexRadius(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShape_GetConvexRadius(
     shape: *const JPH_TaperedCylinderShape
 ) -> f32
 {
@@ -1415,7 +1415,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetConvexRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetHalfHeight(
+pub unsafe extern "C" fn jpc_JPH_TaperedCylinderShape_GetHalfHeight(
     shape: *const JPH_TaperedCylinderShape
 ) -> f32
 {
@@ -1425,7 +1425,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCylinderShape_GetHalfHeight(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShapeSettings_Create(
     points: *const JPH_Vec3,
     pointsCount: u32,
     maxConvexRadius: f32
@@ -1439,7 +1439,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShapeSettings_CreateShape(
     settings: *const JPH_ConvexHullShapeSettings
 ) -> *mut JPH_ConvexHullShape
 {
@@ -1449,7 +1449,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumPoints(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_GetNumPoints(
     shape: *const JPH_ConvexHullShape
 ) -> u32
 {
@@ -1459,7 +1459,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumPoints(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetPoint(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_GetPoint(
     shape: *const JPH_ConvexHullShape,
     index: u32,
     result: *mut JPH_Vec3
@@ -1473,7 +1473,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetPoint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumFaces(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_GetNumFaces(
     shape: *const JPH_ConvexHullShape
 ) -> u32
 {
@@ -1483,7 +1483,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumFaces(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumVerticesInFace(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_GetNumVerticesInFace(
     shape: *const JPH_ConvexHullShape,
     faceIndex: u32
 ) -> u32
@@ -1495,7 +1495,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetNumVerticesInFace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetFaceVertices(
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_GetFaceVertices(
     shape: *const JPH_ConvexHullShape,
     faceIndex: u32,
     maxVertices: u32,
@@ -1511,7 +1511,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConvexHullShape_GetFaceVertices(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_Create(
     triangles: *const JPH_Triangle,
     triangleCount: u32
 ) -> *mut JPH_MeshShapeSettings
@@ -1523,7 +1523,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Create2(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_Create2(
     vertices: *const JPH_Vec3,
     verticesCount: u32,
     triangles: *const JPH_IndexedTriangle,
@@ -1539,7 +1539,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Create2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_GetPerTriangleUserData(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_GetPerTriangleUserData(
     settings: *const JPH_MeshShapeSettings
 ) -> bool
 {
@@ -1549,7 +1549,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_GetPerTriangleUserD
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_SetPerTriangleUserData(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_SetPerTriangleUserData(
     settings: *mut JPH_MeshShapeSettings,
     perTriangleUserData: bool
 )
@@ -1561,7 +1561,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_SetPerTriangleUserD
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Sanitize(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_Sanitize(
     settings: *mut JPH_MeshShapeSettings
 )
 {
@@ -1571,7 +1571,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_Sanitize(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_MeshShapeSettings_CreateShape(
     settings: *const JPH_MeshShapeSettings
 ) -> *mut JPH_MeshShape
 {
@@ -1581,7 +1581,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MeshShape_GetTriangleUserData(
+pub unsafe extern "C" fn jpc_JPH_MeshShape_GetTriangleUserData(
     shape: *const JPH_MeshShape,
     id: JPH_SubShapeID
 ) -> u32
@@ -1593,7 +1593,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MeshShape_GetTriangleUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShapeSettings_Create(
     samples: *const f32,
     offset: *const JPH_Vec3,
     scale: *const JPH_Vec3,
@@ -1609,7 +1609,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShapeSettings_CreateShape(
     settings: *mut JPH_HeightFieldShapeSettings
 ) -> *mut JPH_HeightFieldShape
 {
@@ -1619,7 +1619,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample(
     settings: *const JPH_HeightFieldShapeSettings,
     pOutMinValue: *mut f32,
     pOutMaxValue: *mut f32,
@@ -1635,7 +1635,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_DetermineMin
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError(
     settings: *const JPH_HeightFieldShapeSettings,
     maxError: f32
 ) -> u32
@@ -1647,7 +1647,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShapeSettings_CalculateBit
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetSampleCount(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetSampleCount(
     shape: *const JPH_HeightFieldShape
 ) -> u32
 {
@@ -1657,7 +1657,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetSampleCount(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetBlockSize(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetBlockSize(
     shape: *const JPH_HeightFieldShape
 ) -> u32
 {
@@ -1667,7 +1667,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetBlockSize(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMaterial(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetMaterial(
     shape: *const JPH_HeightFieldShape,
     x: u32,
     y: u32
@@ -1681,7 +1681,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMaterial(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetPosition(
     shape: *const JPH_HeightFieldShape,
     x: u32,
     y: u32,
@@ -1697,7 +1697,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_IsNoCollision(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_IsNoCollision(
     shape: *const JPH_HeightFieldShape,
     x: u32,
     y: u32
@@ -1711,7 +1711,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_IsNoCollision(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_ProjectOntoSurface(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_ProjectOntoSurface(
     shape: *const JPH_HeightFieldShape,
     localPosition: *const JPH_Vec3,
     outSurfacePosition: *mut JPH_Vec3,
@@ -1727,7 +1727,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_ProjectOntoSurface(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMinHeightValue(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetMinHeightValue(
     shape: *const JPH_HeightFieldShape
 ) -> f32
 {
@@ -1737,7 +1737,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMinHeightValue(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMaxHeightValue(
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_GetMaxHeightValue(
     shape: *const JPH_HeightFieldShape
 ) -> f32
 {
@@ -1747,7 +1747,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HeightFieldShape_GetMaxHeightValue(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_TaperedCapsuleShapeSettings_Create(
     halfHeightOfTaperedCylinder: f32,
     topRadius: f32,
     bottomRadius: f32
@@ -1761,7 +1761,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_TaperedCapsuleShapeSettings_CreateShape(
     settings: *mut JPH_TaperedCapsuleShapeSettings
 ) -> *mut JPH_TaperedCapsuleShape
 {
@@ -1771,7 +1771,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShapeSettings_CreateSha
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetTopRadius(
+pub unsafe extern "C" fn jpc_JPH_TaperedCapsuleShape_GetTopRadius(
     shape: *const JPH_TaperedCapsuleShape
 ) -> f32
 {
@@ -1781,7 +1781,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetTopRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetBottomRadius(
+pub unsafe extern "C" fn jpc_JPH_TaperedCapsuleShape_GetBottomRadius(
     shape: *const JPH_TaperedCapsuleShape
 ) -> f32
 {
@@ -1791,7 +1791,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetBottomRadius(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetHalfHeight(
+pub unsafe extern "C" fn jpc_JPH_TaperedCapsuleShape_GetHalfHeight(
     shape: *const JPH_TaperedCapsuleShape
 ) -> f32
 {
@@ -1801,7 +1801,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TaperedCapsuleShape_GetHalfHeight(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShapeSettings_AddShape(
+pub unsafe extern "C" fn jpc_JPH_CompoundShapeSettings_AddShape(
     settings: *mut JPH_CompoundShapeSettings,
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
@@ -1819,7 +1819,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShapeSettings_AddShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShapeSettings_AddShape2(
+pub unsafe extern "C" fn jpc_JPH_CompoundShapeSettings_AddShape2(
     settings: *mut JPH_CompoundShapeSettings,
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
@@ -1837,7 +1837,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShapeSettings_AddShape2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetNumSubShapes(
+pub unsafe extern "C" fn jpc_JPH_CompoundShape_GetNumSubShapes(
     shape: *const JPH_CompoundShape
 ) -> u32
 {
@@ -1847,7 +1847,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetNumSubShapes(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetSubShape(
+pub unsafe extern "C" fn jpc_JPH_CompoundShape_GetSubShape(
     shape: *const JPH_CompoundShape,
     index: u32,
     subShape: *mut *const JPH_Shape,
@@ -1867,7 +1867,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetSubShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetSubShapeIndexFromID(
+pub unsafe extern "C" fn jpc_JPH_CompoundShape_GetSubShapeIndexFromID(
     shape: *const JPH_CompoundShape,
     id: JPH_SubShapeID,
     remainder: *mut JPH_SubShapeID
@@ -1881,7 +1881,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CompoundShape_GetSubShapeIndexFromID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_StaticCompoundShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_StaticCompoundShapeSettings_Create(
 
 ) -> *mut JPH_StaticCompoundShapeSettings
 {
@@ -1891,7 +1891,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_StaticCompoundShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_StaticCompoundShape_Create(
+pub unsafe extern "C" fn jpc_JPH_StaticCompoundShape_Create(
     settings: *const JPH_StaticCompoundShapeSettings
 ) -> *mut JPH_StaticCompoundShape
 {
@@ -1901,7 +1901,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_StaticCompoundShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShapeSettings_Create(
 
 ) -> *mut JPH_MutableCompoundShapeSettings
 {
@@ -1911,7 +1911,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_Create(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_Create(
     settings: *const JPH_MutableCompoundShapeSettings
 ) -> *mut JPH_MutableCompoundShape
 {
@@ -1921,7 +1921,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_AddShape(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_AddShape(
     shape: *mut JPH_MutableCompoundShape,
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
@@ -1939,7 +1939,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_AddShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_RemoveShape(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_RemoveShape(
     shape: *mut JPH_MutableCompoundShape,
     index: u32
 )
@@ -1951,7 +1951,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_RemoveShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_ModifyShape(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_ModifyShape(
     shape: *mut JPH_MutableCompoundShape,
     index: u32,
     position: *const JPH_Vec3,
@@ -1967,7 +1967,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_ModifyShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_ModifyShape2(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_ModifyShape2(
     shape: *mut JPH_MutableCompoundShape,
     index: u32,
     position: *const JPH_Vec3,
@@ -1985,7 +1985,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_ModifyShape2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_AdjustCenterOfMass(
+pub unsafe extern "C" fn jpc_JPH_MutableCompoundShape_AdjustCenterOfMass(
     shape: *mut JPH_MutableCompoundShape
 )
 {
@@ -1995,7 +1995,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MutableCompoundShape_AdjustCenterOfMa
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DecoratedShape_GetInnerShape(
+pub unsafe extern "C" fn jpc_JPH_DecoratedShape_GetInnerShape(
     shape: *const JPH_DecoratedShape
 ) -> *const JPH_Shape
 {
@@ -2005,7 +2005,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DecoratedShape_GetInnerShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShapeSettings_Create(
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
     shapeSettings: *const JPH_ShapeSettings
@@ -2019,7 +2019,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_Create
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_Create2(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShapeSettings_Create2(
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
     shape: *const JPH_Shape
@@ -2033,7 +2033,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_Create
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShapeSettings_CreateShape(
     settings: *const JPH_RotatedTranslatedShapeSettings
 ) -> *mut JPH_RotatedTranslatedShape
 {
@@ -2043,7 +2043,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShapeSettings_Create
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_Create(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShape_Create(
     position: *const JPH_Vec3,
     rotation: *const JPH_Quat,
     shape: *const JPH_Shape
@@ -2057,7 +2057,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShape_GetPosition(
     shape: *const JPH_RotatedTranslatedShape,
     position: *mut JPH_Vec3
 )
@@ -2069,7 +2069,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_GetRotation(
+pub unsafe extern "C" fn jpc_JPH_RotatedTranslatedShape_GetRotation(
     shape: *const JPH_RotatedTranslatedShape,
     rotation: *mut JPH_Quat
 )
@@ -2081,7 +2081,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_RotatedTranslatedShape_GetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_ScaledShapeSettings_Create(
     shapeSettings: *const JPH_ShapeSettings,
     scale: *const JPH_Vec3
 ) -> *mut JPH_ScaledShapeSettings
@@ -2093,7 +2093,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_Create2(
+pub unsafe extern "C" fn jpc_JPH_ScaledShapeSettings_Create2(
     shape: *const JPH_Shape,
     scale: *const JPH_Vec3
 ) -> *mut JPH_ScaledShapeSettings
@@ -2105,7 +2105,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_Create2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_ScaledShapeSettings_CreateShape(
     settings: *const JPH_ScaledShapeSettings
 ) -> *mut JPH_ScaledShape
 {
@@ -2115,7 +2115,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShape_Create(
+pub unsafe extern "C" fn jpc_JPH_ScaledShape_Create(
     shape: *const JPH_Shape,
     scale: *const JPH_Vec3
 ) -> *mut JPH_ScaledShape
@@ -2127,7 +2127,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShape_GetScale(
+pub unsafe extern "C" fn jpc_JPH_ScaledShape_GetScale(
     shape: *const JPH_ScaledShape,
     result: *mut JPH_Vec3
 )
@@ -2139,7 +2139,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ScaledShape_GetScale(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_OffsetCenterOfMassShapeSettings_Create(
     offset: *const JPH_Vec3,
     shapeSettings: *const JPH_ShapeSettings
 ) -> *mut JPH_OffsetCenterOfMassShapeSettings
@@ -2151,7 +2151,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_Creat
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_Create2(
+pub unsafe extern "C" fn jpc_JPH_OffsetCenterOfMassShapeSettings_Create2(
     offset: *const JPH_Vec3,
     shape: *const JPH_Shape
 ) -> *mut JPH_OffsetCenterOfMassShapeSettings
@@ -2163,7 +2163,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_Creat
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_OffsetCenterOfMassShapeSettings_CreateShape(
     settings: *const JPH_OffsetCenterOfMassShapeSettings
 ) -> *mut JPH_OffsetCenterOfMassShape
 {
@@ -2173,7 +2173,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShapeSettings_Creat
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShape_Create(
+pub unsafe extern "C" fn jpc_JPH_OffsetCenterOfMassShape_Create(
     offset: *const JPH_Vec3,
     shape: *const JPH_Shape
 ) -> *mut JPH_OffsetCenterOfMassShape
@@ -2185,7 +2185,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShape_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShape_GetOffset(
+pub unsafe extern "C" fn jpc_JPH_OffsetCenterOfMassShape_GetOffset(
     shape: *const JPH_OffsetCenterOfMassShape,
     result: *mut JPH_Vec3
 )
@@ -2197,7 +2197,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_OffsetCenterOfMassShape_GetOffset(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_EmptyShapeSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_EmptyShapeSettings_Create(
     centerOfMass: *const JPH_Vec3
 ) -> *mut JPH_EmptyShapeSettings
 {
@@ -2207,7 +2207,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_EmptyShapeSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_EmptyShapeSettings_CreateShape(
+pub unsafe extern "C" fn jpc_JPH_EmptyShapeSettings_CreateShape(
     settings: *const JPH_EmptyShapeSettings
 ) -> *mut JPH_EmptyShape
 {
@@ -2217,7 +2217,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_EmptyShapeSettings_CreateShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_Create(
 
 ) -> *mut JPH_BodyCreationSettings
 {
@@ -2227,7 +2227,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create2(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_Create2(
     settings: *mut JPH_ShapeSettings,
     position: *const JPH_RVec3,
     rotation: *const JPH_Quat,
@@ -2245,7 +2245,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create3(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_Create3(
     shape: *const JPH_Shape,
     position: *const JPH_RVec3,
     rotation: *const JPH_Quat,
@@ -2263,7 +2263,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Create3(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Destroy(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_Destroy(
     settings: *mut JPH_BodyCreationSettings
 )
 {
@@ -2273,7 +2273,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetPosition(
     settings: *mut JPH_BodyCreationSettings,
     result: *mut JPH_RVec3
 )
@@ -2285,7 +2285,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetPosition(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetPosition(
     settings: *mut JPH_BodyCreationSettings,
     value: *const JPH_RVec3
 )
@@ -2297,7 +2297,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetRotation(
     settings: *mut JPH_BodyCreationSettings,
     result: *mut JPH_Quat
 )
@@ -2309,7 +2309,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetRotation(
     settings: *mut JPH_BodyCreationSettings,
     value: *const JPH_Quat
 )
@@ -2321,7 +2321,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetLinearVelocity(
     settings: *mut JPH_BodyCreationSettings,
     velocity: *mut JPH_Vec3
 )
@@ -2333,7 +2333,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetLinearVelocit
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetLinearVelocity(
     settings: *mut JPH_BodyCreationSettings,
     velocity: *const JPH_Vec3
 )
@@ -2345,7 +2345,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetLinearVelocit
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetAngularVelocity(
     settings: *mut JPH_BodyCreationSettings,
     velocity: *mut JPH_Vec3
 )
@@ -2357,7 +2357,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetAngularVeloci
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetAngularVelocity(
     settings: *mut JPH_BodyCreationSettings,
     velocity: *const JPH_Vec3
 )
@@ -2369,7 +2369,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetAngularVeloci
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetMotionType(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetMotionType(
     settings: *mut JPH_BodyCreationSettings
 ) -> JPH_MotionType
 {
@@ -2379,7 +2379,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetMotionType(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetMotionType(
     settings: *mut JPH_BodyCreationSettings,
     value: JPH_MotionType
 )
@@ -2391,7 +2391,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetAllowedDOFs(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_GetAllowedDOFs(
     settings: *mut JPH_BodyCreationSettings
 ) -> JPH_AllowedDOFs
 {
@@ -2401,7 +2401,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_GetAllowedDOFs(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetAllowedDOFs(
+pub unsafe extern "C" fn jpc_JPH_BodyCreationSettings_SetAllowedDOFs(
     settings: *mut JPH_BodyCreationSettings,
     value: JPH_AllowedDOFs
 )
@@ -2413,7 +2413,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyCreationSettings_SetAllowedDOFs(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SoftBodyCreationSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_SoftBodyCreationSettings_Create(
 
 ) -> *mut JPH_SoftBodyCreationSettings
 {
@@ -2423,7 +2423,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SoftBodyCreationSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SoftBodyCreationSettings_Destroy(
+pub unsafe extern "C" fn jpc_JPH_SoftBodyCreationSettings_Destroy(
     settings: *mut JPH_SoftBodyCreationSettings
 )
 {
@@ -2433,7 +2433,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SoftBodyCreationSettings_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_Destroy(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_Destroy(
     settings: *mut JPH_ConstraintSettings
 )
 {
@@ -2443,7 +2443,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetEnabled(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetEnabled(
     settings: *mut JPH_ConstraintSettings
 ) -> bool
 {
@@ -2453,7 +2453,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetEnabled(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetEnabled(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetEnabled(
     settings: *mut JPH_ConstraintSettings,
     value: bool
 )
@@ -2465,7 +2465,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetEnabled(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetConstraintPriority(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetConstraintPriority(
     settings: *mut JPH_ConstraintSettings
 ) -> u32
 {
@@ -2475,7 +2475,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetConstraintPrior
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetConstraintPriority(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetConstraintPriority(
     settings: *mut JPH_ConstraintSettings,
     value: u32
 )
@@ -2487,7 +2487,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetConstraint
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetNumVelocityStepsOverride(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetNumVelocityStepsOverride(
     settings: *mut JPH_ConstraintSettings
 ) -> u32
 {
@@ -2497,7 +2497,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetNumVelocityStep
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetNumVelocityStepsOverride(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_SetNumVelocityStepsOverride(
     settings: *mut JPH_ConstraintSettings,
     value: u32
 )
@@ -2509,7 +2509,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetNumVelocityStep
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetNumPositionStepsOverride(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetNumPositionStepsOverride(
     settings: *mut JPH_ConstraintSettings
 ) -> u32
 {
@@ -2519,7 +2519,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetNumPositionStep
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetNumPositionStepsOverride(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_SetNumPositionStepsOverride(
     settings: *mut JPH_ConstraintSettings,
     value: u32
 )
@@ -2531,7 +2531,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetNumPositionStep
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetDrawConstraintSize(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetDrawConstraintSize(
     settings: *mut JPH_ConstraintSettings
 ) -> f32
 {
@@ -2541,7 +2541,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetDrawConstraintS
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetDrawConstraintSize(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_SetDrawConstraintSize(
     settings: *mut JPH_ConstraintSettings,
     value: f32
 )
@@ -2553,7 +2553,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetDrawConstraintS
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_GetUserData(
     settings: *mut JPH_ConstraintSettings
 ) -> u64
 {
@@ -2563,7 +2563,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_ConstraintSettings_SetUserData(
     settings: *mut JPH_ConstraintSettings,
     value: u64
 )
@@ -2575,7 +2575,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConstraintSettings_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetConstraintSettings(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetConstraintSettings(
     constraint: *mut JPH_Constraint
 ) -> *mut JPH_ConstraintSettings
 {
@@ -2585,7 +2585,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetConstraintSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetType(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetType(
     constraint: *const JPH_Constraint
 ) -> JPH_ConstraintType
 {
@@ -2595,7 +2595,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetSubType(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetSubType(
     constraint: *const JPH_Constraint
 ) -> JPH_ConstraintSubType
 {
@@ -2605,7 +2605,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetSubType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetConstraintPriority(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetConstraintPriority(
     constraint: *const JPH_Constraint
 ) -> u32
 {
@@ -2615,7 +2615,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetConstraintPriority(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetConstraintPriority(
+pub unsafe extern "C" fn jpc_JPH_Constraint_SetConstraintPriority(
     constraint: *mut JPH_Constraint,
     priority: u32
 )
@@ -2627,7 +2627,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetConstraintPriority(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetEnabled(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetEnabled(
     constraint: *mut JPH_Constraint
 ) -> bool
 {
@@ -2637,7 +2637,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetEnabled(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetEnabled(
+pub unsafe extern "C" fn jpc_JPH_Constraint_SetEnabled(
     constraint: *mut JPH_Constraint,
     enabled: bool
 )
@@ -2649,7 +2649,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetEnabled(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_Constraint_GetUserData(
     constraint: *const JPH_Constraint
 ) -> u64
 {
@@ -2659,7 +2659,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_Constraint_SetUserData(
     constraint: *mut JPH_Constraint,
     userData: u64
 )
@@ -2671,7 +2671,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_NotifyShapeChanged(
+pub unsafe extern "C" fn jpc_JPH_Constraint_NotifyShapeChanged(
     constraint: *mut JPH_Constraint,
     bodyID: JPH_BodyID,
     deltaCOM: *mut JPH_Vec3
@@ -2685,7 +2685,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_NotifyShapeChanged(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_Destroy(
+pub unsafe extern "C" fn jpc_JPH_Constraint_Destroy(
     constraint: *mut JPH_Constraint
 )
 {
@@ -2695,7 +2695,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Constraint_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_Create(
 
 ) -> *mut JPH_FixedConstraintSettings
 {
@@ -2705,7 +2705,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetSpace(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetSpace(
     settings: *mut JPH_FixedConstraintSettings
 ) -> JPH_ConstraintSpace
 {
@@ -2715,7 +2715,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetSpace(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetSpace(
     settings: *mut JPH_FixedConstraintSettings,
     space: JPH_ConstraintSpace
 )
@@ -2727,7 +2727,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAutoDetectPoint(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetAutoDetectPoint(
     settings: *mut JPH_FixedConstraintSettings
 ) -> bool
 {
@@ -2737,7 +2737,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAutoDetect
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAutoDetectPoint(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetAutoDetectPoint(
     settings: *mut JPH_FixedConstraintSettings,
     value: bool
 )
@@ -2749,7 +2749,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAutoDetect
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetPoint1(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -2761,7 +2761,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetPoint1(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -2773,7 +2773,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisX1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetAxisX1(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -2785,7 +2785,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisX1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisX1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetAxisX1(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -2797,7 +2797,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisX1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisY1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetAxisY1(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -2809,7 +2809,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisY1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisY1(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetAxisY1(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -2821,7 +2821,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisY1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetPoint2(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -2833,7 +2833,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetPoint2(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -2845,7 +2845,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisX2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetAxisX2(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -2857,7 +2857,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisX2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisX2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetAxisX2(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -2869,7 +2869,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisX2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisY2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_GetAxisY2(
     settings: *mut JPH_FixedConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -2881,7 +2881,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_GetAxisY2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisY2(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_SetAxisY2(
     settings: *mut JPH_FixedConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -2893,7 +2893,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_SetAxisY2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraintSettings_CreateConstraint(
     settings: *mut JPH_FixedConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -2907,7 +2907,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraintSettings_CreateConstra
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_FixedConstraint,
     result: *mut JPH_Vec3
 )
@@ -2919,7 +2919,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraint_GetTotalLambdaPositio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraint_GetTotalLambdaRotation(
+pub unsafe extern "C" fn jpc_JPH_FixedConstraint_GetTotalLambdaRotation(
     constraint: *const JPH_FixedConstraint,
     result: *mut JPH_Vec3
 )
@@ -2931,7 +2931,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_FixedConstraint_GetTotalLambdaRotatio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_Create(
 
 ) -> *mut JPH_DistanceConstraintSettings
 {
@@ -2941,7 +2941,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetSpace(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_GetSpace(
     settings: *mut JPH_DistanceConstraintSettings
 ) -> JPH_ConstraintSpace
 {
@@ -2951,7 +2951,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetSpace(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_SetSpace(
     settings: *mut JPH_DistanceConstraintSettings,
     space: JPH_ConstraintSpace
 )
@@ -2963,7 +2963,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_GetPoint1(
     settings: *mut JPH_DistanceConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -2975,7 +2975,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_SetPoint1(
     settings: *mut JPH_DistanceConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -2987,7 +2987,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_GetPoint2(
     settings: *mut JPH_DistanceConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -2999,7 +2999,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_SetPoint2(
     settings: *mut JPH_DistanceConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3011,7 +3011,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraintSettings_CreateConstraint(
     settings: *mut JPH_DistanceConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -3025,7 +3025,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraintSettings_CreateCons
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_SetDistance(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_SetDistance(
     constraint: *mut JPH_DistanceConstraint,
     minDistance: f32,
     maxDistance: f32
@@ -3039,7 +3039,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_SetDistance(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetMinDistance(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_GetMinDistance(
     constraint: *mut JPH_DistanceConstraint
 ) -> f32
 {
@@ -3049,7 +3049,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetMinDistance(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetMaxDistance(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_GetMaxDistance(
     constraint: *mut JPH_DistanceConstraint
 ) -> f32
 {
@@ -3059,7 +3059,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetMaxDistance(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_GetLimitsSpringSettings(
     constraint: *mut JPH_DistanceConstraint,
     result: *mut JPH_SpringSettings
 )
@@ -3071,7 +3071,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetLimitsSpringSet
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_SetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_SetLimitsSpringSettings(
     constraint: *mut JPH_DistanceConstraint,
     settings: *mut JPH_SpringSettings
 )
@@ -3083,7 +3083,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_SetLimitsSpringSet
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_DistanceConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_DistanceConstraint
 ) -> f32
 {
@@ -3093,7 +3093,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DistanceConstraint_GetTotalLambdaPosi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_Create(
 
 ) -> *mut JPH_PointConstraintSettings
 {
@@ -3103,7 +3103,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetSpace(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_GetSpace(
     settings: *mut JPH_PointConstraintSettings
 ) -> JPH_ConstraintSpace
 {
@@ -3113,7 +3113,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetSpace(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_SetSpace(
     settings: *mut JPH_PointConstraintSettings,
     space: JPH_ConstraintSpace
 )
@@ -3125,7 +3125,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetSpace(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_GetPoint1(
     settings: *mut JPH_PointConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3137,7 +3137,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_SetPoint1(
     settings: *mut JPH_PointConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3149,7 +3149,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_GetPoint2(
     settings: *mut JPH_PointConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3161,7 +3161,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_SetPoint2(
     settings: *mut JPH_PointConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3173,7 +3173,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_PointConstraintSettings_CreateConstraint(
     settings: *mut JPH_PointConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -3187,7 +3187,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraintSettings_CreateConstra
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_PointConstraint_SetPoint1(
     constraint: *mut JPH_PointConstraint,
     space: JPH_ConstraintSpace,
     value: *mut JPH_RVec3
@@ -3201,7 +3201,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_PointConstraint_SetPoint2(
     constraint: *mut JPH_PointConstraint,
     space: JPH_ConstraintSpace,
     value: *mut JPH_RVec3
@@ -3215,7 +3215,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_PointConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_PointConstraint,
     result: *mut JPH_Vec3
 )
@@ -3227,7 +3227,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_PointConstraint_GetTotalLambdaPositio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_Create(
 
 ) -> *mut JPH_HingeConstraintSettings
 {
@@ -3237,7 +3237,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetPoint1(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3249,7 +3249,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetPoint1(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3261,7 +3261,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetPoint2(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3273,7 +3273,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetPoint2(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3285,7 +3285,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetHingeAxis1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetHingeAxis1(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3297,7 +3297,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetHingeAxis1
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetHingeAxis1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetHingeAxis1(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3309,7 +3309,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetHingeAxis1
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetNormalAxis1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetNormalAxis1(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3321,7 +3321,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetNormalAxis
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetNormalAxis1(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetNormalAxis1(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3333,7 +3333,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetNormalAxis
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetHingeAxis2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetHingeAxis2(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3345,7 +3345,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetHingeAxis2
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetHingeAxis2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetHingeAxis2(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3357,7 +3357,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetHingeAxis2
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetNormalAxis2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_SetNormalAxis2(
     settings: *mut JPH_HingeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3369,7 +3369,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_SetNormalAxis
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetNormalAxis2(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_GetNormalAxis2(
     settings: *mut JPH_HingeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3381,7 +3381,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_GetNormalAxis
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraintSettings_CreateConstraint(
     settings: *mut JPH_HingeConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -3395,7 +3395,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraintSettings_CreateConstra
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetSettings(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetSettings(
     constraint: *mut JPH_HingeConstraint
 ) -> *mut JPH_HingeConstraintSettings
 {
@@ -3405,7 +3405,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetCurrentAngle(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetCurrentAngle(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3415,7 +3415,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetCurrentAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMaxFrictionTorque(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetMaxFrictionTorque(
     constraint: *mut JPH_HingeConstraint,
     frictionTorque: f32
 )
@@ -3427,7 +3427,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMaxFrictionTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMaxFrictionTorque(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetMaxFrictionTorque(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3437,7 +3437,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMaxFrictionTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMotorSettings(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetMotorSettings(
     constraint: *mut JPH_HingeConstraint,
     settings: *mut JPH_MotorSettings
 )
@@ -3449,7 +3449,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMotorSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMotorSettings(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetMotorSettings(
     constraint: *mut JPH_HingeConstraint,
     result: *mut JPH_MotorSettings
 )
@@ -3461,7 +3461,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMotorSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMotorState(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetMotorState(
     constraint: *mut JPH_HingeConstraint,
     state: JPH_MotorState
 )
@@ -3473,7 +3473,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetMotorState(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMotorState(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetMotorState(
     constraint: *mut JPH_HingeConstraint
 ) -> JPH_MotorState
 {
@@ -3483,7 +3483,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetMotorState(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetTargetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetTargetAngularVelocity(
     constraint: *mut JPH_HingeConstraint,
     angularVelocity: f32
 )
@@ -3495,7 +3495,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetTargetAngularVeloc
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTargetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTargetAngularVelocity(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3505,7 +3505,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTargetAngularVeloc
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetTargetAngle(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetTargetAngle(
     constraint: *mut JPH_HingeConstraint,
     angle: f32
 )
@@ -3517,7 +3517,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetTargetAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTargetAngle(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTargetAngle(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3527,7 +3527,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTargetAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetLimits(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetLimits(
     constraint: *mut JPH_HingeConstraint,
     inLimitsMin: f32,
     inLimitsMax: f32
@@ -3541,7 +3541,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetLimits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsMin(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetLimitsMin(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3551,7 +3551,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsMin(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsMax(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetLimitsMax(
     constraint: *mut JPH_HingeConstraint
 ) -> f32
 {
@@ -3561,7 +3561,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsMax(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_HasLimits(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_HasLimits(
     constraint: *mut JPH_HingeConstraint
 ) -> bool
 {
@@ -3571,7 +3571,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_HasLimits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetLimitsSpringSettings(
     constraint: *mut JPH_HingeConstraint,
     result: *mut JPH_SpringSettings
 )
@@ -3583,7 +3583,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetLimitsSpringSettin
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_SetLimitsSpringSettings(
     constraint: *mut JPH_HingeConstraint,
     settings: *mut JPH_SpringSettings
 )
@@ -3595,7 +3595,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_SetLimitsSpringSettin
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_HingeConstraint,
     result: *mut JPH_Vec3
 )
@@ -3607,7 +3607,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaPositio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaRotation(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTotalLambdaRotation(
     constraint: *const JPH_HingeConstraint,
     x: *mut f32,
     y: *mut f32
@@ -3621,7 +3621,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaRotatio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaRotationLimits(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTotalLambdaRotationLimits(
     constraint: *const JPH_HingeConstraint
 ) -> f32
 {
@@ -3631,7 +3631,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaRotatio
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaMotor(
+pub unsafe extern "C" fn jpc_JPH_HingeConstraint_GetTotalLambdaMotor(
     constraint: *const JPH_HingeConstraint
 ) -> f32
 {
@@ -3641,7 +3641,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_HingeConstraint_GetTotalLambdaMotor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_Create(
 
 ) -> *mut JPH_SliderConstraintSettings
 {
@@ -3651,7 +3651,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxis(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetSliderAxis(
     settings: *mut JPH_SliderConstraintSettings,
     axis: *const JPH_Vec3
 )
@@ -3663,7 +3663,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetAutoDetectPoint(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetAutoDetectPoint(
     settings: *mut JPH_SliderConstraintSettings
 ) -> bool
 {
@@ -3673,7 +3673,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetAutoDetec
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetAutoDetectPoint(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetAutoDetectPoint(
     settings: *mut JPH_SliderConstraintSettings,
     value: bool
 )
@@ -3685,7 +3685,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetAutoDetec
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetPoint1(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3697,7 +3697,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetPoint1(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3709,7 +3709,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetPoint2(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -3721,7 +3721,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetPoint2(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -3733,7 +3733,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxis1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetSliderAxis1(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3745,7 +3745,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetSliderAxis1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetSliderAxis1(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3757,7 +3757,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetSliderAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetNormalAxis1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetNormalAxis1(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3769,7 +3769,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetNormalAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetNormalAxis1(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetNormalAxis1(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3781,7 +3781,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetNormalAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxis2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetSliderAxis2(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3793,7 +3793,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetSliderAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetSliderAxis2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetSliderAxis2(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3805,7 +3805,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetSliderAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetNormalAxis2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_SetNormalAxis2(
     settings: *mut JPH_SliderConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -3817,7 +3817,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_SetNormalAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetNormalAxis2(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_GetNormalAxis2(
     settings: *mut JPH_SliderConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -3829,7 +3829,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_GetNormalAxi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraintSettings_CreateConstraint(
     settings: *mut JPH_SliderConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -3843,7 +3843,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraintSettings_CreateConstr
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetSettings(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetSettings(
     constraint: *mut JPH_SliderConstraint
 ) -> *mut JPH_SliderConstraintSettings
 {
@@ -3853,7 +3853,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetCurrentPosition(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetCurrentPosition(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -3863,7 +3863,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetCurrentPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMaxFrictionForce(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetMaxFrictionForce(
     constraint: *mut JPH_SliderConstraint,
     frictionForce: f32
 )
@@ -3875,7 +3875,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMaxFrictionForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMaxFrictionForce(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetMaxFrictionForce(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -3885,7 +3885,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMaxFrictionForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMotorSettings(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetMotorSettings(
     constraint: *mut JPH_SliderConstraint,
     settings: *mut JPH_MotorSettings
 )
@@ -3897,7 +3897,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMotorSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMotorSettings(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetMotorSettings(
     constraint: *mut JPH_SliderConstraint,
     result: *mut JPH_MotorSettings
 )
@@ -3909,7 +3909,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMotorSettings(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMotorState(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetMotorState(
     constraint: *mut JPH_SliderConstraint,
     state: JPH_MotorState
 )
@@ -3921,7 +3921,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetMotorState(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMotorState(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetMotorState(
     constraint: *mut JPH_SliderConstraint
 ) -> JPH_MotorState
 {
@@ -3931,7 +3931,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetMotorState(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetTargetVelocity(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetTargetVelocity(
     constraint: *mut JPH_SliderConstraint,
     velocity: f32
 )
@@ -3943,7 +3943,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetTargetVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTargetVelocity(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTargetVelocity(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -3953,7 +3953,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTargetVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetTargetPosition(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetTargetPosition(
     constraint: *mut JPH_SliderConstraint,
     position: f32
 )
@@ -3965,7 +3965,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetTargetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTargetPosition(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTargetPosition(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -3975,7 +3975,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTargetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetLimits(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetLimits(
     constraint: *mut JPH_SliderConstraint,
     inLimitsMin: f32,
     inLimitsMax: f32
@@ -3989,7 +3989,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetLimits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsMin(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetLimitsMin(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -3999,7 +3999,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsMin(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsMax(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetLimitsMax(
     constraint: *mut JPH_SliderConstraint
 ) -> f32
 {
@@ -4009,7 +4009,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsMax(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_HasLimits(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_HasLimits(
     constraint: *mut JPH_SliderConstraint
 ) -> bool
 {
@@ -4019,7 +4019,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_HasLimits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetLimitsSpringSettings(
     constraint: *mut JPH_SliderConstraint,
     result: *mut JPH_SpringSettings
 )
@@ -4031,7 +4031,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetLimitsSpringSetti
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetLimitsSpringSettings(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_SetLimitsSpringSettings(
     constraint: *mut JPH_SliderConstraint,
     settings: *mut JPH_SpringSettings
 )
@@ -4043,7 +4043,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_SetLimitsSpringSetti
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_SliderConstraint,
     x: *mut f32,
     y: *mut f32
@@ -4057,7 +4057,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaPositi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaPositionLimits(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTotalLambdaPositionLimits(
     constraint: *const JPH_SliderConstraint
 ) -> f32
 {
@@ -4067,7 +4067,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaPositi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaRotation(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTotalLambdaRotation(
     constraint: *const JPH_SliderConstraint,
     result: *mut JPH_Vec3
 )
@@ -4079,7 +4079,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaRotati
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaMotor(
+pub unsafe extern "C" fn jpc_JPH_SliderConstraint_GetTotalLambdaMotor(
     constraint: *const JPH_SliderConstraint
 ) -> f32
 {
@@ -4089,7 +4089,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SliderConstraint_GetTotalLambdaMotor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_Create(
 
 ) -> *mut JPH_ConeConstraintSettings
 {
@@ -4099,7 +4099,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetPoint1(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_GetPoint1(
     settings: *mut JPH_ConeConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -4111,7 +4111,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetPoint1(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_SetPoint1(
     settings: *mut JPH_ConeConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -4123,7 +4123,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetPoint1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetPoint2(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_GetPoint2(
     settings: *mut JPH_ConeConstraintSettings,
     result: *mut JPH_RVec3
 )
@@ -4135,7 +4135,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetPoint2(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_SetPoint2(
     settings: *mut JPH_ConeConstraintSettings,
     value: *const JPH_RVec3
 )
@@ -4147,7 +4147,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetPoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetTwistAxis1(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_SetTwistAxis1(
     settings: *mut JPH_ConeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -4159,7 +4159,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetTwistAxis1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetTwistAxis1(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_GetTwistAxis1(
     settings: *mut JPH_ConeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -4171,7 +4171,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetTwistAxis1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetTwistAxis2(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_SetTwistAxis2(
     settings: *mut JPH_ConeConstraintSettings,
     value: *const JPH_Vec3
 )
@@ -4183,7 +4183,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetTwistAxis2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetTwistAxis2(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_GetTwistAxis2(
     settings: *mut JPH_ConeConstraintSettings,
     result: *mut JPH_Vec3
 )
@@ -4195,7 +4195,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetTwistAxis2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetHalfConeAngle(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_SetHalfConeAngle(
     settings: *mut JPH_ConeConstraintSettings,
     halfConeAngle: f32
 )
@@ -4207,7 +4207,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_SetHalfConeAng
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetHalfConeAngle(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_GetHalfConeAngle(
     settings: *mut JPH_ConeConstraintSettings
 ) -> f32
 {
@@ -4217,7 +4217,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_GetHalfConeAng
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraintSettings_CreateConstraint(
     settings: *mut JPH_ConeConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -4231,7 +4231,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraintSettings_CreateConstrai
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_SetHalfConeAngle(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraint_SetHalfConeAngle(
     constraint: *mut JPH_ConeConstraint,
     halfConeAngle: f32
 )
@@ -4243,7 +4243,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_SetHalfConeAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetCosHalfConeAngle(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraint_GetCosHalfConeAngle(
     constraint: *const JPH_ConeConstraint
 ) -> f32
 {
@@ -4253,7 +4253,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetCosHalfConeAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_ConeConstraint,
     result: *mut JPH_Vec3
 )
@@ -4265,7 +4265,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetTotalLambdaPosition
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetTotalLambdaRotation(
+pub unsafe extern "C" fn jpc_JPH_ConeConstraint_GetTotalLambdaRotation(
     constraint: *const JPH_ConeConstraint
 ) -> f32
 {
@@ -4275,7 +4275,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ConeConstraint_GetTotalLambdaRotation
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraintSettings_Create(
 
 ) -> *mut JPH_SwingTwistConstraintSettings
 {
@@ -4285,7 +4285,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraintSettings_CreateConstraint(
     settings: *mut JPH_SwingTwistConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -4299,7 +4299,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraintSettings_CreateCo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetNormalHalfConeAngle(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetNormalHalfConeAngle(
     constraint: *mut JPH_SwingTwistConstraint
 ) -> f32
 {
@@ -4309,7 +4309,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetNormalHalfCon
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_SwingTwistConstraint,
     result: *mut JPH_Vec3
 )
@@ -4321,7 +4321,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaPo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaTwist(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetTotalLambdaTwist(
     constraint: *const JPH_SwingTwistConstraint
 ) -> f32
 {
@@ -4331,7 +4331,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaTw
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaSwingY(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetTotalLambdaSwingY(
     constraint: *const JPH_SwingTwistConstraint
 ) -> f32
 {
@@ -4341,7 +4341,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaSw
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaSwingZ(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetTotalLambdaSwingZ(
     constraint: *const JPH_SwingTwistConstraint
 ) -> f32
 {
@@ -4351,7 +4351,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaSw
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaMotor(
+pub unsafe extern "C" fn jpc_JPH_SwingTwistConstraint_GetTotalLambdaMotor(
     constraint: *const JPH_SwingTwistConstraint,
     result: *mut JPH_Vec3
 )
@@ -4363,7 +4363,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SwingTwistConstraint_GetTotalLambdaMo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraintSettings_Create(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraintSettings_Create(
 
 ) -> *mut JPH_SixDOFConstraintSettings
 {
@@ -4373,7 +4373,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraintSettings_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraintSettings_CreateConstraint(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraintSettings_CreateConstraint(
     settings: *mut JPH_SixDOFConstraintSettings,
     body1: *mut JPH_Body,
     body2: *mut JPH_Body
@@ -4387,7 +4387,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraintSettings_CreateConstr
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetLimitsMin(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetLimitsMin(
     constraint: *mut JPH_SixDOFConstraint,
     axis: JPH_SixDOFConstraintAxis
 ) -> f32
@@ -4399,7 +4399,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetLimitsMin(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetLimitsMax(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetLimitsMax(
     constraint: *mut JPH_SixDOFConstraint,
     axis: JPH_SixDOFConstraintAxis
 ) -> f32
@@ -4411,7 +4411,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetLimitsMax(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaPosition(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetTotalLambdaPosition(
     constraint: *const JPH_SixDOFConstraint,
     result: *mut JPH_Vec3
 )
@@ -4423,7 +4423,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaPositi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaRotation(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetTotalLambdaRotation(
     constraint: *const JPH_SixDOFConstraint,
     result: *mut JPH_Vec3
 )
@@ -4435,7 +4435,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaRotati
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation(
     constraint: *const JPH_SixDOFConstraint,
     result: *mut JPH_Vec3
 )
@@ -4447,7 +4447,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaMotorT
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(
+pub unsafe extern "C" fn jpc_JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(
     constraint: *const JPH_SixDOFConstraint,
     result: *mut JPH_Vec3
 )
@@ -4459,7 +4459,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_SixDOFConstraint_GetTotalLambdaMotorR
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetBody1(
+pub unsafe extern "C" fn jpc_JPH_TwoBodyConstraint_GetBody1(
     constraint: *mut JPH_TwoBodyConstraint
 ) -> *mut JPH_Body
 {
@@ -4469,7 +4469,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetBody1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetBody2(
+pub unsafe extern "C" fn jpc_JPH_TwoBodyConstraint_GetBody2(
     constraint: *mut JPH_TwoBodyConstraint
 ) -> *mut JPH_Body
 {
@@ -4479,7 +4479,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetBody2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(
+pub unsafe extern "C" fn jpc_JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(
     constraint: *mut JPH_TwoBodyConstraint,
     result: *mut JPH_Matrix4x4
 )
@@ -4491,7 +4491,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetConstraintToBody
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(
+pub unsafe extern "C" fn jpc_JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(
     constraint: *mut JPH_TwoBodyConstraint,
     result: *mut JPH_Matrix4x4
 )
@@ -4503,7 +4503,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_TwoBodyConstraint_GetConstraintToBody
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DestroyBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_DestroyBody(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 )
@@ -4515,7 +4515,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DestroyBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateAndAddBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateAndAddBody(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_BodyCreationSettings,
     activationMode: JPH_Activation
@@ -4529,7 +4529,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateAndAddBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateBody(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_BodyCreationSettings
 ) -> *mut JPH_Body
@@ -4541,7 +4541,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBodyWithID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateBodyWithID(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     settings: *const JPH_BodyCreationSettings
@@ -4555,7 +4555,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBodyWithID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBodyWithoutID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateBodyWithoutID(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_BodyCreationSettings
 ) -> *mut JPH_Body
@@ -4567,7 +4567,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateBodyWithoutID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DestroyBodyWithoutID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_DestroyBodyWithoutID(
     interface: *mut JPH_BodyInterface,
     body: *mut JPH_Body
 )
@@ -4579,7 +4579,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DestroyBodyWithoutID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AssignBodyID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AssignBodyID(
     interface: *mut JPH_BodyInterface,
     body: *mut JPH_Body
 ) -> bool
@@ -4591,7 +4591,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AssignBodyID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AssignBodyID2(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AssignBodyID2(
     interface: *mut JPH_BodyInterface,
     body: *mut JPH_Body,
     bodyID: JPH_BodyID
@@ -4605,7 +4605,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AssignBodyID2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_UnassignBodyID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_UnassignBodyID(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> *mut JPH_Body
@@ -4617,7 +4617,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_UnassignBodyID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateSoftBody(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_SoftBodyCreationSettings
 ) -> *mut JPH_Body
@@ -4629,7 +4629,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBodyWithID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateSoftBodyWithID(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     settings: *const JPH_SoftBodyCreationSettings
@@ -4643,7 +4643,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBodyWithID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBodyWithoutID(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateSoftBodyWithoutID(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_SoftBodyCreationSettings
 ) -> *mut JPH_Body
@@ -4655,7 +4655,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateSoftBodyWithoutID
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateAndAddSoftBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_CreateAndAddSoftBody(
     interface: *mut JPH_BodyInterface,
     settings: *const JPH_SoftBodyCreationSettings,
     activationMode: JPH_Activation
@@ -4669,7 +4669,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_CreateAndAddSoftBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddBody(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     activationMode: JPH_Activation
@@ -4683,7 +4683,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_RemoveBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_RemoveBody(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 )
@@ -4695,7 +4695,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_RemoveBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_RemoveAndDestroyBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_RemoveAndDestroyBody(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 )
@@ -4707,7 +4707,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_RemoveAndDestroyBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_IsActive(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_IsActive(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> bool
@@ -4719,7 +4719,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_IsActive(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_IsAdded(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_IsAdded(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> bool
@@ -4731,7 +4731,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_IsAdded(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetBodyType(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetBodyType(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> JPH_BodyType
@@ -4743,7 +4743,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetBodyType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetLinearVelocity(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     velocity: *const JPH_Vec3
@@ -4757,7 +4757,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetLinearVelocity(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     velocity: *mut JPH_Vec3
@@ -4771,7 +4771,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetCenterOfMassPosition(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetCenterOfMassPosition(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     position: *mut JPH_RVec3
@@ -4785,7 +4785,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetCenterOfMassPosition
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetMotionType(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetMotionType(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> JPH_MotionType
@@ -4797,7 +4797,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetMotionType(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetMotionType(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     motionType: JPH_MotionType,
@@ -4813,7 +4813,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetRestitution(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetRestitution(
     interface: *const JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> f32
@@ -4825,7 +4825,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetRestitution(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetRestitution(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     restitution: f32
@@ -4839,7 +4839,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetFriction(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetFriction(
     interface: *const JPH_BodyInterface,
     bodyID: JPH_BodyID
 ) -> f32
@@ -4851,7 +4851,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetFriction(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetFriction(
     interface: *mut JPH_BodyInterface,
     bodyID: JPH_BodyID,
     friction: f32
@@ -4865,7 +4865,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPosition(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetPosition(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     position: *mut JPH_RVec3,
@@ -4881,7 +4881,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetPosition(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     result: *mut JPH_RVec3
@@ -4895,7 +4895,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetRotation(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     rotation: *mut JPH_Quat,
@@ -4911,7 +4911,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetRotation(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     result: *mut JPH_Quat
@@ -4925,7 +4925,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionAndRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetPositionAndRotation(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     position: *mut JPH_RVec3,
@@ -4943,7 +4943,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionAndRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionAndRotationWhenChanged(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetPositionAndRotationWhenChanged(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     position: *mut JPH_RVec3,
@@ -4961,7 +4961,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionAndRotationW
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPositionAndRotation(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetPositionAndRotation(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     position: *mut JPH_RVec3,
@@ -4977,7 +4977,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPositionAndRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionRotationAndVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetPositionRotationAndVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     position: *mut JPH_RVec3,
@@ -4997,7 +4997,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetPositionRotationAndV
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetShape(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetShape(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 ) -> *const JPH_Shape
@@ -5009,7 +5009,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetShape(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetShape(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     shape: *const JPH_Shape,
@@ -5027,7 +5027,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_NotifyShapeChanged(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_NotifyShapeChanged(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     previousCenterOfMass: *mut JPH_Vec3,
@@ -5045,7 +5045,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_NotifyShapeChanged(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_ActivateBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_ActivateBody(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 )
@@ -5057,7 +5057,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_ActivateBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DeactivateBody(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_DeactivateBody(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 )
@@ -5069,7 +5069,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_DeactivateBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetObjectLayer(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetObjectLayer(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 ) -> JPH_ObjectLayer
@@ -5081,7 +5081,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetObjectLayer(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetObjectLayer(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetObjectLayer(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     layer: JPH_ObjectLayer
@@ -5095,7 +5095,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetObjectLayer(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetWorldTransform(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetWorldTransform(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     result: *mut JPH_RMatrix4x4
@@ -5109,7 +5109,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetWorldTransform(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetCenterOfMassTransform(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetCenterOfMassTransform(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     result: *mut JPH_RMatrix4x4
@@ -5123,7 +5123,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetCenterOfMassTransfor
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_MoveKinematic(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_MoveKinematic(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     targetPosition: *mut JPH_RVec3,
@@ -5141,7 +5141,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_MoveKinematic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_ApplyBuoyancyImpulse(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_ApplyBuoyancyImpulse(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     surfacePosition: *const JPH_RVec3,
@@ -5169,7 +5169,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_ApplyBuoyancyImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetLinearAndAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetLinearAndAngularVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     linearVelocity: *mut JPH_Vec3,
@@ -5185,7 +5185,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetLinearAndAngularVelo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetLinearAndAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetLinearAndAngularVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     linearVelocity: *mut JPH_Vec3,
@@ -5201,7 +5201,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetLinearAndAngularVelo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddLinearVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     linearVelocity: *mut JPH_Vec3
@@ -5215,7 +5215,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddLinearAndAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddLinearAndAngularVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     linearVelocity: *mut JPH_Vec3,
@@ -5231,7 +5231,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddLinearAndAngularVelo
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetAngularVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     angularVelocity: *mut JPH_Vec3
@@ -5245,7 +5245,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetAngularVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetAngularVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     angularVelocity: *mut JPH_Vec3
@@ -5259,7 +5259,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetAngularVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPointVelocity(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetPointVelocity(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     point: *mut JPH_RVec3,
@@ -5275,7 +5275,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetPointVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForce(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddForce(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     force: *mut JPH_Vec3
@@ -5289,7 +5289,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForce2(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddForce2(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     force: *mut JPH_Vec3,
@@ -5305,7 +5305,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForce2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddTorque(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddTorque(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     torque: *mut JPH_Vec3
@@ -5319,7 +5319,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForceAndTorque(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddForceAndTorque(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     force: *mut JPH_Vec3,
@@ -5335,7 +5335,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddForceAndTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddImpulse(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddImpulse(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     impulse: *mut JPH_Vec3
@@ -5349,7 +5349,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddImpulse2(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddImpulse2(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     impulse: *mut JPH_Vec3,
@@ -5365,7 +5365,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddImpulse2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddAngularImpulse(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_AddAngularImpulse(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     angularImpulse: *mut JPH_Vec3
@@ -5379,7 +5379,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_AddAngularImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetMotionQuality(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetMotionQuality(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     quality: JPH_MotionQuality
@@ -5393,7 +5393,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetMotionQuality(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetMotionQuality(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetMotionQuality(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 ) -> JPH_MotionQuality
@@ -5405,7 +5405,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetMotionQuality(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetInverseInertia(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetInverseInertia(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     result: *mut JPH_Matrix4x4
@@ -5419,7 +5419,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetInverseInertia(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetGravityFactor(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetGravityFactor(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     gravityFactor: f32
@@ -5433,7 +5433,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetGravityFactor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetGravityFactor(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetGravityFactor(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 ) -> f32
@@ -5445,7 +5445,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetGravityFactor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_InvalidateContactCache(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_InvalidateContactCache(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 )
@@ -5457,7 +5457,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_InvalidateContactCache(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_SetUserData(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID,
     inUserData: u64
@@ -5471,7 +5471,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_BodyInterface_GetUserData(
     interface: *mut JPH_BodyInterface,
     bodyId: JPH_BodyID
 ) -> u64
@@ -5483,7 +5483,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyInterface_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_LockRead(
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_LockRead(
     lockInterface: *const JPH_BodyLockInterface,
     bodyID: JPH_BodyID,
     outLock: *mut JPH_BodyLockRead
@@ -5497,7 +5497,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_LockRead(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_UnlockRead(
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_UnlockRead(
     lockInterface: *const JPH_BodyLockInterface,
     ioLock: *mut JPH_BodyLockRead
 )
@@ -5509,7 +5509,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_UnlockRead(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_LockWrite(
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_LockWrite(
     lockInterface: *const JPH_BodyLockInterface,
     bodyID: JPH_BodyID,
     outLock: *mut JPH_BodyLockWrite
@@ -5523,7 +5523,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_LockWrite(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_UnlockWrite(
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_UnlockWrite(
     lockInterface: *const JPH_BodyLockInterface,
     ioLock: *mut JPH_BodyLockWrite
 )
@@ -5535,7 +5535,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyLockInterface_UnlockWrite(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetAllowedDOFs(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetAllowedDOFs(
     properties: *const JPH_MotionProperties
 ) -> JPH_AllowedDOFs
 {
@@ -5545,7 +5545,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetAllowedDOFs(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetLinearDamping(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_SetLinearDamping(
     properties: *mut JPH_MotionProperties,
     damping: f32
 )
@@ -5557,7 +5557,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetLinearDamping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetLinearDamping(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetLinearDamping(
     properties: *const JPH_MotionProperties
 ) -> f32
 {
@@ -5567,7 +5567,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetLinearDamping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetAngularDamping(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_SetAngularDamping(
     properties: *mut JPH_MotionProperties,
     damping: f32
 )
@@ -5579,7 +5579,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetAngularDamping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetAngularDamping(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetAngularDamping(
     properties: *const JPH_MotionProperties
 ) -> f32
 {
@@ -5589,7 +5589,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetAngularDamping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetMassProperties(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_SetMassProperties(
     properties: *mut JPH_MotionProperties,
     allowedDOFs: JPH_AllowedDOFs,
     massProperties: *const JPH_MassProperties
@@ -5603,7 +5603,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetMassProperties(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInverseMassUnchecked(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetInverseMassUnchecked(
     properties: *mut JPH_MotionProperties
 ) -> f32
 {
@@ -5613,7 +5613,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInverseMassUnchec
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetInverseMass(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_SetInverseMass(
     properties: *mut JPH_MotionProperties,
     inverseMass: f32
 )
@@ -5625,7 +5625,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetInverseMass(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInverseInertiaDiagonal(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetInverseInertiaDiagonal(
     properties: *mut JPH_MotionProperties,
     result: *mut JPH_Vec3
 )
@@ -5637,7 +5637,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInverseInertiaDia
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInertiaRotation(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_GetInertiaRotation(
     properties: *mut JPH_MotionProperties,
     result: *mut JPH_Quat
 )
@@ -5649,7 +5649,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_GetInertiaRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetInverseInertia(
+pub unsafe extern "C" fn jpc_JPH_MotionProperties_SetInverseInertia(
     properties: *mut JPH_MotionProperties,
     diagonal: *mut JPH_Vec3,
     rot: *mut JPH_Quat
@@ -5663,7 +5663,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MotionProperties_SetInverseInertia(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_DecomposePrincipalMomentsOfInertia(
+pub unsafe extern "C" fn jpc_JPH_MassProperties_DecomposePrincipalMomentsOfInertia(
     properties: *mut JPH_MassProperties,
     rotation: *mut JPH_Matrix4x4,
     diagonal: *mut JPH_Vec3
@@ -5677,7 +5677,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_DecomposePrincipalMome
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_ScaleToMass(
+pub unsafe extern "C" fn jpc_JPH_MassProperties_ScaleToMass(
     properties: *mut JPH_MassProperties,
     mass: f32
 )
@@ -5689,7 +5689,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_ScaleToMass(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_GetEquivalentSolidBoxSize(
+pub unsafe extern "C" fn jpc_JPH_MassProperties_GetEquivalentSolidBoxSize(
     mass: f32,
     inertiaDiagonal: *const JPH_Vec3,
     result: *mut JPH_Vec3
@@ -5703,7 +5703,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_MassProperties_GetEquivalentSolidBoxS
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CollideShapeSettings_Init(
+pub unsafe extern "C" fn jpc_JPH_CollideShapeSettings_Init(
     settings: *mut JPH_CollideShapeSettings
 )
 {
@@ -5713,7 +5713,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CollideShapeSettings_Init(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeCastSettings_Init(
+pub unsafe extern "C" fn jpc_JPH_ShapeCastSettings_Init(
     settings: *mut JPH_ShapeCastSettings
 )
 {
@@ -5723,7 +5723,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeCastSettings_Init(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CastRay(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseQuery_CastRay(
     query: *const JPH_BroadPhaseQuery,
     origin: *const JPH_Vec3,
     direction: *const JPH_Vec3,
@@ -5745,7 +5745,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CastRay(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CastRay2(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseQuery_CastRay2(
     query: *const JPH_BroadPhaseQuery,
     origin: *const JPH_Vec3,
     direction: *const JPH_Vec3,
@@ -5769,7 +5769,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CastRay2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollideAABox(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseQuery_CollideAABox(
     query: *const JPH_BroadPhaseQuery,
     box_: *const JPH_AABox,
     callback: JPH_CollideShapeBodyCollector,
@@ -5789,7 +5789,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollideAABox(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollideSphere(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseQuery_CollideSphere(
     query: *const JPH_BroadPhaseQuery,
     center: *const JPH_Vec3,
     radius: f32,
@@ -5811,7 +5811,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollideSphere(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollidePoint(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseQuery_CollidePoint(
     query: *const JPH_BroadPhaseQuery,
     point: *const JPH_Vec3,
     callback: JPH_CollideShapeBodyCollector,
@@ -5831,7 +5831,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseQuery_CollidePoint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CastRay(
     query: *const JPH_NarrowPhaseQuery,
     origin: *const JPH_RVec3,
     direction: *const JPH_Vec3,
@@ -5853,7 +5853,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay2(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CastRay2(
     query: *const JPH_NarrowPhaseQuery,
     origin: *const JPH_RVec3,
     direction: *const JPH_Vec3,
@@ -5881,7 +5881,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay3(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CastRay3(
     query: *const JPH_NarrowPhaseQuery,
     origin: *const JPH_RVec3,
     direction: *const JPH_Vec3,
@@ -5911,7 +5911,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastRay3(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollidePoint(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CollidePoint(
     query: *const JPH_NarrowPhaseQuery,
     point: *const JPH_RVec3,
     callback: JPH_CollidePointCollector,
@@ -5935,7 +5935,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollidePoint(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollidePoint2(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CollidePoint2(
     query: *const JPH_NarrowPhaseQuery,
     point: *const JPH_RVec3,
     collectorType: JPH_CollisionCollectorType,
@@ -5961,7 +5961,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollidePoint2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollideShape(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CollideShape(
     query: *const JPH_NarrowPhaseQuery,
     shape: *const JPH_Shape,
     scale: *const JPH_Vec3,
@@ -5993,7 +5993,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollideShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollideShape2(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CollideShape2(
     query: *const JPH_NarrowPhaseQuery,
     shape: *const JPH_Shape,
     scale: *const JPH_Vec3,
@@ -6027,7 +6027,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CollideShape2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastShape(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CastShape(
     query: *const JPH_NarrowPhaseQuery,
     shape: *const JPH_Shape,
     worldTransform: *const JPH_RMatrix4x4,
@@ -6059,7 +6059,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastShape2(
+pub unsafe extern "C" fn jpc_JPH_NarrowPhaseQuery_CastShape2(
     query: *const JPH_NarrowPhaseQuery,
     shape: *const JPH_Shape,
     worldTransform: *const JPH_RMatrix4x4,
@@ -6093,7 +6093,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_NarrowPhaseQuery_CastShape2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetID(
+pub unsafe extern "C" fn jpc_JPH_Body_GetID(
     body: *const JPH_Body
 ) -> JPH_BodyID
 {
@@ -6103,7 +6103,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetID(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetBodyType(
+pub unsafe extern "C" fn jpc_JPH_Body_GetBodyType(
     body: *const JPH_Body
 ) -> JPH_BodyType
 {
@@ -6113,7 +6113,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetBodyType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsRigidBody(
+pub unsafe extern "C" fn jpc_JPH_Body_IsRigidBody(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6123,7 +6123,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsRigidBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsSoftBody(
+pub unsafe extern "C" fn jpc_JPH_Body_IsSoftBody(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6133,7 +6133,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsSoftBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsActive(
+pub unsafe extern "C" fn jpc_JPH_Body_IsActive(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6143,7 +6143,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsActive(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsStatic(
+pub unsafe extern "C" fn jpc_JPH_Body_IsStatic(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6153,7 +6153,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsStatic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsKinematic(
+pub unsafe extern "C" fn jpc_JPH_Body_IsKinematic(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6163,7 +6163,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsKinematic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsDynamic(
+pub unsafe extern "C" fn jpc_JPH_Body_IsDynamic(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6173,7 +6173,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsDynamic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_CanBeKinematicOrDynamic(
+pub unsafe extern "C" fn jpc_JPH_Body_CanBeKinematicOrDynamic(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6183,7 +6183,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_CanBeKinematicOrDynamic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetIsSensor(
+pub unsafe extern "C" fn jpc_JPH_Body_SetIsSensor(
     body: *mut JPH_Body,
     value: bool
 )
@@ -6195,7 +6195,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetIsSensor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsSensor(
+pub unsafe extern "C" fn jpc_JPH_Body_IsSensor(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6205,7 +6205,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsSensor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetCollideKinematicVsNonDynamic(
+pub unsafe extern "C" fn jpc_JPH_Body_SetCollideKinematicVsNonDynamic(
     body: *mut JPH_Body,
     value: bool
 )
@@ -6217,7 +6217,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetCollideKinematicVsNonDynamic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCollideKinematicVsNonDynamic(
+pub unsafe extern "C" fn jpc_JPH_Body_GetCollideKinematicVsNonDynamic(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6227,7 +6227,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCollideKinematicVsNonDynamic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetUseManifoldReduction(
+pub unsafe extern "C" fn jpc_JPH_Body_SetUseManifoldReduction(
     body: *mut JPH_Body,
     value: bool
 )
@@ -6239,7 +6239,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetUseManifoldReduction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUseManifoldReduction(
+pub unsafe extern "C" fn jpc_JPH_Body_GetUseManifoldReduction(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6249,7 +6249,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUseManifoldReduction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUseManifoldReductionWithBody(
+pub unsafe extern "C" fn jpc_JPH_Body_GetUseManifoldReductionWithBody(
     body: *const JPH_Body,
     other: *const JPH_Body
 ) -> bool
@@ -6261,7 +6261,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUseManifoldReductionWithBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetApplyGyroscopicForce(
+pub unsafe extern "C" fn jpc_JPH_Body_SetApplyGyroscopicForce(
     body: *mut JPH_Body,
     value: bool
 )
@@ -6273,7 +6273,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetApplyGyroscopicForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetApplyGyroscopicForce(
+pub unsafe extern "C" fn jpc_JPH_Body_GetApplyGyroscopicForce(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6283,7 +6283,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetApplyGyroscopicForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetEnhancedInternalEdgeRemoval(
+pub unsafe extern "C" fn jpc_JPH_Body_SetEnhancedInternalEdgeRemoval(
     body: *mut JPH_Body,
     value: bool
 )
@@ -6295,7 +6295,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetEnhancedInternalEdgeRemoval(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetEnhancedInternalEdgeRemoval(
+pub unsafe extern "C" fn jpc_JPH_Body_GetEnhancedInternalEdgeRemoval(
     body: *const JPH_Body
 ) -> bool
 {
@@ -6305,7 +6305,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetEnhancedInternalEdgeRemoval(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(
+pub unsafe extern "C" fn jpc_JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(
     body: *const JPH_Body,
     other: *const JPH_Body
 ) -> bool
@@ -6317,7 +6317,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetEnhancedInternalEdgeRemovalWi
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionType(
+pub unsafe extern "C" fn jpc_JPH_Body_GetMotionType(
     body: *const JPH_Body
 ) -> JPH_MotionType
 {
@@ -6327,7 +6327,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetMotionType(
+pub unsafe extern "C" fn jpc_JPH_Body_SetMotionType(
     body: *mut JPH_Body,
     motionType: JPH_MotionType
 )
@@ -6339,7 +6339,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetMotionType(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetBroadPhaseLayer(
+pub unsafe extern "C" fn jpc_JPH_Body_GetBroadPhaseLayer(
     body: *const JPH_Body
 ) -> JPH_BroadPhaseLayer
 {
@@ -6349,7 +6349,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetBroadPhaseLayer(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetObjectLayer(
+pub unsafe extern "C" fn jpc_JPH_Body_GetObjectLayer(
     body: *const JPH_Body
 ) -> JPH_ObjectLayer
 {
@@ -6359,7 +6359,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetObjectLayer(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAllowSleeping(
+pub unsafe extern "C" fn jpc_JPH_Body_GetAllowSleeping(
     body: *mut JPH_Body
 ) -> bool
 {
@@ -6369,7 +6369,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAllowSleeping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAllowSleeping(
+pub unsafe extern "C" fn jpc_JPH_Body_SetAllowSleeping(
     body: *mut JPH_Body,
     allowSleeping: bool
 )
@@ -6381,7 +6381,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAllowSleeping(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetSleepTimer(
+pub unsafe extern "C" fn jpc_JPH_Body_ResetSleepTimer(
     body: *mut JPH_Body
 )
 {
@@ -6391,7 +6391,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetSleepTimer(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetFriction(
+pub unsafe extern "C" fn jpc_JPH_Body_GetFriction(
     body: *const JPH_Body
 ) -> f32
 {
@@ -6401,7 +6401,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetFriction(
+pub unsafe extern "C" fn jpc_JPH_Body_SetFriction(
     body: *mut JPH_Body,
     friction: f32
 )
@@ -6413,7 +6413,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetRestitution(
+pub unsafe extern "C" fn jpc_JPH_Body_GetRestitution(
     body: *const JPH_Body
 ) -> f32
 {
@@ -6423,7 +6423,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetRestitution(
+pub unsafe extern "C" fn jpc_JPH_Body_SetRestitution(
     body: *mut JPH_Body,
     restitution: f32
 )
@@ -6435,7 +6435,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_Body_GetLinearVelocity(
     body: *mut JPH_Body,
     velocity: *mut JPH_Vec3
 )
@@ -6447,7 +6447,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_Body_SetLinearVelocity(
     body: *mut JPH_Body,
     velocity: *const JPH_Vec3
 )
@@ -6459,7 +6459,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetLinearVelocityClamped(
+pub unsafe extern "C" fn jpc_JPH_Body_SetLinearVelocityClamped(
     body: *mut JPH_Body,
     velocity: *const JPH_Vec3
 )
@@ -6471,7 +6471,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetLinearVelocityClamped(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_Body_GetAngularVelocity(
     body: *mut JPH_Body,
     velocity: *mut JPH_Vec3
 )
@@ -6483,7 +6483,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAngularVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAngularVelocity(
+pub unsafe extern "C" fn jpc_JPH_Body_SetAngularVelocity(
     body: *mut JPH_Body,
     velocity: *const JPH_Vec3
 )
@@ -6495,7 +6495,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAngularVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAngularVelocityClamped(
+pub unsafe extern "C" fn jpc_JPH_Body_SetAngularVelocityClamped(
     body: *mut JPH_Body,
     velocity: *const JPH_Vec3
 )
@@ -6507,7 +6507,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetAngularVelocityClamped(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPointVelocityCOM(
+pub unsafe extern "C" fn jpc_JPH_Body_GetPointVelocityCOM(
     body: *mut JPH_Body,
     pointRelativeToCOM: *const JPH_Vec3,
     velocity: *mut JPH_Vec3
@@ -6521,7 +6521,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPointVelocityCOM(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPointVelocity(
+pub unsafe extern "C" fn jpc_JPH_Body_GetPointVelocity(
     body: *mut JPH_Body,
     point: *const JPH_RVec3,
     velocity: *mut JPH_Vec3
@@ -6535,7 +6535,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPointVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddForce(
+pub unsafe extern "C" fn jpc_JPH_Body_AddForce(
     body: *mut JPH_Body,
     force: *const JPH_Vec3
 )
@@ -6547,7 +6547,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddForceAtPosition(
+pub unsafe extern "C" fn jpc_JPH_Body_AddForceAtPosition(
     body: *mut JPH_Body,
     force: *const JPH_Vec3,
     position: *const JPH_RVec3
@@ -6561,7 +6561,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddForceAtPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddTorque(
+pub unsafe extern "C" fn jpc_JPH_Body_AddTorque(
     body: *mut JPH_Body,
     force: *const JPH_Vec3
 )
@@ -6573,7 +6573,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAccumulatedForce(
+pub unsafe extern "C" fn jpc_JPH_Body_GetAccumulatedForce(
     body: *mut JPH_Body,
     force: *mut JPH_Vec3
 )
@@ -6585,7 +6585,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAccumulatedForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAccumulatedTorque(
+pub unsafe extern "C" fn jpc_JPH_Body_GetAccumulatedTorque(
     body: *mut JPH_Body,
     force: *mut JPH_Vec3
 )
@@ -6597,7 +6597,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetAccumulatedTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetForce(
+pub unsafe extern "C" fn jpc_JPH_Body_ResetForce(
     body: *mut JPH_Body
 )
 {
@@ -6607,7 +6607,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetForce(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetTorque(
+pub unsafe extern "C" fn jpc_JPH_Body_ResetTorque(
     body: *mut JPH_Body
 )
 {
@@ -6617,7 +6617,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetTorque(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetMotion(
+pub unsafe extern "C" fn jpc_JPH_Body_ResetMotion(
     body: *mut JPH_Body
 )
 {
@@ -6627,7 +6627,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_ResetMotion(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetInverseInertia(
+pub unsafe extern "C" fn jpc_JPH_Body_GetInverseInertia(
     body: *mut JPH_Body,
     result: *mut JPH_Matrix4x4
 )
@@ -6639,7 +6639,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetInverseInertia(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddImpulse(
+pub unsafe extern "C" fn jpc_JPH_Body_AddImpulse(
     body: *mut JPH_Body,
     impulse: *const JPH_Vec3
 )
@@ -6651,7 +6651,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddImpulseAtPosition(
+pub unsafe extern "C" fn jpc_JPH_Body_AddImpulseAtPosition(
     body: *mut JPH_Body,
     impulse: *const JPH_Vec3,
     position: *const JPH_RVec3
@@ -6665,7 +6665,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddImpulseAtPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddAngularImpulse(
+pub unsafe extern "C" fn jpc_JPH_Body_AddAngularImpulse(
     body: *mut JPH_Body,
     angularImpulse: *const JPH_Vec3
 )
@@ -6677,7 +6677,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_AddAngularImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_MoveKinematic(
+pub unsafe extern "C" fn jpc_JPH_Body_MoveKinematic(
     body: *mut JPH_Body,
     targetPosition: *mut JPH_RVec3,
     targetRotation: *mut JPH_Quat,
@@ -6693,7 +6693,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_MoveKinematic(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_ApplyBuoyancyImpulse(
+pub unsafe extern "C" fn jpc_JPH_Body_ApplyBuoyancyImpulse(
     body: *mut JPH_Body,
     surfacePosition: *const JPH_RVec3,
     surfaceNormal: *const JPH_Vec3,
@@ -6719,7 +6719,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_ApplyBuoyancyImpulse(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsInBroadPhase(
+pub unsafe extern "C" fn jpc_JPH_Body_IsInBroadPhase(
     body: *mut JPH_Body
 ) -> bool
 {
@@ -6729,7 +6729,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsInBroadPhase(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsCollisionCacheInvalid(
+pub unsafe extern "C" fn jpc_JPH_Body_IsCollisionCacheInvalid(
     body: *mut JPH_Body
 ) -> bool
 {
@@ -6739,7 +6739,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_IsCollisionCacheInvalid(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetShape(
+pub unsafe extern "C" fn jpc_JPH_Body_GetShape(
     body: *mut JPH_Body
 ) -> *const JPH_Shape
 {
@@ -6749,7 +6749,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_Body_GetPosition(
     body: *const JPH_Body,
     result: *mut JPH_RVec3
 )
@@ -6761,7 +6761,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetRotation(
+pub unsafe extern "C" fn jpc_JPH_Body_GetRotation(
     body: *const JPH_Body,
     result: *mut JPH_Quat
 )
@@ -6773,7 +6773,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldTransform(
+pub unsafe extern "C" fn jpc_JPH_Body_GetWorldTransform(
     body: *const JPH_Body,
     result: *mut JPH_RMatrix4x4
 )
@@ -6785,7 +6785,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldTransform(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCenterOfMassPosition(
+pub unsafe extern "C" fn jpc_JPH_Body_GetCenterOfMassPosition(
     body: *const JPH_Body,
     result: *mut JPH_RVec3
 )
@@ -6797,7 +6797,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCenterOfMassPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCenterOfMassTransform(
+pub unsafe extern "C" fn jpc_JPH_Body_GetCenterOfMassTransform(
     body: *const JPH_Body,
     result: *mut JPH_RMatrix4x4
 )
@@ -6809,7 +6809,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetCenterOfMassTransform(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetInverseCenterOfMassTransform(
+pub unsafe extern "C" fn jpc_JPH_Body_GetInverseCenterOfMassTransform(
     body: *const JPH_Body,
     result: *mut JPH_RMatrix4x4
 )
@@ -6821,7 +6821,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetInverseCenterOfMassTransform(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldSpaceBounds(
+pub unsafe extern "C" fn jpc_JPH_Body_GetWorldSpaceBounds(
     body: *const JPH_Body,
     result: *mut JPH_AABox
 )
@@ -6833,7 +6833,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldSpaceBounds(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldSpaceSurfaceNormal(
+pub unsafe extern "C" fn jpc_JPH_Body_GetWorldSpaceSurfaceNormal(
     body: *const JPH_Body,
     subShapeID: JPH_SubShapeID,
     position: *const JPH_RVec3,
@@ -6849,7 +6849,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetWorldSpaceSurfaceNormal(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionProperties(
+pub unsafe extern "C" fn jpc_JPH_Body_GetMotionProperties(
     body: *mut JPH_Body
 ) -> *mut JPH_MotionProperties
 {
@@ -6859,7 +6859,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionProperties(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionPropertiesUnchecked(
+pub unsafe extern "C" fn jpc_JPH_Body_GetMotionPropertiesUnchecked(
     body: *mut JPH_Body
 ) -> *mut JPH_MotionProperties
 {
@@ -6869,7 +6869,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetMotionPropertiesUnchecked(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_Body_SetUserData(
     body: *mut JPH_Body,
     userData: u64
 )
@@ -6881,7 +6881,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_Body_GetUserData(
     body: *mut JPH_Body
 ) -> u64
 {
@@ -6891,7 +6891,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetFixedToWorldBody(
+pub unsafe extern "C" fn jpc_JPH_Body_GetFixedToWorldBody(
 
 ) -> *mut JPH_Body
 {
@@ -6901,7 +6901,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Body_GetFixedToWorldBody(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerFilter_Create(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerFilter_Create(
     procs: JPH_BroadPhaseLayerFilter_Procs,
     userData: *mut c_void
 ) -> *mut JPH_BroadPhaseLayerFilter
@@ -6913,7 +6913,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerFilter_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerFilter_Destroy(
+pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerFilter_Destroy(
     filter: *mut JPH_BroadPhaseLayerFilter
 )
 {
@@ -6923,7 +6923,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BroadPhaseLayerFilter_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerFilter_Create(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerFilter_Create(
     procs: JPH_ObjectLayerFilter_Procs,
     userData: *mut c_void
 ) -> *mut JPH_ObjectLayerFilter
@@ -6935,7 +6935,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerFilter_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerFilter_Destroy(
+pub unsafe extern "C" fn jpc_JPH_ObjectLayerFilter_Destroy(
     filter: *mut JPH_ObjectLayerFilter
 )
 {
@@ -6945,7 +6945,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ObjectLayerFilter_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyFilter_Create(
+pub unsafe extern "C" fn jpc_JPH_BodyFilter_Create(
     procs: JPH_BodyFilter_Procs,
     userData: *mut c_void
 ) -> *mut JPH_BodyFilter
@@ -6957,7 +6957,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyFilter_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyFilter_Destroy(
+pub unsafe extern "C" fn jpc_JPH_BodyFilter_Destroy(
     filter: *mut JPH_BodyFilter
 )
 {
@@ -6967,7 +6967,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyFilter_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_Create(
+pub unsafe extern "C" fn jpc_JPH_ShapeFilter_Create(
     procs: JPH_ShapeFilter_Procs,
     userData: *mut c_void
 ) -> *mut JPH_ShapeFilter
@@ -6979,7 +6979,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_Destroy(
+pub unsafe extern "C" fn jpc_JPH_ShapeFilter_Destroy(
     filter: *mut JPH_ShapeFilter
 )
 {
@@ -6989,7 +6989,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_GetBodyID2(
+pub unsafe extern "C" fn jpc_JPH_ShapeFilter_GetBodyID2(
     filter: *mut JPH_ShapeFilter
 ) -> JPH_BodyID
 {
@@ -6999,7 +6999,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ShapeFilter_GetBodyID2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactListener_Create(
+pub unsafe extern "C" fn jpc_JPH_ContactListener_Create(
     procs: JPH_ContactListener_Procs,
     userData: *mut c_void
 ) -> *mut JPH_ContactListener
@@ -7011,7 +7011,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactListener_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactListener_Destroy(
+pub unsafe extern "C" fn jpc_JPH_ContactListener_Destroy(
     listener: *mut JPH_ContactListener
 )
 {
@@ -7021,7 +7021,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactListener_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyActivationListener_Create(
+pub unsafe extern "C" fn jpc_JPH_BodyActivationListener_Create(
     procs: JPH_BodyActivationListener_Procs,
     userData: *mut c_void
 ) -> *mut JPH_BodyActivationListener
@@ -7033,7 +7033,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyActivationListener_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyActivationListener_Destroy(
+pub unsafe extern "C" fn jpc_JPH_BodyActivationListener_Destroy(
     listener: *mut JPH_BodyActivationListener
 )
 {
@@ -7043,7 +7043,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyActivationListener_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyDrawFilter_Create(
+pub unsafe extern "C" fn jpc_JPH_BodyDrawFilter_Create(
     procs: JPH_BodyDrawFilter_Procs,
     userData: *mut c_void
 ) -> *mut JPH_BodyDrawFilter
@@ -7055,7 +7055,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyDrawFilter_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_BodyDrawFilter_Destroy(
+pub unsafe extern "C" fn jpc_JPH_BodyDrawFilter_Destroy(
     filter: *mut JPH_BodyDrawFilter
 )
 {
@@ -7065,7 +7065,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_BodyDrawFilter_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceNormal(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetWorldSpaceNormal(
     manifold: *const JPH_ContactManifold,
     result: *mut JPH_Vec3
 )
@@ -7077,7 +7077,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceNormal(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetPenetrationDepth(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetPenetrationDepth(
     manifold: *const JPH_ContactManifold
 ) -> f32
 {
@@ -7087,7 +7087,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetPenetrationDepth(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetSubShapeID1(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetSubShapeID1(
     manifold: *const JPH_ContactManifold
 ) -> JPH_SubShapeID
 {
@@ -7097,7 +7097,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetSubShapeID1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetSubShapeID2(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetSubShapeID2(
     manifold: *const JPH_ContactManifold
 ) -> JPH_SubShapeID
 {
@@ -7107,7 +7107,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetSubShapeID2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetPointCount(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetPointCount(
     manifold: *const JPH_ContactManifold
 ) -> u32
 {
@@ -7117,7 +7117,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetPointCount(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceContactPointOn1(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetWorldSpaceContactPointOn1(
     manifold: *const JPH_ContactManifold,
     index: u32,
     result: *mut JPH_RVec3
@@ -7131,7 +7131,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceContactP
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceContactPointOn2(
+pub unsafe extern "C" fn jpc_JPH_ContactManifold_GetWorldSpaceContactPointOn2(
     manifold: *const JPH_ContactManifold,
     index: u32,
     result: *mut JPH_RVec3
@@ -7145,7 +7145,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactManifold_GetWorldSpaceContactP
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetFriction(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetFriction(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7155,7 +7155,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetFriction(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetFriction(
     settings: *mut JPH_ContactSettings,
     friction: f32
 )
@@ -7167,7 +7167,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetFriction(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRestitution(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetRestitution(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7177,7 +7177,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRestitution(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetRestitution(
     settings: *mut JPH_ContactSettings,
     restitution: f32
 )
@@ -7189,7 +7189,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRestitution(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvMassScale1(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetInvMassScale1(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7199,7 +7199,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvMassScale1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvMassScale1(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetInvMassScale1(
     settings: *mut JPH_ContactSettings,
     scale: f32
 )
@@ -7211,7 +7211,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvMassScale1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvInertiaScale1(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetInvInertiaScale1(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7221,7 +7221,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvInertiaScale1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvInertiaScale1(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetInvInertiaScale1(
     settings: *mut JPH_ContactSettings,
     scale: f32
 )
@@ -7233,7 +7233,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvInertiaScale1(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvMassScale2(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetInvMassScale2(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7243,7 +7243,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvMassScale2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvMassScale2(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetInvMassScale2(
     settings: *mut JPH_ContactSettings,
     scale: f32
 )
@@ -7255,7 +7255,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvMassScale2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvInertiaScale2(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetInvInertiaScale2(
     settings: *mut JPH_ContactSettings
 ) -> f32
 {
@@ -7265,7 +7265,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetInvInertiaScale2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvInertiaScale2(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetInvInertiaScale2(
     settings: *mut JPH_ContactSettings,
     scale: f32
 )
@@ -7277,7 +7277,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetInvInertiaScale2(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetIsSensor(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetIsSensor(
     settings: *mut JPH_ContactSettings
 ) -> bool
 {
@@ -7287,7 +7287,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetIsSensor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetIsSensor(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetIsSensor(
     settings: *mut JPH_ContactSettings,
     sensor: bool
 )
@@ -7299,7 +7299,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetIsSensor(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRelativeLinearSurfaceVelocity(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetRelativeLinearSurfaceVelocity(
     settings: *mut JPH_ContactSettings,
     result: *mut JPH_Vec3
 )
@@ -7311,7 +7311,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRelativeLinearSurf
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRelativeLinearSurfaceVelocity(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetRelativeLinearSurfaceVelocity(
     settings: *mut JPH_ContactSettings,
     velocity: *mut JPH_Vec3
 )
@@ -7323,7 +7323,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRelativeLinearSurf
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRelativeAngularSurfaceVelocity(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_GetRelativeAngularSurfaceVelocity(
     settings: *mut JPH_ContactSettings,
     result: *mut JPH_Vec3
 )
@@ -7335,7 +7335,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_GetRelativeAngularSur
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRelativeAngularSurfaceVelocity(
+pub unsafe extern "C" fn jpc_JPH_ContactSettings_SetRelativeAngularSurfaceVelocity(
     settings: *mut JPH_ContactSettings,
     velocity: *mut JPH_Vec3
 )
@@ -7347,7 +7347,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_ContactSettings_SetRelativeAngularSur
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_Destroy(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_Destroy(
     character: *mut JPH_CharacterBase
 )
 {
@@ -7357,7 +7357,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetCosMaxSlopeAngle(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetCosMaxSlopeAngle(
     character: *mut JPH_CharacterBase
 ) -> f32
 {
@@ -7367,7 +7367,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetCosMaxSlopeAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_SetMaxSlopeAngle(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_SetMaxSlopeAngle(
     character: *mut JPH_CharacterBase,
     maxSlopeAngle: f32
 )
@@ -7379,7 +7379,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_SetMaxSlopeAngle(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetUp(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetUp(
     character: *mut JPH_CharacterBase,
     result: *mut JPH_Vec3
 )
@@ -7391,7 +7391,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetUp(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_SetUp(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_SetUp(
     character: *mut JPH_CharacterBase,
     value: *const JPH_Vec3
 )
@@ -7403,7 +7403,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_SetUp(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_IsSlopeTooSteep(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_IsSlopeTooSteep(
     character: *mut JPH_CharacterBase,
     value: *const JPH_Vec3
 ) -> bool
@@ -7415,7 +7415,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_IsSlopeTooSteep(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetShape(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetShape(
     character: *mut JPH_CharacterBase
 ) -> *const JPH_Shape
 {
@@ -7425,7 +7425,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetShape(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundState(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundState(
     character: *mut JPH_CharacterBase
 ) -> JPH_GroundState
 {
@@ -7435,7 +7435,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundState(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_IsSupported(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_IsSupported(
     character: *mut JPH_CharacterBase
 ) -> bool
 {
@@ -7445,7 +7445,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_IsSupported(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundPosition(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundPosition(
     character: *mut JPH_CharacterBase,
     position: *mut JPH_RVec3
 )
@@ -7457,7 +7457,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundNormal(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundNormal(
     character: *mut JPH_CharacterBase,
     normal: *mut JPH_Vec3
 )
@@ -7469,7 +7469,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundNormal(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundVelocity(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundVelocity(
     character: *mut JPH_CharacterBase,
     velocity: *mut JPH_Vec3
 )
@@ -7481,7 +7481,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundMaterial(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundMaterial(
     character: *mut JPH_CharacterBase
 ) -> *const JPH_PhysicsMaterial
 {
@@ -7491,7 +7491,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundMaterial(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundBodyId(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundBodyId(
     character: *mut JPH_CharacterBase
 ) -> JPH_BodyID
 {
@@ -7501,7 +7501,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundBodyId(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundSubShapeId(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundSubShapeId(
     character: *mut JPH_CharacterBase
 ) -> JPH_SubShapeID
 {
@@ -7511,7 +7511,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundSubShapeId(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundUserData(
+pub unsafe extern "C" fn jpc_JPH_CharacterBase_GetGroundUserData(
     character: *mut JPH_CharacterBase
 ) -> u64
 {
@@ -7521,7 +7521,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterBase_GetGroundUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterSettings_Init(
+pub unsafe extern "C" fn jpc_JPH_CharacterSettings_Init(
     settings: *mut JPH_CharacterSettings
 )
 {
@@ -7531,7 +7531,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterSettings_Init(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Character_Create(
+pub unsafe extern "C" fn jpc_JPH_Character_Create(
     settings: *const JPH_CharacterSettings,
     position: *const JPH_RVec3,
     rotation: *const JPH_Quat,
@@ -7549,7 +7549,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Character_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Character_AddToPhysicsSystem(
+pub unsafe extern "C" fn jpc_JPH_Character_AddToPhysicsSystem(
     character: *mut JPH_Character,
     activationMode: JPH_Activation,
     lockBodies: bool
@@ -7563,7 +7563,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Character_AddToPhysicsSystem(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Character_RemoveFromPhysicsSystem(
+pub unsafe extern "C" fn jpc_JPH_Character_RemoveFromPhysicsSystem(
     character: *mut JPH_Character,
     lockBodies: bool
 )
@@ -7575,7 +7575,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Character_RemoveFromPhysicsSystem(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Character_Activate(
+pub unsafe extern "C" fn jpc_JPH_Character_Activate(
     character: *mut JPH_Character,
     lockBodies: bool
 )
@@ -7587,7 +7587,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Character_Activate(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_Character_PostSimulation(
+pub unsafe extern "C" fn jpc_JPH_Character_PostSimulation(
     character: *mut JPH_Character,
     maxSeparationDistance: f32,
     lockBodies: bool
@@ -7601,7 +7601,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_Character_PostSimulation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtualSettings_Init(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtualSettings_Init(
     settings: *mut JPH_CharacterVirtualSettings
 )
 {
@@ -7611,7 +7611,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtualSettings_Init(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_Create(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_Create(
     settings: *const JPH_CharacterVirtualSettings,
     position: *const JPH_RVec3,
     rotation: *const JPH_Quat,
@@ -7629,7 +7629,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetListener(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetListener(
     character: *mut JPH_CharacterVirtual,
     listener: *mut JPH_CharacterContactListener
 )
@@ -7641,7 +7641,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetListener(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetLinearVelocity(
     character: *mut JPH_CharacterVirtual,
     velocity: *mut JPH_Vec3
 )
@@ -7653,7 +7653,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetLinearVelocity(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetLinearVelocity(
     character: *mut JPH_CharacterVirtual,
     velocity: *const JPH_Vec3
 )
@@ -7665,7 +7665,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetLinearVelocity(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetPosition(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetPosition(
     character: *mut JPH_CharacterVirtual,
     position: *mut JPH_RVec3
 )
@@ -7677,7 +7677,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetPosition(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetPosition(
     character: *mut JPH_CharacterVirtual,
     position: *const JPH_RVec3
 )
@@ -7689,7 +7689,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetPosition(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetRotation(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetRotation(
     character: *mut JPH_CharacterVirtual,
     rotation: *mut JPH_Quat
 )
@@ -7701,7 +7701,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetRotation(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetRotation(
     character: *mut JPH_CharacterVirtual,
     rotation: *const JPH_Quat
 )
@@ -7713,7 +7713,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetRotation(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetWorldTransform(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetWorldTransform(
     character: *mut JPH_CharacterVirtual,
     result: *mut JPH_RMatrix4x4
 )
@@ -7725,7 +7725,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetWorldTransform(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetCenterOfMassTransform(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetCenterOfMassTransform(
     character: *mut JPH_CharacterVirtual,
     result: *mut JPH_RMatrix4x4
 )
@@ -7737,7 +7737,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetCenterOfMassTrans
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMass(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetMass(
     character: *mut JPH_CharacterVirtual
 ) -> f32
 {
@@ -7747,7 +7747,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMass(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMass(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetMass(
     character: *mut JPH_CharacterVirtual,
     value: f32
 )
@@ -7759,7 +7759,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMass(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxStrength(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetMaxStrength(
     character: *mut JPH_CharacterVirtual
 ) -> f32
 {
@@ -7769,7 +7769,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxStrength(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMaxStrength(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetMaxStrength(
     character: *mut JPH_CharacterVirtual,
     value: f32
 )
@@ -7781,7 +7781,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMaxStrength(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetPenetrationRecoverySpeed(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetPenetrationRecoverySpeed(
     character: *mut JPH_CharacterVirtual
 ) -> f32
 {
@@ -7791,7 +7791,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetPenetrationRecove
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetPenetrationRecoverySpeed(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetPenetrationRecoverySpeed(
     character: *mut JPH_CharacterVirtual,
     value: f32
 )
@@ -7803,7 +7803,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetPenetrationRecove
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetEnhancedInternalEdgeRemoval(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetEnhancedInternalEdgeRemoval(
     character: *mut JPH_CharacterVirtual
 ) -> bool
 {
@@ -7813,7 +7813,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetEnhancedInternalE
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetEnhancedInternalEdgeRemoval(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetEnhancedInternalEdgeRemoval(
     character: *mut JPH_CharacterVirtual,
     value: bool
 )
@@ -7825,7 +7825,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetEnhancedInternalE
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetCharacterPadding(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetCharacterPadding(
     character: *mut JPH_CharacterVirtual
 ) -> f32
 {
@@ -7835,7 +7835,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetCharacterPadding(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxNumHits(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetMaxNumHits(
     character: *mut JPH_CharacterVirtual
 ) -> u32
 {
@@ -7845,7 +7845,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxNumHits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMaxNumHits(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetMaxNumHits(
     character: *mut JPH_CharacterVirtual,
     value: u32
 )
@@ -7857,7 +7857,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetMaxNumHits(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetHitReductionCosMaxAngle(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetHitReductionCosMaxAngle(
     character: *mut JPH_CharacterVirtual
 ) -> f32
 {
@@ -7867,7 +7867,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetHitReductionCosMa
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetHitReductionCosMaxAngle(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetHitReductionCosMaxAngle(
     character: *mut JPH_CharacterVirtual,
     value: f32
 )
@@ -7879,7 +7879,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetHitReductionCosMa
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxHitsExceeded(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetMaxHitsExceeded(
     character: *mut JPH_CharacterVirtual
 ) -> bool
 {
@@ -7889,7 +7889,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetMaxHitsExceeded(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetUserData(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_GetUserData(
     character: *mut JPH_CharacterVirtual
 ) -> u64
 {
@@ -7899,7 +7899,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_GetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetUserData(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetUserData(
     character: *mut JPH_CharacterVirtual,
     value: u64
 )
@@ -7911,7 +7911,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_SetUserData(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
     character: *mut JPH_CharacterVirtual,
     desiredVelocity: *const JPH_Vec3,
     velocity: *mut JPH_Vec3
@@ -7925,7 +7925,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_CancelVelocityToward
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_Update(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_Update(
     character: *mut JPH_CharacterVirtual,
     deltaTime: f32,
     layer: JPH_ObjectLayer,
@@ -7941,7 +7941,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_Update(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_ExtendedUpdate(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_ExtendedUpdate(
     character: *mut JPH_CharacterVirtual,
     deltaTime: f32,
     settings: *const JPH_ExtendedUpdateSettings,
@@ -7959,7 +7959,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_ExtendedUpdate(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_RefreshContacts(
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_RefreshContacts(
     character: *mut JPH_CharacterVirtual,
     layer: JPH_ObjectLayer,
     system: *mut JPH_PhysicsSystem
@@ -7973,7 +7973,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterVirtual_RefreshContacts(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterContactListener_Create(
+pub unsafe extern "C" fn jpc_JPH_CharacterContactListener_Create(
     procs: JPH_CharacterContactListener_Procs,
     userData: *mut c_void
 ) -> *mut JPH_CharacterContactListener
@@ -7985,7 +7985,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterContactListener_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_CharacterContactListener_Destroy(
+pub unsafe extern "C" fn jpc_JPH_CharacterContactListener_Destroy(
     listener: *mut JPH_CharacterContactListener
 )
 {
@@ -7995,7 +7995,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_CharacterContactListener_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DebugRenderer_Create(
+pub unsafe extern "C" fn jpc_JPH_DebugRenderer_Create(
     procs: JPH_DebugRenderer_Procs,
     userData: *mut c_void
 ) -> *mut JPH_DebugRenderer
@@ -8007,7 +8007,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DebugRenderer_Create(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DebugRenderer_Destroy(
+pub unsafe extern "C" fn jpc_JPH_DebugRenderer_Destroy(
     renderer: *mut JPH_DebugRenderer
 )
 {
@@ -8017,7 +8017,7 @@ pub unsafe extern "C" fn csjoltphysics_JPH_DebugRenderer_Destroy(
 }
 
 #[no_mangle]
-pub unsafe extern "C" fn csjoltphysics_JPH_DebugRenderer_NextFrame(
+pub unsafe extern "C" fn jpc_JPH_DebugRenderer_NextFrame(
     renderer: *mut JPH_DebugRenderer
 )
 {

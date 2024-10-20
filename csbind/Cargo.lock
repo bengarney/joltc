@@ -76,16 +76,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "csbind"
-version = "0.1.0"
-dependencies = [
- "bindgen",
- "bitflags",
- "cc",
- "csbindgen",
-]
-
-[[package]]
 name = "csbindgen"
 version = "1.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -133,6 +123,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569"
 dependencies = [
  "either",
+]
+
+[[package]]
+name = "joltc"
+version = "0.1.0"
+dependencies = [
+ "bindgen",
+ "bitflags",
+ "cc",
+ "csbindgen",
 ]
 
 [[package]]

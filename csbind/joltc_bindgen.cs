@@ -8,14 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 
 
-namespace JoltPhysicsC
+namespace JoltPhysics
 {
-    public static unsafe partial class Jolt
+    public static unsafe partial class JoltC
     {
 #if UNITY_IOS && !UNITY_EDITOR
         const string __DllName = "__Internal";
 #else
-        const string __DllName = "JoltPhysicsC";
+        const string __DllName = "libjoltc";
 #endif
         
 
@@ -240,2025 +240,2025 @@ namespace JoltPhysicsC
         public const uint JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Force32 = 2147483647;
 
 
-        [DllImport(__DllName, EntryPoint = "JPH_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Init();
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shutdown", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shutdown", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shutdown();
 
-        [DllImport(__DllName, EntryPoint = "JPH_SetTraceHandler", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SetTraceHandler", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SetTraceHandler(delegate* unmanaged[Cdecl]<byte*, void> handler);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SetAssertFailureHandler", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SetAssertFailureHandler", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SetAssertFailureHandler(delegate* unmanaged[Cdecl]<byte*, byte*, byte*, uint, bool> handler);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerInterfaceMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerInterfaceMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BroadPhaseLayerInterface* JPH_BroadPhaseLayerInterfaceMask_Create(uint numBroadPhaseLayers);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer(JPH_BroadPhaseLayerInterface* bpInterface, byte broadPhaseLayer, uint groupsToInclude, uint groupsToExclude);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerInterfaceTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BroadPhaseLayerInterface* JPH_BroadPhaseLayerInterfaceTable_Create(uint numObjectLayers, uint numBroadPhaseLayers);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(JPH_BroadPhaseLayerInterface* bpInterface, ushort objectLayer, byte broadPhaseLayer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ObjectLayerPairFilter* JPH_ObjectLayerPairFilterMask_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterMask_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterMask_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ushort JPH_ObjectLayerPairFilterMask_GetObjectLayer(uint group, uint mask);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterMask_GetGroup", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterMask_GetGroup", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ObjectLayerPairFilterMask_GetGroup(ushort layer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterMask_GetMask", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterMask_GetMask", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ObjectLayerPairFilterMask_GetMask(ushort layer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ObjectLayerPairFilter* JPH_ObjectLayerPairFilterTable_Create(uint numObjectLayers);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterTable_DisableCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterTable_DisableCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ObjectLayerPairFilterTable_DisableCollision(JPH_ObjectLayerPairFilter* objectFilter, ushort layer1, ushort layer2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterTable_EnableCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterTable_EnableCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ObjectLayerPairFilterTable_EnableCollision(JPH_ObjectLayerPairFilter* objectFilter, ushort layer1, ushort layer2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerPairFilterTable_ShouldCollide", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerPairFilterTable_ShouldCollide", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_ObjectLayerPairFilterTable_ShouldCollide(JPH_ObjectLayerPairFilter* objectFilter, ushort layer1, ushort layer2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectVsBroadPhaseLayerFilterMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectVsBroadPhaseLayerFilterMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ObjectVsBroadPhaseLayerFilter* JPH_ObjectVsBroadPhaseLayerFilterMask_Create(JPH_BroadPhaseLayerInterface* broadPhaseLayerInterface);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectVsBroadPhaseLayerFilterTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectVsBroadPhaseLayerFilterTable_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ObjectVsBroadPhaseLayerFilter* JPH_ObjectVsBroadPhaseLayerFilterTable_Create(JPH_BroadPhaseLayerInterface* broadPhaseLayerInterface, uint numBroadPhaseLayers, JPH_ObjectLayerPairFilter* objectLayerPairFilter, uint numObjectLayers);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DrawSettings_InitDefault", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DrawSettings_InitDefault", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DrawSettings_InitDefault(JPH_DrawSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PhysicsSystem* JPH_PhysicsSystem_Create(JPH_PhysicsSystemSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_Destroy(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_SetPhysicsSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_SetPhysicsSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_SetPhysicsSettings(JPH_PhysicsSystem* system, JPH_PhysicsSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetPhysicsSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetPhysicsSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_GetPhysicsSettings(JPH_PhysicsSystem* system, JPH_PhysicsSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_OptimizeBroadPhase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_OptimizeBroadPhase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_Update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_Update(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_Step", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Step", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_Step(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBodyInterface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodyInterface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyInterface* JPH_PhysicsSystem_GetBodyInterface(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBodyInterfaceNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodyInterfaceNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyInterface* JPH_PhysicsSystem_GetBodyInterfaceNoLock(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBodyLockInterface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodyLockInterface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyLockInterface* JPH_PhysicsSystem_GetBodyLockInterface(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBodyLockInterfaceNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodyLockInterfaceNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyLockInterface* JPH_PhysicsSystem_GetBodyLockInterfaceNoLock(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBroadPhaseQuery", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBroadPhaseQuery", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BroadPhaseQuery* JPH_PhysicsSystem_GetBroadPhaseQuery(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetNarrowPhaseQuery", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNarrowPhaseQuery", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_NarrowPhaseQuery* JPH_PhysicsSystem_GetNarrowPhaseQuery(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_NarrowPhaseQuery* JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_SetContactListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_SetContactListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_SetContactListener(JPH_PhysicsSystem* system, JPH_ContactListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_SetBodyActivationListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_SetBodyActivationListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_SetBodyActivationListener(JPH_PhysicsSystem* system, JPH_BodyActivationListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_WereBodiesInContact", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_WereBodiesInContact", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_PhysicsSystem_WereBodiesInContact(JPH_PhysicsSystem* system, uint body1, uint body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetNumBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNumBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_GetNumBodies(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetNumActiveBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNumActiveBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_GetNumActiveBodies(JPH_PhysicsSystem* system, uint type_);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetMaxBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetMaxBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_GetMaxBodies(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetNumConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNumConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_GetNumConstraints(JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_SetGravity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_SetGravity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem* system, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetGravity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetGravity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_GetGravity(JPH_PhysicsSystem* system, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_AddConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_AddConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_AddConstraint(JPH_PhysicsSystem* system, JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_RemoveConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_RemoveConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_RemoveConstraint(JPH_PhysicsSystem* system, JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_AddConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_AddConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_AddConstraints(JPH_PhysicsSystem* system, JPH_Constraint** constraints, uint count);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_RemoveConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_RemoveConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem* system, JPH_Constraint** constraints, uint count);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_GetBodies(JPH_PhysicsSystem* system, uint* ids, uint count);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_GetConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_GetConstraints(JPH_PhysicsSystem* system, JPH_Constraint** constraints, uint count);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_DrawBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_DrawBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_DrawBodies(JPH_PhysicsSystem* system, JPH_DrawSettings* settings, JPH_DebugRenderer* renderer, JPH_BodyDrawFilter* bodyFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_DrawConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_DrawConstraints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_DrawConstraints(JPH_PhysicsSystem* system, JPH_DebugRenderer* renderer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_DrawConstraintLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_DrawConstraintLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_DrawConstraintLimits(JPH_PhysicsSystem* system, JPH_DebugRenderer* renderer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsSystem_DrawConstraintReferenceFrame", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_DrawConstraintReferenceFrame", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsSystem_DrawConstraintReferenceFrame(JPH_PhysicsSystem* system, JPH_DebugRenderer* renderer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Quaternion_FromTo", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Quaternion_FromTo", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Quaternion_FromTo(JPH_Vec3* from, JPH_Vec3* to, JPH_Quat* quat);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsMaterial_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsMaterial_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PhysicsMaterial* JPH_PhysicsMaterial_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_PhysicsMaterial_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsMaterial_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PhysicsMaterial_Destroy(JPH_PhysicsMaterial* material);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ShapeSettings_Destroy(JPH_ShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeSettings_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeSettings_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_ShapeSettings_GetUserData(JPH_ShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeSettings_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeSettings_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ShapeSettings_SetUserData(JPH_ShapeSettings* settings, ulong userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_Destroy(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Shape_GetType(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Shape_GetSubType(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_Shape_GetUserData(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_SetUserData(JPH_Shape* shape, ulong userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_MustBeStatic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_MustBeStatic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Shape_MustBeStatic(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetCenterOfMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetCenterOfMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_GetCenterOfMass(JPH_Shape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetLocalBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetLocalBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_GetLocalBounds(JPH_Shape* shape, JPH_AABox* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetSubShapeIDBitsRecursive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetSubShapeIDBitsRecursive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Shape_GetSubShapeIDBitsRecursive(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetWorldSpaceBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetWorldSpaceBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_GetWorldSpaceBounds(JPH_Shape* shape, JPH_Matrix4x4* centerOfMassTransform, JPH_Vec3* scale, JPH_AABox* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetInnerRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetInnerRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_Shape_GetInnerRadius(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetMassProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetMassProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_GetMassProperties(JPH_Shape* shape, JPH_MassProperties* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetLeafShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetLeafShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Shape* JPH_Shape_GetLeafShape(JPH_Shape* shape, uint subShapeID, uint* remainder);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PhysicsMaterial* JPH_Shape_GetMaterial(JPH_Shape* shape, uint subShapeID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetSurfaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetSurfaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Shape_GetSurfaceNormal(JPH_Shape* shape, uint subShapeID, JPH_Vec3* localPosition, JPH_Vec3* normal);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_GetVolume", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetVolume", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_Shape_GetVolume(JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Shape_CastRay(JPH_Shape* shape, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastResult* hit);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Shape_CastRay2(JPH_Shape* shape, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Shape_CollidePoint(JPH_Shape* shape, JPH_Vec3* point);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Shape_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Shape_CollidePoint2(JPH_Shape* shape, JPH_Vec3* point, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexShapeSettings_GetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexShapeSettings_GetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConvexShapeSettings_GetDensity(JPH_ConvexShapeSettings* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexShapeSettings_SetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexShapeSettings_SetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConvexShapeSettings_SetDensity(JPH_ConvexShapeSettings* shape, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexShape_GetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexShape_GetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConvexShape_GetDensity(JPH_ConvexShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexShape_SetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexShape_SetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConvexShape_SetDensity(JPH_ConvexShape* shape, float inDensity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BoxShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BoxShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BoxShapeSettings* JPH_BoxShapeSettings_Create(JPH_Vec3* halfExtent, float convexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BoxShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BoxShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BoxShape* JPH_BoxShapeSettings_CreateShape(JPH_BoxShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BoxShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BoxShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BoxShape* JPH_BoxShape_Create(JPH_Vec3* halfExtent, float convexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BoxShape_GetHalfExtent", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BoxShape_GetHalfExtent", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BoxShape_GetHalfExtent(JPH_BoxShape* shape, JPH_Vec3* halfExtent);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BoxShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BoxShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_BoxShape_GetConvexRadius(JPH_BoxShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SphereShapeSettings* JPH_SphereShapeSettings_Create(float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SphereShape* JPH_SphereShapeSettings_CreateShape(JPH_SphereShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShapeSettings_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShapeSettings_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SphereShapeSettings_GetRadius(JPH_SphereShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShapeSettings_SetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShapeSettings_SetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SphereShapeSettings_SetRadius(JPH_SphereShapeSettings* settings, float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SphereShape* JPH_SphereShape_Create(float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SphereShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SphereShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SphereShape_GetRadius(JPH_SphereShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PlaneShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PlaneShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PlaneShapeSettings* JPH_PlaneShapeSettings_Create(JPH_Plane* plane, JPH_PhysicsMaterial* material, float halfExtent);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PlaneShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PlaneShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PlaneShape* JPH_PlaneShapeSettings_CreateShape(JPH_PlaneShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PlaneShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PlaneShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PlaneShape* JPH_PlaneShape_Create(JPH_Plane* plane, JPH_PhysicsMaterial* material, float halfExtent);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PlaneShape_GetPlane", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PlaneShape_GetPlane", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PlaneShape_GetPlane(JPH_PlaneShape* shape, JPH_Plane* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PlaneShape_GetHalfExtent", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PlaneShape_GetHalfExtent", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_PlaneShape_GetHalfExtent(JPH_PlaneShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TriangleShapeSettings* JPH_TriangleShapeSettings_Create(JPH_Vec3* v1, JPH_Vec3* v2, JPH_Vec3* v3, float convexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TriangleShape* JPH_TriangleShapeSettings_CreateShape(JPH_TriangleShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TriangleShape* JPH_TriangleShape_Create(JPH_Vec3* v1, JPH_Vec3* v2, JPH_Vec3* v3, float convexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TriangleShape_GetConvexRadius(JPH_TriangleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShape_GetVertex1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShape_GetVertex1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_TriangleShape_GetVertex1(JPH_TriangleShape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShape_GetVertex2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShape_GetVertex2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_TriangleShape_GetVertex2(JPH_TriangleShape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TriangleShape_GetVertex3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TriangleShape_GetVertex3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_TriangleShape_GetVertex3(JPH_TriangleShape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CapsuleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CapsuleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CapsuleShapeSettings* JPH_CapsuleShapeSettings_Create(float halfHeightOfCylinder, float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CapsuleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CapsuleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CapsuleShape* JPH_CapsuleShapeSettings_CreateShape(JPH_CapsuleShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CapsuleShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CapsuleShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CapsuleShape* JPH_CapsuleShape_Create(float halfHeightOfCylinder, float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CapsuleShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CapsuleShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CapsuleShape_GetRadius(JPH_CapsuleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CapsuleShape_GetHalfHeightOfCylinder", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CapsuleShape_GetHalfHeightOfCylinder", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CapsuleShape_GetHalfHeightOfCylinder(JPH_CapsuleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CylinderShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CylinderShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CylinderShapeSettings* JPH_CylinderShapeSettings_Create(float halfHeight, float radius, float convexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CylinderShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CylinderShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CylinderShape* JPH_CylinderShapeSettings_CreateShape(JPH_CylinderShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CylinderShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CylinderShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CylinderShape* JPH_CylinderShape_Create(float halfHeight, float radius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CylinderShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CylinderShape_GetRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CylinderShape_GetRadius(JPH_CylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CylinderShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CylinderShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CylinderShape_GetHalfHeight(JPH_CylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TaperedCylinderShapeSettings* JPH_TaperedCylinderShapeSettings_Create(float halfHeightOfTaperedCylinder, float topRadius, float bottomRadius, float convexRadius, JPH_PhysicsMaterial* material);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TaperedCylinderShape* JPH_TaperedCylinderShapeSettings_CreateShape(JPH_TaperedCylinderShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShape_GetTopRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShape_GetTopRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCylinderShape_GetTopRadius(JPH_TaperedCylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShape_GetBottomRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShape_GetBottomRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCylinderShape_GetBottomRadius(JPH_TaperedCylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShape_GetConvexRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCylinderShape_GetConvexRadius(JPH_TaperedCylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCylinderShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCylinderShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCylinderShape_GetHalfHeight(JPH_TaperedCylinderShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ConvexHullShapeSettings* JPH_ConvexHullShapeSettings_Create(JPH_Vec3* points, uint pointsCount, float maxConvexRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ConvexHullShape* JPH_ConvexHullShapeSettings_CreateShape(JPH_ConvexHullShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShape_GetNumPoints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_GetNumPoints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConvexHullShape_GetNumPoints(JPH_ConvexHullShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShape_GetPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_GetPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConvexHullShape_GetPoint(JPH_ConvexHullShape* shape, uint index, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShape_GetNumFaces", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_GetNumFaces", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConvexHullShape_GetNumFaces(JPH_ConvexHullShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShape_GetNumVerticesInFace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_GetNumVerticesInFace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConvexHullShape_GetNumVerticesInFace(JPH_ConvexHullShape* shape, uint faceIndex);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConvexHullShape_GetFaceVertices", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_GetFaceVertices", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConvexHullShape_GetFaceVertices(JPH_ConvexHullShape* shape, uint faceIndex, uint maxVertices, uint* vertices);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MeshShapeSettings* JPH_MeshShapeSettings_Create(JPH_Triangle* triangles, uint triangleCount);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MeshShapeSettings* JPH_MeshShapeSettings_Create2(JPH_Vec3* vertices, uint verticesCount, JPH_IndexedTriangle* triangles, uint triangleCount);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_GetPerTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_GetPerTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_MeshShapeSettings_GetPerTriangleUserData(JPH_MeshShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_SetPerTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_SetPerTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MeshShapeSettings_SetPerTriangleUserData(JPH_MeshShapeSettings* settings, [MarshalAs(UnmanagedType.U1)] bool perTriangleUserData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_Sanitize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_Sanitize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MeshShapeSettings_Sanitize(JPH_MeshShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MeshShape* JPH_MeshShapeSettings_CreateShape(JPH_MeshShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MeshShape_GetTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShape_GetTriangleUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_MeshShape_GetTriangleUserData(JPH_MeshShape* shape, uint id);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_HeightFieldShapeSettings* JPH_HeightFieldShapeSettings_Create(float* samples, JPH_Vec3* offset, JPH_Vec3* scale, uint sampleCount);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_HeightFieldShape* JPH_HeightFieldShapeSettings_CreateShape(JPH_HeightFieldShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample(JPH_HeightFieldShapeSettings* settings, float* pOutMinValue, float* pOutMaxValue, float* pOutQuantizationScale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError(JPH_HeightFieldShapeSettings* settings, float maxError);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetSampleCount", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetSampleCount", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_HeightFieldShape_GetSampleCount(JPH_HeightFieldShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetBlockSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetBlockSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_HeightFieldShape_GetBlockSize(JPH_HeightFieldShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PhysicsMaterial* JPH_HeightFieldShape_GetMaterial(JPH_HeightFieldShape* shape, uint x, uint y);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HeightFieldShape_GetPosition(JPH_HeightFieldShape* shape, uint x, uint y, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_IsNoCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_IsNoCollision", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_HeightFieldShape_IsNoCollision(JPH_HeightFieldShape* shape, uint x, uint y);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_ProjectOntoSurface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_ProjectOntoSurface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_HeightFieldShape_ProjectOntoSurface(JPH_HeightFieldShape* shape, JPH_Vec3* localPosition, JPH_Vec3* outSurfacePosition, uint* outSubShapeID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetMinHeightValue", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetMinHeightValue", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HeightFieldShape_GetMinHeightValue(JPH_HeightFieldShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HeightFieldShape_GetMaxHeightValue", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_GetMaxHeightValue", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HeightFieldShape_GetMaxHeightValue(JPH_HeightFieldShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCapsuleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCapsuleShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TaperedCapsuleShapeSettings* JPH_TaperedCapsuleShapeSettings_Create(float halfHeightOfTaperedCylinder, float topRadius, float bottomRadius);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCapsuleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCapsuleShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_TaperedCapsuleShape* JPH_TaperedCapsuleShapeSettings_CreateShape(JPH_TaperedCapsuleShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCapsuleShape_GetTopRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCapsuleShape_GetTopRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCapsuleShape_GetTopRadius(JPH_TaperedCapsuleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCapsuleShape_GetBottomRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCapsuleShape_GetBottomRadius", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCapsuleShape_GetBottomRadius(JPH_TaperedCapsuleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TaperedCapsuleShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TaperedCapsuleShape_GetHalfHeight", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_TaperedCapsuleShape_GetHalfHeight(JPH_TaperedCapsuleShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CompoundShapeSettings_AddShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CompoundShapeSettings_AddShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CompoundShapeSettings_AddShape(JPH_CompoundShapeSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, JPH_ShapeSettings* shape, uint userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CompoundShapeSettings_AddShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CompoundShapeSettings_AddShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CompoundShapeSettings_AddShape2(JPH_CompoundShapeSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, JPH_Shape* shape, uint userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CompoundShape_GetNumSubShapes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CompoundShape_GetNumSubShapes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CompoundShape_GetNumSubShapes(JPH_CompoundShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CompoundShape_GetSubShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CompoundShape_GetSubShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CompoundShape_GetSubShape(JPH_CompoundShape* shape, uint index, JPH_Shape** subShape, JPH_Vec3* positionCOM, JPH_Quat* rotation, uint* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CompoundShape_GetSubShapeIndexFromID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CompoundShape_GetSubShapeIndexFromID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CompoundShape_GetSubShapeIndexFromID(JPH_CompoundShape* shape, uint id, uint* remainder);
 
-        [DllImport(__DllName, EntryPoint = "JPH_StaticCompoundShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_StaticCompoundShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_StaticCompoundShapeSettings* JPH_StaticCompoundShapeSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_StaticCompoundShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_StaticCompoundShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_StaticCompoundShape* JPH_StaticCompoundShape_Create(JPH_StaticCompoundShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MutableCompoundShapeSettings* JPH_MutableCompoundShapeSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MutableCompoundShape* JPH_MutableCompoundShape_Create(JPH_MutableCompoundShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_AddShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_AddShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_MutableCompoundShape_AddShape(JPH_MutableCompoundShape* shape, JPH_Vec3* position, JPH_Quat* rotation, JPH_Shape* child, uint userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_RemoveShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_RemoveShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MutableCompoundShape_RemoveShape(JPH_MutableCompoundShape* shape, uint index);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_ModifyShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_ModifyShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MutableCompoundShape_ModifyShape(JPH_MutableCompoundShape* shape, uint index, JPH_Vec3* position, JPH_Quat* rotation);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_ModifyShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_ModifyShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MutableCompoundShape_ModifyShape2(JPH_MutableCompoundShape* shape, uint index, JPH_Vec3* position, JPH_Quat* rotation, JPH_Shape* newShape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MutableCompoundShape_AdjustCenterOfMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MutableCompoundShape_AdjustCenterOfMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MutableCompoundShape_AdjustCenterOfMass(JPH_MutableCompoundShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DecoratedShape_GetInnerShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DecoratedShape_GetInnerShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Shape* JPH_DecoratedShape_GetInnerShape(JPH_DecoratedShape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_RotatedTranslatedShapeSettings* JPH_RotatedTranslatedShapeSettings_Create(JPH_Vec3* position, JPH_Quat* rotation, JPH_ShapeSettings* shapeSettings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_RotatedTranslatedShapeSettings* JPH_RotatedTranslatedShapeSettings_Create2(JPH_Vec3* position, JPH_Quat* rotation, JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_RotatedTranslatedShape* JPH_RotatedTranslatedShapeSettings_CreateShape(JPH_RotatedTranslatedShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_RotatedTranslatedShape* JPH_RotatedTranslatedShape_Create(JPH_Vec3* position, JPH_Quat* rotation, JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShape_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShape_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_RotatedTranslatedShape_GetPosition(JPH_RotatedTranslatedShape* shape, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_RotatedTranslatedShape_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_RotatedTranslatedShape_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_RotatedTranslatedShape_GetRotation(JPH_RotatedTranslatedShape* shape, JPH_Quat* rotation);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ScaledShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ScaledShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ScaledShapeSettings* JPH_ScaledShapeSettings_Create(JPH_ShapeSettings* shapeSettings, JPH_Vec3* scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ScaledShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ScaledShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ScaledShapeSettings* JPH_ScaledShapeSettings_Create2(JPH_Shape* shape, JPH_Vec3* scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ScaledShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ScaledShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ScaledShape* JPH_ScaledShapeSettings_CreateShape(JPH_ScaledShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ScaledShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ScaledShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ScaledShape* JPH_ScaledShape_Create(JPH_Shape* shape, JPH_Vec3* scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ScaledShape_GetScale", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ScaledShape_GetScale", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ScaledShape_GetScale(JPH_ScaledShape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_OffsetCenterOfMassShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_OffsetCenterOfMassShapeSettings* JPH_OffsetCenterOfMassShapeSettings_Create(JPH_Vec3* offset, JPH_ShapeSettings* shapeSettings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_OffsetCenterOfMassShapeSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_OffsetCenterOfMassShapeSettings* JPH_OffsetCenterOfMassShapeSettings_Create2(JPH_Vec3* offset, JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_OffsetCenterOfMassShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_OffsetCenterOfMassShape* JPH_OffsetCenterOfMassShapeSettings_CreateShape(JPH_OffsetCenterOfMassShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_OffsetCenterOfMassShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_OffsetCenterOfMassShape_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_OffsetCenterOfMassShape* JPH_OffsetCenterOfMassShape_Create(JPH_Vec3* offset, JPH_Shape* shape);
 
-        [DllImport(__DllName, EntryPoint = "JPH_OffsetCenterOfMassShape_GetOffset", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_OffsetCenterOfMassShape_GetOffset", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_OffsetCenterOfMassShape_GetOffset(JPH_OffsetCenterOfMassShape* shape, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_EmptyShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_EmptyShapeSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_EmptyShapeSettings* JPH_EmptyShapeSettings_Create(JPH_Vec3* centerOfMass);
 
-        [DllImport(__DllName, EntryPoint = "JPH_EmptyShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_EmptyShapeSettings_CreateShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_EmptyShape* JPH_EmptyShapeSettings_CreateShape(JPH_EmptyShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create2(JPH_ShapeSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, uint motionType, ushort objectLayer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_Create3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Create3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create3(JPH_Shape* shape, JPH_Vec3* position, JPH_Quat* rotation, uint motionType, ushort objectLayer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_Destroy(JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_GetPosition(JPH_BodyCreationSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetPosition(JPH_BodyCreationSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_GetRotation(JPH_BodyCreationSettings* settings, JPH_Quat* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetRotation(JPH_BodyCreationSettings* settings, JPH_Quat* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_GetLinearVelocity(JPH_BodyCreationSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetLinearVelocity(JPH_BodyCreationSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_GetAngularVelocity(JPH_BodyCreationSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetAngularVelocity(JPH_BodyCreationSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyCreationSettings_GetMotionType(JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetMotionType(JPH_BodyCreationSettings* settings, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyCreationSettings_GetAllowedDOFs(JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyCreationSettings_SetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_SetAllowedDOFs(JPH_BodyCreationSettings* settings, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SoftBodyCreationSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SoftBodyCreationSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SoftBodyCreationSettings* JPH_SoftBodyCreationSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_SoftBodyCreationSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SoftBodyCreationSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SoftBodyCreationSettings_Destroy(JPH_SoftBodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConstraintSettings_Destroy(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_ConstraintSettings_GetEnabled(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetEnabled(JPH_ConstraintSettings* settings, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConstraintSettings_GetConstraintPriority(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetConstraintPriority(JPH_ConstraintSettings* settings, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetNumVelocityStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetNumVelocityStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConstraintSettings_GetNumVelocityStepsOverride(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_SetNumVelocityStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_SetNumVelocityStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConstraintSettings_SetNumVelocityStepsOverride(JPH_ConstraintSettings* settings, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetNumPositionStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetNumPositionStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ConstraintSettings_GetNumPositionStepsOverride(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_SetNumPositionStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_SetNumPositionStepsOverride", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConstraintSettings_SetNumPositionStepsOverride(JPH_ConstraintSettings* settings, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetDrawConstraintSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetDrawConstraintSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConstraintSettings_GetDrawConstraintSize(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_SetDrawConstraintSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_SetDrawConstraintSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConstraintSettings_SetDrawConstraintSize(JPH_ConstraintSettings* settings, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_ConstraintSettings_GetUserData(JPH_ConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConstraintSettings_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConstraintSettings_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConstraintSettings_SetUserData(JPH_ConstraintSettings* settings, ulong value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetConstraintSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetConstraintSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ConstraintSettings* JPH_Constraint_GetConstraintSettings(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Constraint_GetType(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Constraint_GetSubType(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Constraint_GetConstraintPriority(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_SetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_SetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Constraint_SetConstraintPriority(JPH_Constraint* constraint, uint priority);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Constraint_GetEnabled(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_SetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_SetEnabled", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Constraint_SetEnabled(JPH_Constraint* constraint, [MarshalAs(UnmanagedType.U1)] bool enabled);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_Constraint_GetUserData(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Constraint_SetUserData(JPH_Constraint* constraint, ulong userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_NotifyShapeChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_NotifyShapeChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Constraint_NotifyShapeChanged(JPH_Constraint* constraint, uint bodyID, JPH_Vec3* deltaCOM);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Constraint_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Constraint_Destroy(JPH_Constraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_FixedConstraintSettings* JPH_FixedConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_FixedConstraintSettings_GetSpace(JPH_FixedConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetSpace(JPH_FixedConstraintSettings* settings, uint space);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_FixedConstraintSettings_GetAutoDetectPoint(JPH_FixedConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetAutoDetectPoint(JPH_FixedConstraintSettings* settings, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetPoint1(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetPoint1(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetAxisX1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAxisX1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetAxisX1(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetAxisX1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetAxisX1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetAxisX1(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetAxisY1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAxisY1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetAxisY1(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetAxisY1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetAxisY1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetAxisY1(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetPoint2(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetPoint2(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetAxisX2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAxisX2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetAxisX2(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetAxisX2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetAxisX2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetAxisX2(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_GetAxisY2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAxisY2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_GetAxisY2(JPH_FixedConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_SetAxisY2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetAxisY2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraintSettings_SetAxisY2(JPH_FixedConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_FixedConstraint* JPH_FixedConstraintSettings_CreateConstraint(JPH_FixedConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraint_GetTotalLambdaPosition(JPH_FixedConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_FixedConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_FixedConstraint_GetTotalLambdaRotation(JPH_FixedConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_DistanceConstraintSettings* JPH_DistanceConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_DistanceConstraintSettings_GetSpace(JPH_DistanceConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_SetSpace(JPH_DistanceConstraintSettings* settings, uint space);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_GetPoint1(JPH_DistanceConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_SetPoint1(JPH_DistanceConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_GetPoint2(JPH_DistanceConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_SetPoint2(JPH_DistanceConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_DistanceConstraint* JPH_DistanceConstraintSettings_CreateConstraint(JPH_DistanceConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_SetDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_SetDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraint_SetDistance(JPH_DistanceConstraint* constraint, float minDistance, float maxDistance);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_GetMinDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_GetMinDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_DistanceConstraint_GetMinDistance(JPH_DistanceConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_GetMaxDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_GetMaxDistance", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_DistanceConstraint_GetMaxDistance(JPH_DistanceConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraint_GetLimitsSpringSettings(JPH_DistanceConstraint* constraint, JPH_SpringSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraint_SetLimitsSpringSettings(JPH_DistanceConstraint* constraint, JPH_SpringSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DistanceConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_DistanceConstraint_GetTotalLambdaPosition(JPH_DistanceConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PointConstraintSettings* JPH_PointConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PointConstraintSettings_GetSpace(JPH_PointConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_SetSpace(JPH_PointConstraintSettings* settings, uint space);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_GetPoint1(JPH_PointConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_SetPoint1(JPH_PointConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_GetPoint2(JPH_PointConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_SetPoint2(JPH_PointConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PointConstraint* JPH_PointConstraintSettings_CreateConstraint(JPH_PointConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraint_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraint_SetPoint1(JPH_PointConstraint* constraint, uint space, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraint_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraint_SetPoint2(JPH_PointConstraint* constraint, uint space, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_PointConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraint_GetTotalLambdaPosition(JPH_PointConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_HingeConstraintSettings* JPH_HingeConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetPoint1(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetPoint1(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetPoint2(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetPoint2(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetHingeAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetHingeAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetHingeAxis1(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetHingeAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetHingeAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetHingeAxis1(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetNormalAxis1(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetNormalAxis1(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetHingeAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetHingeAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetHingeAxis2(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetHingeAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetHingeAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetHingeAxis2(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_SetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_SetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_SetNormalAxis2(JPH_HingeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_GetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_GetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraintSettings_GetNormalAxis2(JPH_HingeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_HingeConstraint* JPH_HingeConstraintSettings_CreateConstraint(JPH_HingeConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_HingeConstraintSettings* JPH_HingeConstraint_GetSettings(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetCurrentAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetCurrentAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetCurrentAngle(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetMaxFrictionTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetMaxFrictionTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetMaxFrictionTorque(JPH_HingeConstraint* constraint, float frictionTorque);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetMaxFrictionTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetMaxFrictionTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetMaxFrictionTorque(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetMotorSettings(JPH_HingeConstraint* constraint, JPH_MotorSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_GetMotorSettings(JPH_HingeConstraint* constraint, JPH_MotorSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetMotorState(JPH_HingeConstraint* constraint, uint state);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_HingeConstraint_GetMotorState(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetTargetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetTargetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetTargetAngularVelocity(JPH_HingeConstraint* constraint, float angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTargetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTargetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetTargetAngularVelocity(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetTargetAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetTargetAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetTargetAngle(JPH_HingeConstraint* constraint, float angle);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTargetAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTargetAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetTargetAngle(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetLimits(JPH_HingeConstraint* constraint, float inLimitsMin, float inLimitsMax);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetLimitsMin(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetLimitsMax(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_HasLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_HasLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_HingeConstraint_HasLimits(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_GetLimitsSpringSettings(JPH_HingeConstraint* constraint, JPH_SpringSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetLimitsSpringSettings(JPH_HingeConstraint* constraint, JPH_SpringSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_GetTotalLambdaPosition(JPH_HingeConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_GetTotalLambdaRotation(JPH_HingeConstraint* constraint, float* x, float* y);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTotalLambdaRotationLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTotalLambdaRotationLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetTotalLambdaRotationLimits(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_HingeConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_HingeConstraint_GetTotalLambdaMotor(JPH_HingeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SliderConstraintSettings* JPH_SliderConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetSliderAxis", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetSliderAxis", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetSliderAxis(JPH_SliderConstraintSettings* settings, JPH_Vec3* axis);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_SliderConstraintSettings_GetAutoDetectPoint(JPH_SliderConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetAutoDetectPoint(JPH_SliderConstraintSettings* settings, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetPoint1(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetPoint1(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetPoint2(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetPoint2(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetSliderAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetSliderAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetSliderAxis1(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetSliderAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetSliderAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetSliderAxis1(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetNormalAxis1(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetNormalAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetNormalAxis1(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetSliderAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetSliderAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetSliderAxis2(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetSliderAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetSliderAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetSliderAxis2(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_SetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_SetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_SetNormalAxis2(JPH_SliderConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_GetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_GetNormalAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraintSettings_GetNormalAxis2(JPH_SliderConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SliderConstraint* JPH_SliderConstraintSettings_CreateConstraint(JPH_SliderConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SliderConstraintSettings* JPH_SliderConstraint_GetSettings(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetCurrentPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetCurrentPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetCurrentPosition(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetMaxFrictionForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetMaxFrictionForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetMaxFrictionForce(JPH_SliderConstraint* constraint, float frictionForce);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetMaxFrictionForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetMaxFrictionForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetMaxFrictionForce(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetMotorSettings(JPH_SliderConstraint* constraint, JPH_MotorSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetMotorSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_GetMotorSettings(JPH_SliderConstraint* constraint, JPH_MotorSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetMotorState(JPH_SliderConstraint* constraint, uint state);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_SliderConstraint_GetMotorState(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetTargetVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetTargetVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetTargetVelocity(JPH_SliderConstraint* constraint, float velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTargetVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTargetVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetTargetVelocity(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetTargetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetTargetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetTargetPosition(JPH_SliderConstraint* constraint, float position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTargetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTargetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetTargetPosition(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetLimits(JPH_SliderConstraint* constraint, float inLimitsMin, float inLimitsMax);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetLimitsMin(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetLimitsMax(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_HasLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_HasLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_SliderConstraint_HasLimits(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_GetLimitsSpringSettings(JPH_SliderConstraint* constraint, JPH_SpringSettings* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetLimitsSpringSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetLimitsSpringSettings(JPH_SliderConstraint* constraint, JPH_SpringSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_GetTotalLambdaPosition(JPH_SliderConstraint* constraint, float* x, float* y);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTotalLambdaPositionLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTotalLambdaPositionLimits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetTotalLambdaPositionLimits(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_GetTotalLambdaRotation(JPH_SliderConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SliderConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SliderConstraint_GetTotalLambdaMotor(JPH_SliderConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ConeConstraintSettings* JPH_ConeConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_GetPoint1(JPH_ConeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_SetPoint1(JPH_ConeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_GetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_GetPoint2(JPH_ConeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_SetPoint2(JPH_ConeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_SetTwistAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_SetTwistAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_SetTwistAxis1(JPH_ConeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_GetTwistAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_GetTwistAxis1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_GetTwistAxis1(JPH_ConeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_SetTwistAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_SetTwistAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_SetTwistAxis2(JPH_ConeConstraintSettings* settings, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_GetTwistAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_GetTwistAxis2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_GetTwistAxis2(JPH_ConeConstraintSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_SetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_SetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraintSettings_SetHalfConeAngle(JPH_ConeConstraintSettings* settings, float halfConeAngle);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_GetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_GetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConeConstraintSettings_GetHalfConeAngle(JPH_ConeConstraintSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ConeConstraint* JPH_ConeConstraintSettings_CreateConstraint(JPH_ConeConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraint_SetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraint_SetHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraint_SetHalfConeAngle(JPH_ConeConstraint* constraint, float halfConeAngle);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraint_GetCosHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraint_GetCosHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConeConstraint_GetCosHalfConeAngle(JPH_ConeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ConeConstraint_GetTotalLambdaPosition(JPH_ConeConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ConeConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConeConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConeConstraint_GetTotalLambdaRotation(JPH_ConeConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SwingTwistConstraintSettings* JPH_SwingTwistConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SwingTwistConstraint* JPH_SwingTwistConstraintSettings_CreateConstraint(JPH_SwingTwistConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetNormalHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetNormalHalfConeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SwingTwistConstraint_GetNormalHalfConeAngle(JPH_SwingTwistConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SwingTwistConstraint_GetTotalLambdaPosition(JPH_SwingTwistConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetTotalLambdaTwist", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetTotalLambdaTwist", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SwingTwistConstraint_GetTotalLambdaTwist(JPH_SwingTwistConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetTotalLambdaSwingY", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetTotalLambdaSwingY", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SwingTwistConstraint_GetTotalLambdaSwingY(JPH_SwingTwistConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetTotalLambdaSwingZ", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetTotalLambdaSwingZ", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SwingTwistConstraint_GetTotalLambdaSwingZ(JPH_SwingTwistConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SwingTwistConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SwingTwistConstraint_GetTotalLambdaMotor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SwingTwistConstraint_GetTotalLambdaMotor(JPH_SwingTwistConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraintSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SixDOFConstraintSettings* JPH_SixDOFConstraintSettings_Create();
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraintSettings_CreateConstraint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SixDOFConstraint* JPH_SixDOFConstraintSettings_CreateConstraint(JPH_SixDOFConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SixDOFConstraint_GetLimitsMin(JPH_SixDOFConstraint* constraint, uint axis);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_SixDOFConstraint_GetLimitsMax(JPH_SixDOFConstraint* constraint, uint axis);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SixDOFConstraint_GetTotalLambdaPosition(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetTotalLambdaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SixDOFConstraint_GetTotalLambdaRotation(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SixDOFConstraint_GetTotalLambdaMotorTranslation(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_SixDOFConstraint_GetTotalLambdaMotorRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetTotalLambdaMotorRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TwoBodyConstraint_GetBody1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TwoBodyConstraint_GetBody1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_TwoBodyConstraint_GetBody1(JPH_TwoBodyConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TwoBodyConstraint_GetBody2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TwoBodyConstraint_GetBody2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_TwoBodyConstraint_GetBody2(JPH_TwoBodyConstraint* constraint);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody1Matrix", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TwoBodyConstraint_GetConstraintToBody1Matrix", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(JPH_TwoBodyConstraint* constraint, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody2Matrix", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_TwoBodyConstraint_GetConstraintToBody2Matrix", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(JPH_TwoBodyConstraint* constraint, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_DestroyBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_DestroyBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_DestroyBody(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateAndAddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateAndAddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyInterface_CreateAndAddBody(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateBody(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateBodyWithID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateBodyWithID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateBodyWithID(JPH_BodyInterface* @interface, uint bodyID, JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateBodyWithoutID(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_DestroyBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_DestroyBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_DestroyBodyWithoutID(JPH_BodyInterface* @interface, JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AssignBodyID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AssignBodyID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BodyInterface_AssignBodyID(JPH_BodyInterface* @interface, JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AssignBodyID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AssignBodyID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BodyInterface_AssignBodyID2(JPH_BodyInterface* @interface, JPH_Body* body, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_UnassignBodyID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_UnassignBodyID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_UnassignBodyID(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateSoftBody(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateSoftBodyWithID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateSoftBodyWithID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateSoftBodyWithID(JPH_BodyInterface* @interface, uint bodyID, JPH_SoftBodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateSoftBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateSoftBodyWithoutID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateSoftBodyWithoutID(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_CreateAndAddSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateAndAddSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyInterface_CreateAndAddSoftBody(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddBody(JPH_BodyInterface* @interface, uint bodyID, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_RemoveBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_RemoveBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_RemoveBody(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_RemoveAndDestroyBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_RemoveAndDestroyBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_RemoveAndDestroyBody(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_IsActive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_IsActive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BodyInterface_IsActive(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_IsAdded", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_IsAdded", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BodyInterface_IsAdded(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyInterface_GetBodyType(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetLinearVelocity(JPH_BodyInterface* @interface, uint bodyID, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetLinearVelocity(JPH_BodyInterface* @interface, uint bodyID, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetCenterOfMassPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetCenterOfMassPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetCenterOfMassPosition(JPH_BodyInterface* @interface, uint bodyID, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyInterface_GetMotionType(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetMotionType(JPH_BodyInterface* @interface, uint bodyID, uint motionType, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_BodyInterface_GetRestitution(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetRestitution(JPH_BodyInterface* @interface, uint bodyID, float restitution);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_BodyInterface_GetFriction(JPH_BodyInterface* @interface, uint bodyID);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetFriction(JPH_BodyInterface* @interface, uint bodyID, float friction);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetPosition(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetPosition(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Quat* rotation, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Quat* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetPositionAndRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetPositionAndRotationWhenChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetPositionAndRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetPositionRotationAndVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPositionRotationAndVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetPositionRotationAndVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, JPH_Vec3* linearVelocity, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Shape* JPH_BodyInterface_GetShape(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetShape(JPH_BodyInterface* @interface, uint bodyId, JPH_Shape* shape, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_NotifyShapeChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_NotifyShapeChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_NotifyShapeChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* previousCenterOfMass, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, uint activationMode);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_ActivateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_ActivateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_ActivateBody(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_DeactivateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_DeactivateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_DeactivateBody(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ushort JPH_BodyInterface_GetObjectLayer(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetObjectLayer(JPH_BodyInterface* @interface, uint bodyId, ushort layer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetWorldTransform(JPH_BodyInterface* @interface, uint bodyId, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetCenterOfMassTransform(JPH_BodyInterface* @interface, uint bodyId, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_MoveKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_MoveKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_MoveKinematic(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* targetPosition, JPH_Quat* targetRotation, float deltaTime);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_ApplyBuoyancyImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_ApplyBuoyancyImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BodyInterface_ApplyBuoyancyImpulse(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* surfacePosition, JPH_Vec3* surfaceNormal, float buoyancy, float linearDrag, float angularDrag, JPH_Vec3* fluidVelocity, JPH_Vec3* gravity, float deltaTime);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetLinearAndAngularVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* linearVelocity, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetLinearAndAngularVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* linearVelocity, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddLinearVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* linearVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddLinearAndAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddLinearAndAngularVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* linearVelocity, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetAngularVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetAngularVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* angularVelocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetPointVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetPointVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetPointVelocity(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* point, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddForce(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* force);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddForce2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddForce2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddForce2(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* force, JPH_Vec3* point);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddTorque(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* torque);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddForceAndTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddForceAndTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddForceAndTorque(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* force, JPH_Vec3* torque);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddImpulse(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* impulse);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddImpulse2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddImpulse2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddImpulse2(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* impulse, JPH_Vec3* point);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_AddAngularImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddAngularImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_AddAngularImpulse(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* angularImpulse);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetMotionQuality(JPH_BodyInterface* @interface, uint bodyId, uint quality);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_BodyInterface_GetMotionQuality(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetInverseInertia(JPH_BodyInterface* @interface, uint bodyId, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetGravityFactor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetGravityFactor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetGravityFactor(JPH_BodyInterface* @interface, uint bodyId, float gravityFactor);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetGravityFactor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetGravityFactor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_BodyInterface_GetGravityFactor(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_InvalidateContactCache", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_InvalidateContactCache", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_InvalidateContactCache(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetUserData(JPH_BodyInterface* @interface, uint bodyId, ulong inUserData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyInterface_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_BodyInterface_GetUserData(JPH_BodyInterface* @interface, uint bodyId);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyLockInterface_LockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_LockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyLockInterface_LockRead(JPH_BodyLockInterface* lockInterface, uint bodyID, JPH_BodyLockRead* outLock);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyLockInterface_UnlockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_UnlockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyLockInterface_UnlockRead(JPH_BodyLockInterface* lockInterface, JPH_BodyLockRead* ioLock);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyLockInterface_LockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_LockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyLockInterface_LockWrite(JPH_BodyLockInterface* lockInterface, uint bodyID, JPH_BodyLockWrite* outLock);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyLockInterface_UnlockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_UnlockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyLockInterface_UnlockWrite(JPH_BodyLockInterface* lockInterface, JPH_BodyLockWrite* ioLock);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_MotionProperties_GetAllowedDOFs(JPH_MotionProperties* properties);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_SetLinearDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetLinearDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetLinearDamping(JPH_MotionProperties* properties, float damping);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetLinearDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetLinearDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_MotionProperties_GetLinearDamping(JPH_MotionProperties* properties);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_SetAngularDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetAngularDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetAngularDamping(JPH_MotionProperties* properties, float damping);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetAngularDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetAngularDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_MotionProperties_GetAngularDamping(JPH_MotionProperties* properties);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_SetMassProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetMassProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetMassProperties(JPH_MotionProperties* properties, uint allowedDOFs, JPH_MassProperties* massProperties);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetInverseMassUnchecked", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetInverseMassUnchecked", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_MotionProperties_GetInverseMassUnchecked(JPH_MotionProperties* properties);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_SetInverseMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetInverseMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetInverseMass(JPH_MotionProperties* properties, float inverseMass);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetInverseInertiaDiagonal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetInverseInertiaDiagonal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_GetInverseInertiaDiagonal(JPH_MotionProperties* properties, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_GetInertiaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetInertiaRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_GetInertiaRotation(JPH_MotionProperties* properties, JPH_Quat* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MotionProperties_SetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetInverseInertia(JPH_MotionProperties* properties, JPH_Vec3* diagonal, JPH_Quat* rot);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MassProperties_DecomposePrincipalMomentsOfInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MassProperties_DecomposePrincipalMomentsOfInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MassProperties_DecomposePrincipalMomentsOfInertia(JPH_MassProperties* properties, JPH_Matrix4x4* rotation, JPH_Vec3* diagonal);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MassProperties_ScaleToMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MassProperties_ScaleToMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MassProperties_ScaleToMass(JPH_MassProperties* properties, float mass);
 
-        [DllImport(__DllName, EntryPoint = "JPH_MassProperties_GetEquivalentSolidBoxSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MassProperties_GetEquivalentSolidBoxSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MassProperties_GetEquivalentSolidBoxSize(float mass, JPH_Vec3* inertiaDiagonal, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CollideShapeSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CollideShapeSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CollideShapeSettings_Init(JPH_CollideShapeSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeCastSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeCastSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ShapeCastSettings_Init(JPH_ShapeCastSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseQuery_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BroadPhaseQuery_CastRay(JPH_BroadPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, delegate* unmanaged[Cdecl]<void*, JPH_BroadPhaseCastResult*, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseQuery_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BroadPhaseQuery_CastRay2(JPH_BroadPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_BroadPhaseCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseQuery_CollideAABox", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CollideAABox", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BroadPhaseQuery_CollideAABox(JPH_BroadPhaseQuery* query, JPH_AABox* box_, delegate* unmanaged[Cdecl]<void*, uint, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseQuery_CollideSphere", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CollideSphere", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BroadPhaseQuery_CollideSphere(JPH_BroadPhaseQuery* query, JPH_Vec3* center, float radius, delegate* unmanaged[Cdecl]<void*, uint, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseQuery_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_BroadPhaseQuery_CollidePoint(JPH_BroadPhaseQuery* query, JPH_Vec3* point, delegate* unmanaged[Cdecl]<void*, uint, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastRay", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CastRay(JPH_NarrowPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastResult* hit, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CastRay2(JPH_NarrowPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CastRay3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastRay3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CastRay3(JPH_NarrowPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CollidePoint(JPH_NarrowPhaseQuery* query, JPH_Vec3* point, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CollidePoint2(JPH_NarrowPhaseQuery* query, JPH_Vec3* point, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CollideShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollideShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CollideShape(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Vec3* scale, JPH_Matrix4x4* centerOfMassTransform, JPH_CollideShapeSettings* settings, JPH_Vec3* baseOffset, delegate* unmanaged[Cdecl]<void*, JPH_CollideShapeResult*, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CollideShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollideShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CollideShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Vec3* scale, JPH_Matrix4x4* centerOfMassTransform, JPH_CollideShapeSettings* settings, JPH_Vec3* baseOffset, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollideShapeResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CastShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CastShape(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Matrix4x4* worldTransform, JPH_Vec3* direction, JPH_ShapeCastSettings* settings, JPH_Vec3* baseOffset, delegate* unmanaged[Cdecl]<void*, JPH_ShapeCastResult*, float> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_NarrowPhaseQuery_CastShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_NarrowPhaseQuery_CastShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Matrix4x4* worldTransform, JPH_Vec3* direction, JPH_ShapeCastSettings* settings, JPH_Vec3* baseOffset, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_ShapeCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Body_GetID(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Body_GetBodyType(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsRigidBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsRigidBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsRigidBody(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsSoftBody(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsActive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsActive", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsActive(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsStatic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsStatic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsStatic(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsKinematic(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsDynamic(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_CanBeKinematicOrDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_CanBeKinematicOrDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_CanBeKinematicOrDynamic(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetIsSensor(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsSensor(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetCollideKinematicVsNonDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetCollideKinematicVsNonDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetCollideKinematicVsNonDynamic(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetCollideKinematicVsNonDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetCollideKinematicVsNonDynamic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetCollideKinematicVsNonDynamic(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetUseManifoldReduction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetUseManifoldReduction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetUseManifoldReduction(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetUseManifoldReduction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetUseManifoldReduction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetUseManifoldReduction(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetUseManifoldReductionWithBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetUseManifoldReductionWithBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetUseManifoldReductionWithBody(JPH_Body* body, JPH_Body* other);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetApplyGyroscopicForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetApplyGyroscopicForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetApplyGyroscopicForce(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetApplyGyroscopicForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetApplyGyroscopicForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetApplyGyroscopicForce(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetEnhancedInternalEdgeRemoval(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetEnhancedInternalEdgeRemoval(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetEnhancedInternalEdgeRemovalWithBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetEnhancedInternalEdgeRemovalWithBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(JPH_Body* body, JPH_Body* other);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Body_GetMotionType(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetMotionType(JPH_Body* body, uint motionType);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetBroadPhaseLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetBroadPhaseLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern byte JPH_Body_GetBroadPhaseLayer(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetObjectLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ushort JPH_Body_GetObjectLayer(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetAllowSleeping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetAllowSleeping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_GetAllowSleeping(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetAllowSleeping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetAllowSleeping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetAllowSleeping(JPH_Body* body, [MarshalAs(UnmanagedType.U1)] bool allowSleeping);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_ResetSleepTimer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_ResetSleepTimer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_ResetSleepTimer(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_Body_GetFriction(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetFriction(JPH_Body* body, float friction);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_Body_GetRestitution(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetRestitution(JPH_Body* body, float restitution);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetLinearVelocity(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetLinearVelocity(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetLinearVelocityClamped", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetLinearVelocityClamped", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetLinearVelocityClamped(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetAngularVelocity(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetAngularVelocity(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetAngularVelocityClamped", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetAngularVelocityClamped", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetAngularVelocityClamped(JPH_Body* body, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetPointVelocityCOM", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetPointVelocityCOM", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetPointVelocityCOM(JPH_Body* body, JPH_Vec3* pointRelativeToCOM, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetPointVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetPointVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetPointVelocity(JPH_Body* body, JPH_Vec3* point, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddForce(JPH_Body* body, JPH_Vec3* force);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddForceAtPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddForceAtPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddForceAtPosition(JPH_Body* body, JPH_Vec3* force, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddTorque(JPH_Body* body, JPH_Vec3* force);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetAccumulatedForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetAccumulatedForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetAccumulatedForce(JPH_Body* body, JPH_Vec3* force);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetAccumulatedTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetAccumulatedTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetAccumulatedTorque(JPH_Body* body, JPH_Vec3* force);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_ResetForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_ResetForce", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_ResetForce(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_ResetTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_ResetTorque", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_ResetTorque(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_ResetMotion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_ResetMotion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_ResetMotion(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetInverseInertia(JPH_Body* body, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddImpulse(JPH_Body* body, JPH_Vec3* impulse);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddImpulseAtPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddImpulseAtPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddImpulseAtPosition(JPH_Body* body, JPH_Vec3* impulse, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_AddAngularImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_AddAngularImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_AddAngularImpulse(JPH_Body* body, JPH_Vec3* angularImpulse);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_MoveKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_MoveKinematic", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_MoveKinematic(JPH_Body* body, JPH_Vec3* targetPosition, JPH_Quat* targetRotation, float deltaTime);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_ApplyBuoyancyImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_ApplyBuoyancyImpulse", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_ApplyBuoyancyImpulse(JPH_Body* body, JPH_Vec3* surfacePosition, JPH_Vec3* surfaceNormal, float buoyancy, float linearDrag, float angularDrag, JPH_Vec3* fluidVelocity, JPH_Vec3* gravity, float deltaTime);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsInBroadPhase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsInBroadPhase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsInBroadPhase(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_IsCollisionCacheInvalid", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsCollisionCacheInvalid", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_Body_IsCollisionCacheInvalid(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Shape* JPH_Body_GetShape(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetPosition(JPH_Body* body, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetRotation(JPH_Body* body, JPH_Quat* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetWorldTransform(JPH_Body* body, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetCenterOfMassPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetCenterOfMassPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetCenterOfMassPosition(JPH_Body* body, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetCenterOfMassTransform(JPH_Body* body, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetInverseCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetInverseCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetInverseCenterOfMassTransform(JPH_Body* body, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetWorldSpaceBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetWorldSpaceBounds", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetWorldSpaceBounds(JPH_Body* body, JPH_AABox* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetWorldSpaceSurfaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetWorldSpaceSurfaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_GetWorldSpaceSurfaceNormal(JPH_Body* body, uint subShapeID, JPH_Vec3* position, JPH_Vec3* normal);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetMotionProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetMotionProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MotionProperties* JPH_Body_GetMotionProperties(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetMotionPropertiesUnchecked", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetMotionPropertiesUnchecked", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_MotionProperties* JPH_Body_GetMotionPropertiesUnchecked(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Body_SetUserData(JPH_Body* body, ulong userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_Body_GetUserData(JPH_Body* body);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Body_GetFixedToWorldBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetFixedToWorldBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_Body_GetFixedToWorldBody();
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BroadPhaseLayerFilter* JPH_BroadPhaseLayerFilter_Create(JPH_BroadPhaseLayerFilter_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BroadPhaseLayerFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BroadPhaseLayerFilter_Destroy(JPH_BroadPhaseLayerFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ObjectLayerFilter* JPH_ObjectLayerFilter_Create(JPH_ObjectLayerFilter_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ObjectLayerFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ObjectLayerFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ObjectLayerFilter_Destroy(JPH_ObjectLayerFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyFilter* JPH_BodyFilter_Create(JPH_BodyFilter_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyFilter_Destroy(JPH_BodyFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ShapeFilter* JPH_ShapeFilter_Create(JPH_ShapeFilter_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ShapeFilter_Destroy(JPH_ShapeFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ShapeFilter_GetBodyID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ShapeFilter_GetBodyID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ShapeFilter_GetBodyID2(JPH_ShapeFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_ContactListener* JPH_ContactListener_Create(JPH_ContactListener_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactListener_Destroy(JPH_ContactListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyActivationListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyActivationListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyActivationListener* JPH_BodyActivationListener_Create(JPH_BodyActivationListener_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyActivationListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyActivationListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyActivationListener_Destroy(JPH_BodyActivationListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyDrawFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyDrawFilter_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyDrawFilter* JPH_BodyDrawFilter_Create(JPH_BodyDrawFilter_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_BodyDrawFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyDrawFilter_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyDrawFilter_Destroy(JPH_BodyDrawFilter* filter);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetWorldSpaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetWorldSpaceNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactManifold_GetWorldSpaceNormal(JPH_ContactManifold* manifold, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetPenetrationDepth", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetPenetrationDepth", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactManifold_GetPenetrationDepth(JPH_ContactManifold* manifold);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetSubShapeID1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetSubShapeID1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ContactManifold_GetSubShapeID1(JPH_ContactManifold* manifold);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetSubShapeID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetSubShapeID2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ContactManifold_GetSubShapeID2(JPH_ContactManifold* manifold);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetPointCount", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetPointCount", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_ContactManifold_GetPointCount(JPH_ContactManifold* manifold);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetWorldSpaceContactPointOn1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactManifold_GetWorldSpaceContactPointOn1(JPH_ContactManifold* manifold, uint index, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactManifold_GetWorldSpaceContactPointOn2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactManifold_GetWorldSpaceContactPointOn2(JPH_ContactManifold* manifold, uint index, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetFriction(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetFriction", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetFriction(JPH_ContactSettings* settings, float friction);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetRestitution(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetRestitution(JPH_ContactSettings* settings, float restitution);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetInvMassScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetInvMassScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetInvMassScale1(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetInvMassScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetInvMassScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetInvMassScale1(JPH_ContactSettings* settings, float scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetInvInertiaScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetInvInertiaScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetInvInertiaScale1(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetInvInertiaScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetInvInertiaScale1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetInvInertiaScale1(JPH_ContactSettings* settings, float scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetInvMassScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetInvMassScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetInvMassScale2(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetInvMassScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetInvMassScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetInvMassScale2(JPH_ContactSettings* settings, float scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetInvInertiaScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetInvInertiaScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ContactSettings_GetInvInertiaScale2(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetInvInertiaScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetInvInertiaScale2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetInvInertiaScale2(JPH_ContactSettings* settings, float scale);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_ContactSettings_GetIsSensor(JPH_ContactSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetIsSensor", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetIsSensor(JPH_ContactSettings* settings, [MarshalAs(UnmanagedType.U1)] bool sensor);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetRelativeLinearSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetRelativeLinearSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_GetRelativeLinearSurfaceVelocity(JPH_ContactSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetRelativeLinearSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetRelativeLinearSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetRelativeLinearSurfaceVelocity(JPH_ContactSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_GetRelativeAngularSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_GetRelativeAngularSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_GetRelativeAngularSurfaceVelocity(JPH_ContactSettings* settings, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_ContactSettings_SetRelativeAngularSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactSettings_SetRelativeAngularSurfaceVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_ContactSettings_SetRelativeAngularSurfaceVelocity(JPH_ContactSettings* settings, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_Destroy(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetCosMaxSlopeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetCosMaxSlopeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterBase_GetCosMaxSlopeAngle(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_SetMaxSlopeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_SetMaxSlopeAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_SetMaxSlopeAngle(JPH_CharacterBase* character, float maxSlopeAngle);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetUp", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetUp", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_GetUp(JPH_CharacterBase* character, JPH_Vec3* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_SetUp", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_SetUp", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_SetUp(JPH_CharacterBase* character, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_IsSlopeTooSteep", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_IsSlopeTooSteep", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_CharacterBase_IsSlopeTooSteep(JPH_CharacterBase* character, JPH_Vec3* value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Shape* JPH_CharacterBase_GetShape(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CharacterBase_GetGroundState(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_IsSupported", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_IsSupported", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_CharacterBase_IsSupported(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_GetGroundPosition(JPH_CharacterBase* character, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundNormal", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_GetGroundNormal(JPH_CharacterBase* character, JPH_Vec3* normal);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterBase_GetGroundVelocity(JPH_CharacterBase* character, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundMaterial", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_PhysicsMaterial* JPH_CharacterBase_GetGroundMaterial(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundBodyId", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundBodyId", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CharacterBase_GetGroundBodyId(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundSubShapeId", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundSubShapeId", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CharacterBase_GetGroundSubShapeId(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterBase_GetGroundUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_CharacterBase_GetGroundUserData(JPH_CharacterBase* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterSettings_Init(JPH_CharacterSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Character_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Character* JPH_Character_Create(JPH_CharacterSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, ulong userData, JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Character_AddToPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_AddToPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Character_AddToPhysicsSystem(JPH_Character* character, uint activationMode, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Character_RemoveFromPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_RemoveFromPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Character_RemoveFromPhysicsSystem(JPH_Character* character, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Character_Activate", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_Activate", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Character_Activate(JPH_Character* character, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
 
-        [DllImport(__DllName, EntryPoint = "JPH_Character_PostSimulation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_PostSimulation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Character_PostSimulation(JPH_Character* character, float maxSeparationDistance, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtualSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtualSettings_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtualSettings_Init(JPH_CharacterVirtualSettings* settings);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CharacterVirtual* JPH_CharacterVirtual_Create(JPH_CharacterVirtualSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, ulong userData, JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetListener", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetListener(JPH_CharacterVirtual* character, JPH_CharacterContactListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_GetLinearVelocity(JPH_CharacterVirtual* character, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetLinearVelocity(JPH_CharacterVirtual* character, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_GetPosition(JPH_CharacterVirtual* character, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetPosition(JPH_CharacterVirtual* character, JPH_Vec3* position);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_GetRotation(JPH_CharacterVirtual* character, JPH_Quat* rotation);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetRotation(JPH_CharacterVirtual* character, JPH_Quat* rotation);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetWorldTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_GetWorldTransform(JPH_CharacterVirtual* character, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetCenterOfMassTransform", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_GetCenterOfMassTransform(JPH_CharacterVirtual* character, JPH_Matrix4x4* result);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterVirtual_GetMass(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetMass", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetMass(JPH_CharacterVirtual* character, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetMaxStrength", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetMaxStrength", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterVirtual_GetMaxStrength(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetMaxStrength", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetMaxStrength", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetMaxStrength(JPH_CharacterVirtual* character, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetPenetrationRecoverySpeed", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetPenetrationRecoverySpeed", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterVirtual_GetPenetrationRecoverySpeed(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetPenetrationRecoverySpeed", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetPenetrationRecoverySpeed", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetPenetrationRecoverySpeed(JPH_CharacterVirtual* character, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_CharacterVirtual_GetEnhancedInternalEdgeRemoval(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetEnhancedInternalEdgeRemoval", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetEnhancedInternalEdgeRemoval(JPH_CharacterVirtual* character, [MarshalAs(UnmanagedType.U1)] bool value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetCharacterPadding", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetCharacterPadding", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterVirtual_GetCharacterPadding(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetMaxNumHits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetMaxNumHits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_CharacterVirtual_GetMaxNumHits(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetMaxNumHits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetMaxNumHits", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetMaxNumHits(JPH_CharacterVirtual* character, uint value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetHitReductionCosMaxAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetHitReductionCosMaxAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_CharacterVirtual_GetHitReductionCosMaxAngle(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetHitReductionCosMaxAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetHitReductionCosMaxAngle", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetHitReductionCosMaxAngle(JPH_CharacterVirtual* character, float value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetMaxHitsExceeded", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetMaxHitsExceeded", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
         public static extern bool JPH_CharacterVirtual_GetMaxHitsExceeded(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_CharacterVirtual_GetUserData(JPH_CharacterVirtual* character);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_SetUserData(JPH_CharacterVirtual* character, ulong value);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(JPH_CharacterVirtual* character, JPH_Vec3* desiredVelocity, JPH_Vec3* velocity);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_Update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_Update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_Update(JPH_CharacterVirtual* character, float deltaTime, ushort layer, JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_ExtendedUpdate", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_ExtendedUpdate", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_ExtendedUpdate(JPH_CharacterVirtual* character, float deltaTime, JPH_ExtendedUpdateSettings* settings, ushort layer, JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterVirtual_RefreshContacts", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_RefreshContacts", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterVirtual_RefreshContacts(JPH_CharacterVirtual* character, ushort layer, JPH_PhysicsSystem* system);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterContactListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterContactListener_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_CharacterContactListener* JPH_CharacterContactListener_Create(JPH_CharacterContactListener_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_CharacterContactListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterContactListener_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_CharacterContactListener_Destroy(JPH_CharacterContactListener* listener);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DebugRenderer_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DebugRenderer_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_DebugRenderer* JPH_DebugRenderer_Create(JPH_DebugRenderer_Procs procs, void* userData);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DebugRenderer_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DebugRenderer_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DebugRenderer_Destroy(JPH_DebugRenderer* renderer);
 
-        [DllImport(__DllName, EntryPoint = "JPH_DebugRenderer_NextFrame", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_DebugRenderer_NextFrame", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer);
 
 
