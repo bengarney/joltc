@@ -428,8 +428,8 @@ bool JPH_Init(void)
 	JPH::Trace = TraceImpl;
 	JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = AssertFailedImpl;)
 
-		// Create a factory
-		JPH::Factory::sInstance = new JPH::Factory();
+    // Create a factory
+    JPH::Factory::sInstance = new JPH::Factory();
 
 	// Register all Jolt physics types
 	JPH::RegisterTypes();
@@ -439,6 +439,8 @@ bool JPH_Init(void)
 
 	// Init Job system.
 	s_JobSystem = new JPH::JobSystemThreadPool(JPH::cMaxPhysicsJobs, JPH::cMaxPhysicsBarriers, (int)std::thread::hardware_concurrency() - 1);
+
+    JPH::Trace("JoltPhysics initialized.");
 
 	return true;
 }
