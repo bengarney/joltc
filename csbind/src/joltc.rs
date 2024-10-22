@@ -3384,6 +3384,36 @@ extern "C" {
     pub fn JPH_SetAssertFailureHandler(handler: JPH_AssertFailureFunc);
 }
 extern "C" {
+    pub fn JPH_ContactConstraintManager_SetDebugDraws(
+        contactPoints: bool,
+        supportingFaces: bool,
+        pointReduction: bool,
+        manifolds: bool,
+    );
+}
+extern "C" {
+    pub fn JPH_PhysicsSystem_SetDebugDraws(motionQualityLinearCast: bool);
+}
+extern "C" {
+    pub fn JPH_CharacterVirtual_SetDebugDraws(
+        constraints: bool,
+        walkStairs: bool,
+        stickToFloor: bool,
+    );
+}
+extern "C" {
+    pub fn JPH_ConvexHullShape_SetDebugDraws(faceOutlines: bool);
+}
+extern "C" {
+    pub fn JPH_HeightFieldShape_SetDebugDraws(triangleOutlines: bool);
+}
+extern "C" {
+    pub fn JPH_MeshShape_SetDebugDraws(triangleGroups: bool, triangleOutlines: bool);
+}
+extern "C" {
+    pub fn JPH_Shape_SetDebugDraws(submergedVolumes: bool);
+}
+extern "C" {
     pub fn JPH_BroadPhaseLayerInterfaceMask_Create(
         numBroadPhaseLayers: u32,
     ) -> *mut JPH_BroadPhaseLayerInterface;

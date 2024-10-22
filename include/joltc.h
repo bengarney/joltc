@@ -734,6 +734,15 @@ JPH_CAPI void JPH_Shutdown(void);
 JPH_CAPI void JPH_SetTraceHandler(JPH_TraceFunc handler);
 JPH_CAPI void JPH_SetAssertFailureHandler(JPH_AssertFailureFunc handler);
 
+JPH_CAPI void JPH_ContactConstraintManager_SetDebugDraws(bool contactPoints, bool supportingFaces, bool pointReduction, bool manifolds);
+JPH_CAPI void JPH_PhysicsSystem_SetDebugDraws(bool motionQualityLinearCast);
+JPH_CAPI void JPH_CharacterVirtual_SetDebugDraws(bool constraints, bool walkStairs, bool stickToFloor);
+JPH_CAPI void JPH_ConvexHullShape_SetDebugDraws(bool faceOutlines);
+JPH_CAPI void JPH_HeightFieldShape_SetDebugDraws(bool triangleOutlines);
+JPH_CAPI void JPH_MeshShape_SetDebugDraws(bool triangleGroups, bool triangleOutlines);
+JPH_CAPI void JPH_Shape_SetDebugDraws(bool submergedVolumes);
+
+
 /* JPH_BroadPhaseLayerInterface */
 JPH_CAPI JPH_BroadPhaseLayerInterface* JPH_BroadPhaseLayerInterfaceMask_Create(uint32_t numBroadPhaseLayers);
 JPH_CAPI void JPH_BroadPhaseLayerInterfaceMask_ConfigureLayer(JPH_BroadPhaseLayerInterface* bpInterface, JPH_BroadPhaseLayer broadPhaseLayer, uint32_t groupsToInclude, uint32_t groupsToExclude);

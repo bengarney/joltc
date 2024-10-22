@@ -472,6 +472,47 @@ void JPH_SetAssertFailureHandler(JPH_AssertFailureFunc handler)
 #endif
 }
 
+void JPH_ContactConstraintManager_SetDebugDraws(bool contactPoint, bool supportingFaces, bool pointReduction, bool manifolds)
+{
+    ContactConstraintManager::sDrawContactPoint = contactPoint;
+    ContactConstraintManager::sDrawSupportingFaces = supportingFaces;
+    ContactConstraintManager::sDrawContactPointReduction = pointReduction;
+    ContactConstraintManager::sDrawContactManifolds = manifolds;
+}
+
+void JPH_PhysicsSystem_SetDebugDraws(bool motionQualityLinearCast)
+{
+    PhysicsSystem::sDrawMotionQualityLinearCast = motionQualityLinearCast;
+}
+
+void JPH_CharacterVirtual_SetDebugDraws(bool constraints, bool walkStairs, bool stickToFloor)
+{
+    CharacterVirtual::sDrawConstraints = constraints;
+    CharacterVirtual::sDrawWalkStairs = walkStairs;
+    CharacterVirtual::sDrawStickToFloor = stickToFloor;
+}
+
+void JPH_ConvexHullShape_SetDebugDraws(bool faceOutlines)
+{
+    ConvexHullShape::sDrawFaceOutlines = faceOutlines;
+}
+
+void JPH_HeightFieldShape_SetDebugDraws(bool triangleOutlines)
+{
+    HeightFieldShape::sDrawTriangleOutlines = triangleOutlines;
+}
+
+void JPH_MeshShape_SetDebugDraws(bool triangleGroups, bool triangleOutlines)
+{
+    MeshShape::sDrawTriangleGroups = triangleGroups;
+    MeshShape::sDrawTriangleOutlines = triangleOutlines;
+}
+
+void JPH_Shape_SetDebugDraws(bool submergedVolumes)
+{
+    Shape::sDrawSubmergedVolumes = submergedVolumes;
+}
+
 /* JPH_BroadPhaseLayerInterface */
 JPH_BroadPhaseLayerInterface* JPH_BroadPhaseLayerInterfaceMask_Create(uint32_t numBroadPhaseLayers)
 {
