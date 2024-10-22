@@ -1,4 +1,7 @@
 use std::error::Error;
+use std::fs::{self, File};
+use std::io::{Write};
+use std::path::Path;
 
 fn main() -> Result<(), Box<dyn Error>> {
     bindgen::Builder::default()
@@ -178,6 +181,19 @@ csbindgen::Builder::default()
         .csharp_generate_const_filter(|_| true)
         .generate_to_file("src/joltc_ffi.rs", "joltc_bindgen.cs")
         .unwrap();
+
+    // Specify the file path
+    let file_path = Path::new("joltc_bindgen.cs");
+
+    // Read the file content
+    let content = fs::read_to_string(file_path)?;
+
+    // Perform search and replace
+    let modified_content = content.replace(" JPH_", " ");
+
+    // Write the modified content back to the file
+    let mut file = File::create(file_path)?;
+    file.write_all(modified_content.as_bytes())?;
 
     Ok(())
 }
