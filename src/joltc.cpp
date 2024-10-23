@@ -4564,6 +4564,14 @@ uint64_t JPH_BodyLockInterface_GetMutexMask(const JPH_BodyLockInterface* lockInt
     return joltBodyLockInterface->GetMutexMask((const JPH::BodyID *)inBodies, inNumber);
 }
 
+JPH_CAPI JPH_Body *JPH_BodyLockInterface_TryGetBody(const JPH_BodyLockInterface* lockInterface, uint32_t bodyID)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    return (JPH_Body*)joltBodyLockInterface->TryGetBody(JPH::BodyID(bodyID));
+}
+
 void JPH_BodyLockInterface_MultiUnlockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask)
 {
 	JPH_ASSERT(lockInterface != nullptr);

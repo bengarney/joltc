@@ -1408,6 +1408,8 @@ JPH_CAPI void JPH_BodyLockInterface_UnlockWrite(const JPH_BodyLockInterface* loc
 
 JPH_CAPI uint64_t JPH_BodyLockInterface_GetMutexMask(const JPH_BodyLockInterface* lockInterface, const uint32_t *inBodies, uint32_t inNumber);
 
+JPH_CAPI JPH_Body *JPH_BodyLockInterface_TryGetBody(const JPH_BodyLockInterface* lockInterface, uint32_t bodyID);
+
 JPH_CAPI void JPH_BodyLockInterface_MultiUnlockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
 JPH_CAPI void JPH_BodyLockInterface_MultiLockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
 

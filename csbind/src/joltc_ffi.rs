@@ -5631,6 +5631,18 @@ pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_GetMutexMask(
 }
 
 #[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_TryGetBody(
+    lockInterface: *const JPH_BodyLockInterface,
+    bodyID: u32
+) -> *mut JPH_Body
+{
+    JPH_BodyLockInterface_TryGetBody(
+        lockInterface,
+        bodyID
+    )
+}
+
+#[no_mangle]
 pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_MultiUnlockRead(
     lockInterface: *const JPH_BodyLockInterface,
     mask: u64
