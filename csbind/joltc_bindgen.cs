@@ -21,223 +21,202 @@ namespace JoltPhysics
 
         public const uint JOLT_C_H_ = 1;
         public const uint __bool_true_false_are_defined = 1;
-        public const uint true_ = 1;
         public const uint false_ = 0;
-        public const uint __WORDSIZE = 64;
-        public const uint __has_safe_buffers = 1;
-        public const uint __DARWIN_ONLY_64_BIT_INO_T = 1;
-        public const uint __DARWIN_ONLY_UNIX_CONFORMANCE = 1;
-        public const uint __DARWIN_ONLY_VERS_1050 = 1;
-        public const uint __DARWIN_UNIX03 = 1;
-        public const uint __DARWIN_64_BIT_INO_T = 1;
-        public const uint __DARWIN_VERS_1050 = 1;
-        public const uint __DARWIN_NON_CANCELABLE = 0;
-        public static ReadOnlySpan<byte> __DARWIN_SUF_EXTSN => new byte[] { 36, 68, 65, 82, 87, 73, 78, 95, 69, 88, 84, 83, 78, 0 };
-        public const uint __DARWIN_C_ANSI = 4096;
-        public const uint __DARWIN_C_FULL = 900000;
-        public const uint __DARWIN_C_LEVEL = 900000;
-        public const uint __STDC_WANT_LIB_EXT1__ = 1;
-        public const uint __DARWIN_NO_LONG_LONG = 0;
-        public const uint _DARWIN_FEATURE_64_BIT_INODE = 1;
-        public const uint _DARWIN_FEATURE_ONLY_64_BIT_INODE = 1;
-        public const uint _DARWIN_FEATURE_ONLY_VERS_1050 = 1;
-        public const uint _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1;
-        public const uint _DARWIN_FEATURE_UNIX_CONFORMANCE = 3;
-        public const uint __has_ptrcheck = 0;
-        public const uint __PTHREAD_SIZE__ = 8176;
-        public const uint __PTHREAD_ATTR_SIZE__ = 56;
-        public const uint __PTHREAD_MUTEXATTR_SIZE__ = 8;
-        public const uint __PTHREAD_MUTEX_SIZE__ = 56;
-        public const uint __PTHREAD_CONDATTR_SIZE__ = 8;
-        public const uint __PTHREAD_COND_SIZE__ = 40;
-        public const uint __PTHREAD_ONCE_SIZE__ = 8;
-        public const uint __PTHREAD_RWLOCK_SIZE__ = 192;
-        public const uint __PTHREAD_RWLOCKATTR_SIZE__ = 16;
-        public const uint INT8_MAX = 127;
-        public const uint INT16_MAX = 32767;
-        public const uint INT32_MAX = 2147483647;
-        public const ulong INT64_MAX = 9223372036854775807;
-        public const uint UINT8_MAX = 255;
-        public const uint UINT16_MAX = 65535;
-        public const uint UINT32_MAX = 4294967295;
-        public const uint INT_LEAST8_MAX = 127;
-        public const uint INT_LEAST16_MAX = 32767;
-        public const uint INT_LEAST32_MAX = 2147483647;
-        public const ulong INT_LEAST64_MAX = 9223372036854775807;
-        public const uint UINT_LEAST8_MAX = 255;
-        public const uint UINT_LEAST16_MAX = 65535;
-        public const uint UINT_LEAST32_MAX = 4294967295;
-        public const uint INT_FAST8_MAX = 127;
-        public const uint INT_FAST16_MAX = 32767;
-        public const uint INT_FAST32_MAX = 2147483647;
-        public const ulong INT_FAST64_MAX = 9223372036854775807;
-        public const uint UINT_FAST8_MAX = 255;
-        public const uint UINT_FAST16_MAX = 65535;
-        public const uint UINT_FAST32_MAX = 4294967295;
-        public const ulong INTPTR_MAX = 9223372036854775807;
-        public const uint WINT_MAX = 2147483647;
-        public const uint SIG_ATOMIC_MAX = 2147483647;
+        public const uint true_ = 1;
+        public const uint _VCRT_COMPILER_PREPROCESSOR = 1;
+        public const uint _SAL_VERSION = 20;
+        public const uint __SAL_H_VERSION = 180000000;
+        public const uint _USE_DECLSPECS_FOR_SAL = 0;
+        public const uint _USE_ATTRIBUTES_FOR_SAL = 0;
+        public const uint _CRT_PACKING = 8;
+        public const uint _HAS_EXCEPTIONS = 1;
+        public const uint _STL_LANG = 0;
+        public const uint _HAS_CXX17 = 0;
+        public const uint _HAS_CXX20 = 0;
+        public const uint _HAS_CXX23 = 0;
+        public const uint _HAS_NODISCARD = 0;
+        public const uint WCHAR_MIN = 0;
+        public const uint WCHAR_MAX = 65535;
+        public const uint WINT_MIN = 0;
+        public const uint WINT_MAX = 65535;
+        public const uint _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE = 1;
+        public const uint _CRT_BUILD_DESKTOP_APP = 1;
+        public const uint _ARGMAX = 100;
+        public const uint _CRT_INT_MAX = 2147483647;
+        public const uint _CRT_FUNCTIONS_REQUIRED = 1;
+        public const uint _CRT_HAS_CXX17 = 0;
+        public const uint _CRT_HAS_C11 = 1;
+        public const uint _CRT_INTERNAL_NONSTDC_NAMES = 1;
+        public const uint __STDC_SECURE_LIB__ = 200411;
+        public const uint __GOT_SECURE_LIB__ = 200411;
+        public const uint __STDC_WANT_SECURE_LIB__ = 1;
+        public const uint _SECURECRT_FILL_BUFFER_PATTERN = 254;
+        public const uint _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES = 0;
+        public const uint _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT = 0;
+        public const uint _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES = 1;
+        public const uint _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_MEMORY = 0;
+        public const uint _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY = 0;
         public const double JPH_DEFAULT_CONVEX_RADIUS = 0.05;
         public const double JPH_CAPSULE_PROJECTION_SLOP = 0.02;
         public const uint JPH_MAX_PHYSICS_JOBS = 2048;
         public const uint JPH_MAX_PHYSICS_BARRIERS = 2048;
-        public const uint JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_None = 0;
-        public const uint JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_ManifoldCacheFull = 1;
-        public const uint JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_BodyPairCacheFull = 2;
-        public const uint JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_ContactConstraintsFull = 4;
-        public const uint JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Count = 5;
-        public const uint JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Force32 = 2147483647;
-        public const uint JPH_BodyType_JPH_BodyType_Rigid = 0;
-        public const uint JPH_BodyType_JPH_BodyType_Soft = 1;
-        public const uint JPH_BodyType__JPH_BodyType_Count = 2;
-        public const uint JPH_BodyType__JPH_BodyType_Force32 = 2147483647;
-        public const uint JPH_MotionType_JPH_MotionType_Static = 0;
-        public const uint JPH_MotionType_JPH_MotionType_Kinematic = 1;
-        public const uint JPH_MotionType_JPH_MotionType_Dynamic = 2;
-        public const uint JPH_MotionType__JPH_MotionType_Count = 3;
-        public const uint JPH_MotionType__JPH_MotionType_Force32 = 2147483647;
-        public const uint JPH_Activation_JPH_Activation_Activate = 0;
-        public const uint JPH_Activation_JPH_Activation_DontActivate = 1;
-        public const uint JPH_Activation__JPH_Activation_Count = 2;
-        public const uint JPH_Activation__JPH_Activation_Force32 = 2147483647;
-        public const uint JPH_ValidateResult_JPH_ValidateResult_AcceptAllContactsForThisBodyPair = 0;
-        public const uint JPH_ValidateResult_JPH_ValidateResult_AcceptContact = 1;
-        public const uint JPH_ValidateResult_JPH_ValidateResult_RejectContact = 2;
-        public const uint JPH_ValidateResult_JPH_ValidateResult_RejectAllContactsForThisBodyPair = 3;
-        public const uint JPH_ValidateResult__JPH_ValidateResult_Count = 4;
-        public const uint JPH_ValidateResult__JPH_ValidateResult_Force32 = 2147483647;
-        public const uint JPH_ShapeType_JPH_ShapeType_Convex = 0;
-        public const uint JPH_ShapeType_JPH_ShapeType_Compound = 1;
-        public const uint JPH_ShapeType_JPH_ShapeType_Decorated = 2;
-        public const uint JPH_ShapeType_JPH_ShapeType_Mesh = 3;
-        public const uint JPH_ShapeType_JPH_ShapeType_HeightField = 4;
-        public const uint JPH_ShapeType_JPH_ShapeType_SoftBody = 5;
-        public const uint JPH_ShapeType_JPH_ShapeType_User1 = 6;
-        public const uint JPH_ShapeType_JPH_ShapeType_User2 = 7;
-        public const uint JPH_ShapeType_JPH_ShapeType_User3 = 8;
-        public const uint JPH_ShapeType_JPH_ShapeType_User4 = 9;
-        public const uint JPH_ShapeType__JPH_ShapeType_Count = 10;
-        public const uint JPH_ShapeType__JPH_ShapeType_Force32 = 2147483647;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Sphere = 0;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Box = 1;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Triangle = 2;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Capsule = 3;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_TaperedCapsule = 4;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Cylinder = 5;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_ConvexHull = 6;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_StaticCompound = 7;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_MutableCompound = 8;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_RotatedTranslated = 9;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Scaled = 10;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_OffsetCenterOfMass = 11;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_Mesh = 12;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_HeightField = 13;
-        public const uint JPH_ShapeSubType_JPH_ShapeSubType_SoftBody = 14;
-        public const uint JPH_ShapeSubType__JPH_ShapeSubType_Count = 15;
-        public const uint JPH_ShapeSubType__JPH_ShapeSubType_Force32 = 2147483647;
-        public const uint JPH_ConstraintType_JPH_ConstraintType_Constraint = 0;
-        public const uint JPH_ConstraintType_JPH_ConstraintType_TwoBodyConstraint = 1;
-        public const uint JPH_ConstraintType__JPH_ConstraintType_Count = 2;
-        public const uint JPH_ConstraintType__JPH_ConstraintType_Force32 = 2147483647;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Fixed = 0;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Point = 1;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Hinge = 2;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Slider = 3;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Distance = 4;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Cone = 5;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_SwingTwist = 6;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_SixDOF = 7;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Path = 8;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Vehicle = 9;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_RackAndPinion = 10;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Gear = 11;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_Pulley = 12;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_User1 = 13;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_User2 = 14;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_User3 = 15;
-        public const uint JPH_ConstraintSubType_JPH_ConstraintSubType_User4 = 16;
-        public const uint JPH_ConstraintSubType__JPH_ConstraintSubType_Count = 17;
-        public const uint JPH_ConstraintSubType__JPH_ConstraintSubType_Force32 = 2147483647;
-        public const uint JPH_ConstraintSpace_JPH_ConstraintSpace_LocalToBodyCOM = 0;
-        public const uint JPH_ConstraintSpace_JPH_ConstraintSpace_WorldSpace = 1;
-        public const uint JPH_ConstraintSpace__JPH_ConstraintSpace_Count = 2;
-        public const uint JPH_ConstraintSpace__JPH_ConstraintSpace_Force32 = 2147483647;
-        public const uint JPH_MotionQuality_JPH_MotionQuality_Discrete = 0;
-        public const uint JPH_MotionQuality_JPH_MotionQuality_LinearCast = 1;
-        public const uint JPH_MotionQuality__JPH_MotionQuality_Count = 2;
-        public const uint JPH_MotionQuality__JPH_MotionQuality_Force32 = 2147483647;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_All = 63;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationX = 1;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationY = 2;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationZ = 4;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_RotationX = 8;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_RotationY = 16;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_RotationZ = 32;
-        public const uint JPH_AllowedDOFs_JPH_AllowedDOFs_Plane2D = 35;
-        public const uint JPH_AllowedDOFs__JPH_AllowedDOFs_Count = 36;
-        public const uint JPH_AllowedDOFs__JPH_AllowedDOFs_Force32 = 2147483647;
-        public const uint JPH_GroundState_JPH_GroundState_OnGround = 0;
-        public const uint JPH_GroundState_JPH_GroundState_OnSteepGround = 1;
-        public const uint JPH_GroundState_JPH_GroundState_NotSupported = 2;
-        public const uint JPH_GroundState_JPH_GroundState_InAir = 3;
-        public const uint JPH_GroundState__JPH_GroundState_Count = 4;
-        public const uint JPH_GroundState__JPH_GroundState_Force32 = 2147483647;
-        public const uint JPH_BackFaceMode_JPH_BackFaceMode_IgnoreBackFaces = 0;
-        public const uint JPH_BackFaceMode_JPH_BackFaceMode_CollideWithBackFaces = 1;
-        public const uint JPH_BackFaceMode__JPH_BackFaceMode_Count = 2;
-        public const uint JPH_BackFaceMode__JPH_BackFaceMode_Force32 = 2147483647;
-        public const uint JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideOnlyWithActive = 0;
-        public const uint JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideWithAll = 1;
-        public const uint JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Count = 2;
-        public const uint JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Force32 = 2147483647;
-        public const uint JPH_CollectFacesMode_JPH_CollectFacesMode_CollectFaces = 0;
-        public const uint JPH_CollectFacesMode_JPH_CollectFacesMode_NoFaces = 1;
-        public const uint JPH_CollectFacesMode__JPH_CollectFacesMode_Count = 2;
-        public const uint JPH_CollectFacesMode__JPH_CollectFacesMode_Force32 = 2147483647;
-        public const uint JPH_MotorState_JPH_MotorState_Off = 0;
-        public const uint JPH_MotorState_JPH_MotorState_Velocity = 1;
-        public const uint JPH_MotorState_JPH_MotorState_Position = 2;
-        public const uint JPH_MotorState__JPH_MotorState_Count = 3;
-        public const uint JPH_MotorState__JPH_MotorState_Force32 = 2147483647;
-        public const uint JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHit = 0;
-        public const uint JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHitSorted = 1;
-        public const uint JPH_CollisionCollectorType_JPH_CollisionCollectorType_ClosestHit = 2;
-        public const uint JPH_CollisionCollectorType_JPH_CollisionCollectorType_AnyHit = 3;
-        public const uint JPH_CollisionCollectorType__JPH_CollisionCollectorType_Count = 4;
-        public const uint JPH_CollisionCollectorType__JPH_CollisionCollectorType_Force32 = 2147483647;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationX = 0;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationY = 1;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationZ = 2;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationX = 3;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationY = 4;
-        public const uint JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationZ = 5;
-        public const uint JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Count = 6;
-        public const uint JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Force32 = 2147483647;
-        public const uint JPH_SpringMode_JPH_SpringMode_FrequencyAndDamping = 0;
-        public const uint JPH_SpringMode_JPH_SpringMode_StiffnessAndDamping = 1;
-        public const uint JPH_SpringMode__JPH_SpringMode_Count = 2;
-        public const uint JPH_SpringMode__JPH_SpringMode_Force32 = 2147483647;
-        public const uint JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintType = 0;
-        public const uint JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintGroup = 1;
-        public const uint JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintOrder = 2;
-        public const uint JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Count = 3;
-        public const uint JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Force32 = 2147483647;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_InstanceColor = 0;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_ShapeTypeColor = 1;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_MotionTypeColor = 2;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_SleepColor = 3;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_IslandColor = 4;
-        public const uint JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_MaterialColor = 5;
-        public const uint JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Count = 6;
-        public const uint JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Force32 = 2147483647;
-        public const uint JPH_DebugRenderer_CastShadow_JPH_DebugRenderer_CastShadow_On = 0;
-        public const uint JPH_DebugRenderer_CastShadow_JPH_DebugRenderer_CastShadow_Off = 1;
-        public const uint JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Count = 2;
-        public const uint JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Force32 = 2147483647;
-        public const uint JPH_DebugRenderer_DrawMode_JPH_DebugRenderer_DrawMode_Solid = 0;
-        public const uint JPH_DebugRenderer_DrawMode_JPH_DebugRenderer_DrawMode_Wireframe = 1;
-        public const uint JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Count = 2;
-        public const uint JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Force32 = 2147483647;
+        public const int JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_None = 0;
+        public const int JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_ManifoldCacheFull = 1;
+        public const int JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_BodyPairCacheFull = 2;
+        public const int JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_ContactConstraintsFull = 4;
+        public const int JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Count = 5;
+        public const int JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Force32 = 2147483647;
+        public const int JPH_BodyType_JPH_BodyType_Rigid = 0;
+        public const int JPH_BodyType_JPH_BodyType_Soft = 1;
+        public const int JPH_BodyType__JPH_BodyType_Count = 2;
+        public const int JPH_BodyType__JPH_BodyType_Force32 = 2147483647;
+        public const int JPH_MotionType_JPH_MotionType_Static = 0;
+        public const int JPH_MotionType_JPH_MotionType_Kinematic = 1;
+        public const int JPH_MotionType_JPH_MotionType_Dynamic = 2;
+        public const int JPH_MotionType__JPH_MotionType_Count = 3;
+        public const int JPH_MotionType__JPH_MotionType_Force32 = 2147483647;
+        public const int JPH_Activation_JPH_Activation_Activate = 0;
+        public const int JPH_Activation_JPH_Activation_DontActivate = 1;
+        public const int JPH_Activation__JPH_Activation_Count = 2;
+        public const int JPH_Activation__JPH_Activation_Force32 = 2147483647;
+        public const int JPH_ValidateResult_JPH_ValidateResult_AcceptAllContactsForThisBodyPair = 0;
+        public const int JPH_ValidateResult_JPH_ValidateResult_AcceptContact = 1;
+        public const int JPH_ValidateResult_JPH_ValidateResult_RejectContact = 2;
+        public const int JPH_ValidateResult_JPH_ValidateResult_RejectAllContactsForThisBodyPair = 3;
+        public const int JPH_ValidateResult__JPH_ValidateResult_Count = 4;
+        public const int JPH_ValidateResult__JPH_ValidateResult_Force32 = 2147483647;
+        public const int JPH_ShapeType_JPH_ShapeType_Convex = 0;
+        public const int JPH_ShapeType_JPH_ShapeType_Compound = 1;
+        public const int JPH_ShapeType_JPH_ShapeType_Decorated = 2;
+        public const int JPH_ShapeType_JPH_ShapeType_Mesh = 3;
+        public const int JPH_ShapeType_JPH_ShapeType_HeightField = 4;
+        public const int JPH_ShapeType_JPH_ShapeType_SoftBody = 5;
+        public const int JPH_ShapeType_JPH_ShapeType_User1 = 6;
+        public const int JPH_ShapeType_JPH_ShapeType_User2 = 7;
+        public const int JPH_ShapeType_JPH_ShapeType_User3 = 8;
+        public const int JPH_ShapeType_JPH_ShapeType_User4 = 9;
+        public const int JPH_ShapeType__JPH_ShapeType_Count = 10;
+        public const int JPH_ShapeType__JPH_ShapeType_Force32 = 2147483647;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Sphere = 0;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Box = 1;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Triangle = 2;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Capsule = 3;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_TaperedCapsule = 4;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Cylinder = 5;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_ConvexHull = 6;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_StaticCompound = 7;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_MutableCompound = 8;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_RotatedTranslated = 9;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Scaled = 10;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_OffsetCenterOfMass = 11;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_Mesh = 12;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_HeightField = 13;
+        public const int JPH_ShapeSubType_JPH_ShapeSubType_SoftBody = 14;
+        public const int JPH_ShapeSubType__JPH_ShapeSubType_Count = 15;
+        public const int JPH_ShapeSubType__JPH_ShapeSubType_Force32 = 2147483647;
+        public const int JPH_ConstraintType_JPH_ConstraintType_Constraint = 0;
+        public const int JPH_ConstraintType_JPH_ConstraintType_TwoBodyConstraint = 1;
+        public const int JPH_ConstraintType__JPH_ConstraintType_Count = 2;
+        public const int JPH_ConstraintType__JPH_ConstraintType_Force32 = 2147483647;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Fixed = 0;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Point = 1;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Hinge = 2;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Slider = 3;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Distance = 4;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Cone = 5;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_SwingTwist = 6;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_SixDOF = 7;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Path = 8;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Vehicle = 9;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_RackAndPinion = 10;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Gear = 11;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_Pulley = 12;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_User1 = 13;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_User2 = 14;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_User3 = 15;
+        public const int JPH_ConstraintSubType_JPH_ConstraintSubType_User4 = 16;
+        public const int JPH_ConstraintSubType__JPH_ConstraintSubType_Count = 17;
+        public const int JPH_ConstraintSubType__JPH_ConstraintSubType_Force32 = 2147483647;
+        public const int JPH_ConstraintSpace_JPH_ConstraintSpace_LocalToBodyCOM = 0;
+        public const int JPH_ConstraintSpace_JPH_ConstraintSpace_WorldSpace = 1;
+        public const int JPH_ConstraintSpace__JPH_ConstraintSpace_Count = 2;
+        public const int JPH_ConstraintSpace__JPH_ConstraintSpace_Force32 = 2147483647;
+        public const int JPH_MotionQuality_JPH_MotionQuality_Discrete = 0;
+        public const int JPH_MotionQuality_JPH_MotionQuality_LinearCast = 1;
+        public const int JPH_MotionQuality__JPH_MotionQuality_Count = 2;
+        public const int JPH_MotionQuality__JPH_MotionQuality_Force32 = 2147483647;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_All = 63;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationX = 1;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationY = 2;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationZ = 4;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_RotationX = 8;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_RotationY = 16;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_RotationZ = 32;
+        public const int JPH_AllowedDOFs_JPH_AllowedDOFs_Plane2D = 35;
+        public const int JPH_AllowedDOFs__JPH_AllowedDOFs_Count = 36;
+        public const int JPH_AllowedDOFs__JPH_AllowedDOFs_Force32 = 2147483647;
+        public const int JPH_GroundState_JPH_GroundState_OnGround = 0;
+        public const int JPH_GroundState_JPH_GroundState_OnSteepGround = 1;
+        public const int JPH_GroundState_JPH_GroundState_NotSupported = 2;
+        public const int JPH_GroundState_JPH_GroundState_InAir = 3;
+        public const int JPH_GroundState__JPH_GroundState_Count = 4;
+        public const int JPH_GroundState__JPH_GroundState_Force32 = 2147483647;
+        public const int JPH_BackFaceMode_JPH_BackFaceMode_IgnoreBackFaces = 0;
+        public const int JPH_BackFaceMode_JPH_BackFaceMode_CollideWithBackFaces = 1;
+        public const int JPH_BackFaceMode__JPH_BackFaceMode_Count = 2;
+        public const int JPH_BackFaceMode__JPH_BackFaceMode_Force32 = 2147483647;
+        public const int JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideOnlyWithActive = 0;
+        public const int JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideWithAll = 1;
+        public const int JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Count = 2;
+        public const int JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Force32 = 2147483647;
+        public const int JPH_CollectFacesMode_JPH_CollectFacesMode_CollectFaces = 0;
+        public const int JPH_CollectFacesMode_JPH_CollectFacesMode_NoFaces = 1;
+        public const int JPH_CollectFacesMode__JPH_CollectFacesMode_Count = 2;
+        public const int JPH_CollectFacesMode__JPH_CollectFacesMode_Force32 = 2147483647;
+        public const int JPH_MotorState_JPH_MotorState_Off = 0;
+        public const int JPH_MotorState_JPH_MotorState_Velocity = 1;
+        public const int JPH_MotorState_JPH_MotorState_Position = 2;
+        public const int JPH_MotorState__JPH_MotorState_Count = 3;
+        public const int JPH_MotorState__JPH_MotorState_Force32 = 2147483647;
+        public const int JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHit = 0;
+        public const int JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHitSorted = 1;
+        public const int JPH_CollisionCollectorType_JPH_CollisionCollectorType_ClosestHit = 2;
+        public const int JPH_CollisionCollectorType_JPH_CollisionCollectorType_AnyHit = 3;
+        public const int JPH_CollisionCollectorType__JPH_CollisionCollectorType_Count = 4;
+        public const int JPH_CollisionCollectorType__JPH_CollisionCollectorType_Force32 = 2147483647;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationX = 0;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationY = 1;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationZ = 2;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationX = 3;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationY = 4;
+        public const int JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationZ = 5;
+        public const int JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Count = 6;
+        public const int JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Force32 = 2147483647;
+        public const int JPH_SpringMode_JPH_SpringMode_FrequencyAndDamping = 0;
+        public const int JPH_SpringMode_JPH_SpringMode_StiffnessAndDamping = 1;
+        public const int JPH_SpringMode__JPH_SpringMode_Count = 2;
+        public const int JPH_SpringMode__JPH_SpringMode_Force32 = 2147483647;
+        public const int JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintType = 0;
+        public const int JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintGroup = 1;
+        public const int JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintOrder = 2;
+        public const int JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Count = 3;
+        public const int JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Force32 = 2147483647;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_InstanceColor = 0;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_ShapeTypeColor = 1;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_MotionTypeColor = 2;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_SleepColor = 3;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_IslandColor = 4;
+        public const int JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_MaterialColor = 5;
+        public const int JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Count = 6;
+        public const int JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Force32 = 2147483647;
+        public const int JPH_DebugRenderer_CastShadow_JPH_DebugRenderer_CastShadow_On = 0;
+        public const int JPH_DebugRenderer_CastShadow_JPH_DebugRenderer_CastShadow_Off = 1;
+        public const int JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Count = 2;
+        public const int JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Force32 = 2147483647;
+        public const int JPH_DebugRenderer_DrawMode_JPH_DebugRenderer_DrawMode_Solid = 0;
+        public const int JPH_DebugRenderer_DrawMode_JPH_DebugRenderer_DrawMode_Wireframe = 1;
+        public const int JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Count = 2;
+        public const int JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Force32 = 2147483647;
 
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Init", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -336,10 +315,10 @@ namespace JoltPhysics
         public static extern void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem* system);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Update", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_PhysicsSystem_Update(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
+        public static extern int JPH_PhysicsSystem_Update(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_Step", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_PhysicsSystem_Step(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
+        public static extern int JPH_PhysicsSystem_Step(JPH_PhysicsSystem* system, float deltaTime, int collisionSteps);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetBodyInterface", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BodyInterface* JPH_PhysicsSystem_GetBodyInterface(JPH_PhysicsSystem* system);
@@ -376,7 +355,7 @@ namespace JoltPhysics
         public static extern uint JPH_PhysicsSystem_GetNumBodies(JPH_PhysicsSystem* system);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetNumActiveBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_PhysicsSystem_GetNumActiveBodies(JPH_PhysicsSystem* system, uint type_);
+        public static extern uint JPH_PhysicsSystem_GetNumActiveBodies(JPH_PhysicsSystem* system, int type_);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_GetMaxBodies", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_PhysicsSystem_GetMaxBodies(JPH_PhysicsSystem* system);
@@ -442,10 +421,10 @@ namespace JoltPhysics
         public static extern void JPH_Shape_Destroy(JPH_Shape* shape);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Shape_GetType(JPH_Shape* shape);
+        public static extern int JPH_Shape_GetType(JPH_Shape* shape);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Shape_GetSubType(JPH_Shape* shape);
+        public static extern int JPH_Shape_GetSubType(JPH_Shape* shape);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_GetUserData", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern ulong JPH_Shape_GetUserData(JPH_Shape* shape);
@@ -493,7 +472,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_Shape_CastRay2(JPH_Shape* shape, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData);
+        public static extern bool JPH_Shape_CastRay2(JPH_Shape* shape, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -501,7 +480,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_Shape_CollidePoint2(JPH_Shape* shape, JPH_Vec3* point, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData);
+        public static extern bool JPH_Shape_CollidePoint2(JPH_Shape* shape, JPH_Vec3* point, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexShapeSettings_GetDensity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_ConvexShapeSettings_GetDensity(JPH_ConvexShapeSettings* shape);
@@ -831,10 +810,10 @@ namespace JoltPhysics
         public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create();
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Create2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create2(JPH_ShapeSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, uint motionType, ushort objectLayer);
+        public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create2(JPH_ShapeSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, int motionType, ushort objectLayer);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Create3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create3(JPH_Shape* shape, JPH_Vec3* position, JPH_Quat* rotation, uint motionType, ushort objectLayer);
+        public static extern JPH_BodyCreationSettings* JPH_BodyCreationSettings_Create3(JPH_Shape* shape, JPH_Vec3* position, JPH_Quat* rotation, int motionType, ushort objectLayer);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_Destroy", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyCreationSettings_Destroy(JPH_BodyCreationSettings* settings);
@@ -864,16 +843,16 @@ namespace JoltPhysics
         public static extern void JPH_BodyCreationSettings_SetAngularVelocity(JPH_BodyCreationSettings* settings, JPH_Vec3* velocity);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyCreationSettings_GetMotionType(JPH_BodyCreationSettings* settings);
+        public static extern int JPH_BodyCreationSettings_GetMotionType(JPH_BodyCreationSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyCreationSettings_SetMotionType(JPH_BodyCreationSettings* settings, uint value);
+        public static extern void JPH_BodyCreationSettings_SetMotionType(JPH_BodyCreationSettings* settings, int value);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyCreationSettings_GetAllowedDOFs(JPH_BodyCreationSettings* settings);
+        public static extern int JPH_BodyCreationSettings_GetAllowedDOFs(JPH_BodyCreationSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyCreationSettings_SetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyCreationSettings_SetAllowedDOFs(JPH_BodyCreationSettings* settings, uint value);
+        public static extern void JPH_BodyCreationSettings_SetAllowedDOFs(JPH_BodyCreationSettings* settings, int value);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SoftBodyCreationSettings_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_SoftBodyCreationSettings* JPH_SoftBodyCreationSettings_Create();
@@ -925,10 +904,10 @@ namespace JoltPhysics
         public static extern JPH_ConstraintSettings* JPH_Constraint_GetConstraintSettings(JPH_Constraint* constraint);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Constraint_GetType(JPH_Constraint* constraint);
+        public static extern int JPH_Constraint_GetType(JPH_Constraint* constraint);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetSubType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Constraint_GetSubType(JPH_Constraint* constraint);
+        public static extern int JPH_Constraint_GetSubType(JPH_Constraint* constraint);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Constraint_GetConstraintPriority", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Constraint_GetConstraintPriority(JPH_Constraint* constraint);
@@ -959,10 +938,10 @@ namespace JoltPhysics
         public static extern JPH_FixedConstraintSettings* JPH_FixedConstraintSettings_Create();
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_FixedConstraintSettings_GetSpace(JPH_FixedConstraintSettings* settings);
+        public static extern int JPH_FixedConstraintSettings_GetSpace(JPH_FixedConstraintSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_FixedConstraintSettings_SetSpace(JPH_FixedConstraintSettings* settings, uint space);
+        public static extern void JPH_FixedConstraintSettings_SetSpace(JPH_FixedConstraintSettings* settings, int space);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_FixedConstraintSettings_GetAutoDetectPoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1020,10 +999,10 @@ namespace JoltPhysics
         public static extern JPH_DistanceConstraintSettings* JPH_DistanceConstraintSettings_Create();
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_DistanceConstraintSettings_GetSpace(JPH_DistanceConstraintSettings* settings);
+        public static extern int JPH_DistanceConstraintSettings_GetSpace(JPH_DistanceConstraintSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_DistanceConstraintSettings_SetSpace(JPH_DistanceConstraintSettings* settings, uint space);
+        public static extern void JPH_DistanceConstraintSettings_SetSpace(JPH_DistanceConstraintSettings* settings, int space);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_DistanceConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_DistanceConstraintSettings_GetPoint1(JPH_DistanceConstraintSettings* settings, JPH_Vec3* result);
@@ -1062,10 +1041,10 @@ namespace JoltPhysics
         public static extern JPH_PointConstraintSettings* JPH_PointConstraintSettings_Create();
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_GetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_PointConstraintSettings_GetSpace(JPH_PointConstraintSettings* settings);
+        public static extern int JPH_PointConstraintSettings_GetSpace(JPH_PointConstraintSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_SetSpace", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_PointConstraintSettings_SetSpace(JPH_PointConstraintSettings* settings, uint space);
+        public static extern void JPH_PointConstraintSettings_SetSpace(JPH_PointConstraintSettings* settings, int space);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraintSettings_GetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraintSettings_GetPoint1(JPH_PointConstraintSettings* settings, JPH_Vec3* result);
@@ -1083,10 +1062,10 @@ namespace JoltPhysics
         public static extern JPH_PointConstraint* JPH_PointConstraintSettings_CreateConstraint(JPH_PointConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_SetPoint1", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_PointConstraint_SetPoint1(JPH_PointConstraint* constraint, uint space, JPH_Vec3* value);
+        public static extern void JPH_PointConstraint_SetPoint1(JPH_PointConstraint* constraint, int space, JPH_Vec3* value);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_SetPoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_PointConstraint_SetPoint2(JPH_PointConstraint* constraint, uint space, JPH_Vec3* value);
+        public static extern void JPH_PointConstraint_SetPoint2(JPH_PointConstraint* constraint, int space, JPH_Vec3* value);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_PointConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_PointConstraint_GetTotalLambdaPosition(JPH_PointConstraint* constraint, JPH_Vec3* result);
@@ -1152,10 +1131,10 @@ namespace JoltPhysics
         public static extern void JPH_HingeConstraint_GetMotorSettings(JPH_HingeConstraint* constraint, JPH_MotorSettings* result);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_HingeConstraint_SetMotorState(JPH_HingeConstraint* constraint, uint state);
+        public static extern void JPH_HingeConstraint_SetMotorState(JPH_HingeConstraint* constraint, int state);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_HingeConstraint_GetMotorState(JPH_HingeConstraint* constraint);
+        public static extern int JPH_HingeConstraint_GetMotorState(JPH_HingeConstraint* constraint);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_HingeConstraint_SetTargetAngularVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_HingeConstraint_SetTargetAngularVelocity(JPH_HingeConstraint* constraint, float angularVelocity);
@@ -1271,10 +1250,10 @@ namespace JoltPhysics
         public static extern void JPH_SliderConstraint_GetMotorSettings(JPH_SliderConstraint* constraint, JPH_MotorSettings* result);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_SliderConstraint_SetMotorState(JPH_SliderConstraint* constraint, uint state);
+        public static extern void JPH_SliderConstraint_SetMotorState(JPH_SliderConstraint* constraint, int state);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_GetMotorState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_SliderConstraint_GetMotorState(JPH_SliderConstraint* constraint);
+        public static extern int JPH_SliderConstraint_GetMotorState(JPH_SliderConstraint* constraint);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SliderConstraint_SetTargetVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SliderConstraint_SetTargetVelocity(JPH_SliderConstraint* constraint, float velocity);
@@ -1398,10 +1377,10 @@ namespace JoltPhysics
         public static extern JPH_SixDOFConstraint* JPH_SixDOFConstraintSettings_CreateConstraint(JPH_SixDOFConstraintSettings* settings, JPH_Body* body1, JPH_Body* body2);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetLimitsMin", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern float JPH_SixDOFConstraint_GetLimitsMin(JPH_SixDOFConstraint* constraint, uint axis);
+        public static extern float JPH_SixDOFConstraint_GetLimitsMin(JPH_SixDOFConstraint* constraint, int axis);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetLimitsMax", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern float JPH_SixDOFConstraint_GetLimitsMax(JPH_SixDOFConstraint* constraint, uint axis);
+        public static extern float JPH_SixDOFConstraint_GetLimitsMax(JPH_SixDOFConstraint* constraint, int axis);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SixDOFConstraint_GetTotalLambdaPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SixDOFConstraint_GetTotalLambdaPosition(JPH_SixDOFConstraint* constraint, JPH_Vec3* result);
@@ -1431,7 +1410,7 @@ namespace JoltPhysics
         public static extern void JPH_BodyInterface_DestroyBody(JPH_BodyInterface* @interface, uint bodyID);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateAndAddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyInterface_CreateAndAddBody(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings, uint activationMode);
+        public static extern uint JPH_BodyInterface_CreateAndAddBody(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_Body* JPH_BodyInterface_CreateBody(JPH_BodyInterface* @interface, JPH_BodyCreationSettings* settings);
@@ -1466,10 +1445,10 @@ namespace JoltPhysics
         public static extern JPH_Body* JPH_BodyInterface_CreateSoftBodyWithoutID(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_CreateAndAddSoftBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyInterface_CreateAndAddSoftBody(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings, uint activationMode);
+        public static extern uint JPH_BodyInterface_CreateAndAddSoftBody(JPH_BodyInterface* @interface, JPH_SoftBodyCreationSettings* settings, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_AddBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_AddBody(JPH_BodyInterface* @interface, uint bodyID, uint activationMode);
+        public static extern void JPH_BodyInterface_AddBody(JPH_BodyInterface* @interface, uint bodyID, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_RemoveBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_RemoveBody(JPH_BodyInterface* @interface, uint bodyID);
@@ -1486,7 +1465,7 @@ namespace JoltPhysics
         public static extern bool JPH_BodyInterface_IsAdded(JPH_BodyInterface* @interface, uint bodyID);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyInterface_GetBodyType(JPH_BodyInterface* @interface, uint bodyID);
+        public static extern int JPH_BodyInterface_GetBodyType(JPH_BodyInterface* @interface, uint bodyID);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetLinearVelocity", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_SetLinearVelocity(JPH_BodyInterface* @interface, uint bodyID, JPH_Vec3* velocity);
@@ -1498,10 +1477,10 @@ namespace JoltPhysics
         public static extern void JPH_BodyInterface_GetCenterOfMassPosition(JPH_BodyInterface* @interface, uint bodyID, JPH_Vec3* position);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyInterface_GetMotionType(JPH_BodyInterface* @interface, uint bodyID);
+        public static extern int JPH_BodyInterface_GetMotionType(JPH_BodyInterface* @interface, uint bodyID);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetMotionType(JPH_BodyInterface* @interface, uint bodyID, uint motionType, uint activationMode);
+        public static extern void JPH_BodyInterface_SetMotionType(JPH_BodyInterface* @interface, uint bodyID, int motionType, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetRestitution", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_BodyInterface_GetRestitution(JPH_BodyInterface* @interface, uint bodyID);
@@ -1516,22 +1495,22 @@ namespace JoltPhysics
         public static extern void JPH_BodyInterface_SetFriction(JPH_BodyInterface* @interface, uint bodyID, float friction);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetPosition(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, uint activationMode);
+        public static extern void JPH_BodyInterface_SetPosition(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetPosition", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetPosition(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* result);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Quat* rotation, uint activationMode);
+        public static extern void JPH_BodyInterface_SetRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Quat* rotation, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Quat* result);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetPositionAndRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, uint activationMode);
+        public static extern void JPH_BodyInterface_SetPositionAndRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetPositionAndRotationWhenChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, uint activationMode);
+        public static extern void JPH_BodyInterface_SetPositionAndRotationWhenChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetPositionAndRotation", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetPositionAndRotation(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* position, JPH_Quat* rotation);
@@ -1543,10 +1522,10 @@ namespace JoltPhysics
         public static extern JPH_Shape* JPH_BodyInterface_GetShape(JPH_BodyInterface* @interface, uint bodyId);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetShape(JPH_BodyInterface* @interface, uint bodyId, JPH_Shape* shape, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, uint activationMode);
+        public static extern void JPH_BodyInterface_SetShape(JPH_BodyInterface* @interface, uint bodyId, JPH_Shape* shape, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_NotifyShapeChanged", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_NotifyShapeChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* previousCenterOfMass, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, uint activationMode);
+        public static extern void JPH_BodyInterface_NotifyShapeChanged(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* previousCenterOfMass, [MarshalAs(UnmanagedType.U1)] bool updateMassProperties, int activationMode);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_ActivateBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_ActivateBody(JPH_BodyInterface* @interface, uint bodyId);
@@ -1616,10 +1595,10 @@ namespace JoltPhysics
         public static extern void JPH_BodyInterface_AddAngularImpulse(JPH_BodyInterface* @interface, uint bodyId, JPH_Vec3* angularImpulse);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_SetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_BodyInterface_SetMotionQuality(JPH_BodyInterface* @interface, uint bodyId, uint quality);
+        public static extern void JPH_BodyInterface_SetMotionQuality(JPH_BodyInterface* @interface, uint bodyId, int quality);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetMotionQuality", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_BodyInterface_GetMotionQuality(JPH_BodyInterface* @interface, uint bodyId);
+        public static extern int JPH_BodyInterface_GetMotionQuality(JPH_BodyInterface* @interface, uint bodyId);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyInterface_GetInverseInertia", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyInterface_GetInverseInertia(JPH_BodyInterface* @interface, uint bodyId, JPH_Matrix4x4* result);
@@ -1670,7 +1649,7 @@ namespace JoltPhysics
         public static extern void JPH_BodyLockInterface_MultiLockWrite(JPH_BodyLockInterface* lockInterface, ulong mask);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_MotionProperties_GetAllowedDOFs(JPH_MotionProperties* properties);
+        public static extern int JPH_MotionProperties_GetAllowedDOFs(JPH_MotionProperties* properties);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetLinearDamping", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_MotionProperties_SetLinearDamping(JPH_MotionProperties* properties, float damping);
@@ -1685,7 +1664,7 @@ namespace JoltPhysics
         public static extern float JPH_MotionProperties_GetAngularDamping(JPH_MotionProperties* properties);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_SetMassProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_MotionProperties_SetMassProperties(JPH_MotionProperties* properties, uint allowedDOFs, JPH_MassProperties* massProperties);
+        public static extern void JPH_MotionProperties_SetMassProperties(JPH_MotionProperties* properties, int allowedDOFs, JPH_MassProperties* massProperties);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetInverseMassUnchecked", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float JPH_MotionProperties_GetInverseMassUnchecked(JPH_MotionProperties* properties);
@@ -1723,7 +1702,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CastRay2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_BroadPhaseQuery_CastRay2(JPH_BroadPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_BroadPhaseCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
+        public static extern bool JPH_BroadPhaseQuery_CastRay2(JPH_BroadPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_BroadPhaseCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseQuery_CollideAABox", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1747,7 +1726,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastRay3", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_NarrowPhaseQuery_CastRay3(JPH_NarrowPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
+        public static extern bool JPH_NarrowPhaseQuery_CastRay3(JPH_NarrowPhaseQuery* query, JPH_Vec3* origin, JPH_Vec3* direction, JPH_RayCastSettings* rayCastSettings, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_RayCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollidePoint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1755,7 +1734,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollidePoint2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_NarrowPhaseQuery_CollidePoint2(JPH_NarrowPhaseQuery* query, JPH_Vec3* point, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
+        public static extern bool JPH_NarrowPhaseQuery_CollidePoint2(JPH_NarrowPhaseQuery* query, JPH_Vec3* point, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollidePointResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollideShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1763,7 +1742,7 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CollideShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_NarrowPhaseQuery_CollideShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Vec3* scale, JPH_Matrix4x4* centerOfMassTransform, JPH_CollideShapeSettings* settings, JPH_Vec3* baseOffset, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollideShapeResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
+        public static extern bool JPH_NarrowPhaseQuery_CollideShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Vec3* scale, JPH_Matrix4x4* centerOfMassTransform, JPH_CollideShapeSettings* settings, JPH_Vec3* baseOffset, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_CollideShapeResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastShape", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1771,13 +1750,13 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_NarrowPhaseQuery_CastShape2", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool JPH_NarrowPhaseQuery_CastShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Matrix4x4* worldTransform, JPH_Vec3* direction, JPH_ShapeCastSettings* settings, JPH_Vec3* baseOffset, uint collectorType, delegate* unmanaged[Cdecl]<void*, JPH_ShapeCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
+        public static extern bool JPH_NarrowPhaseQuery_CastShape2(JPH_NarrowPhaseQuery* query, JPH_Shape* shape, JPH_Matrix4x4* worldTransform, JPH_Vec3* direction, JPH_ShapeCastSettings* settings, JPH_Vec3* baseOffset, int collectorType, delegate* unmanaged[Cdecl]<void*, JPH_ShapeCastResult*, void> callback, void* userData, JPH_BroadPhaseLayerFilter* broadPhaseLayerFilter, JPH_ObjectLayerFilter* objectLayerFilter, JPH_BodyFilter* bodyFilter, JPH_ShapeFilter* shapeFilter);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetID", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern uint JPH_Body_GetID(JPH_Body* body);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetBodyType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Body_GetBodyType(JPH_Body* body);
+        public static extern int JPH_Body_GetBodyType(JPH_Body* body);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_IsRigidBody", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -1851,10 +1830,10 @@ namespace JoltPhysics
         public static extern bool JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(JPH_Body* body, JPH_Body* other);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_Body_GetMotionType(JPH_Body* body);
+        public static extern int JPH_Body_GetMotionType(JPH_Body* body);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_SetMotionType", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_Body_SetMotionType(JPH_Body* body, uint motionType);
+        public static extern void JPH_Body_SetMotionType(JPH_Body* body, int motionType);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Body_GetBroadPhaseLayer", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern byte JPH_Body_GetBroadPhaseLayer(JPH_Body* body);
@@ -2145,7 +2124,7 @@ namespace JoltPhysics
         public static extern JPH_Shape* JPH_CharacterBase_GetShape(JPH_CharacterBase* character);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_GetGroundState", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern uint JPH_CharacterBase_GetGroundState(JPH_CharacterBase* character);
+        public static extern int JPH_CharacterBase_GetGroundState(JPH_CharacterBase* character);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterBase_IsSupported", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -2179,7 +2158,7 @@ namespace JoltPhysics
         public static extern JPH_Character* JPH_Character_Create(JPH_CharacterSettings* settings, JPH_Vec3* position, JPH_Quat* rotation, ulong userData, JPH_PhysicsSystem* system);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_AddToPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void JPH_Character_AddToPhysicsSystem(JPH_Character* character, uint activationMode, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
+        public static extern void JPH_Character_AddToPhysicsSystem(JPH_Character* character, int activationMode, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_Character_RemoveFromPhysicsSystem", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_Character_RemoveFromPhysicsSystem(JPH_Character* character, [MarshalAs(UnmanagedType.U1)] bool lockBodies);
@@ -2384,8 +2363,8 @@ namespace JoltPhysics
     [StructLayout(LayoutKind.Sequential)]
     public unsafe partial struct JPH_CollideSettingsBase
     {
-        public uint activeEdgeMode;
-        public uint collectFacesMode;
+        public int activeEdgeMode;
+        public int collectFacesMode;
         public float collisionTolerance;
         public float penetrationTolerance;
         public JPH_Vec3 activeEdgeMovementDirection;
@@ -2396,15 +2375,15 @@ namespace JoltPhysics
     {
         public JPH_CollideSettingsBase @base;
         public float maxSeparationDistance;
-        public uint backFaceMode;
+        public int backFaceMode;
     }
 
     [StructLayout(LayoutKind.Sequential)]
     public unsafe partial struct JPH_ShapeCastSettings
     {
         public JPH_CollideSettingsBase @base;
-        public uint backFaceModeTriangles;
-        public uint backFaceModeConvex;
+        public int backFaceModeTriangles;
+        public int backFaceModeConvex;
         [MarshalAs(UnmanagedType.U1)] public bool useShrunkenShapeAndConvexRadius;
         [MarshalAs(UnmanagedType.U1)] public bool returnDeepestPoint;
     }
@@ -2412,15 +2391,15 @@ namespace JoltPhysics
     [StructLayout(LayoutKind.Sequential)]
     public unsafe partial struct JPH_RayCastSettings
     {
-        public uint backFaceModeTriangles;
-        public uint backFaceModeConvex;
+        public int backFaceModeTriangles;
+        public int backFaceModeConvex;
         [MarshalAs(UnmanagedType.U1)] public bool treatConvexAsSolid;
     }
 
     [StructLayout(LayoutKind.Sequential)]
     public unsafe partial struct JPH_SpringSettings
     {
-        public uint mode;
+        public int mode;
         public float frequencyOrStiffness;
         public float damping;
     }
@@ -2500,7 +2479,7 @@ namespace JoltPhysics
         [MarshalAs(UnmanagedType.U1)] public bool drawGetSupportingFace;
         [MarshalAs(UnmanagedType.U1)] public bool drawShape;
         [MarshalAs(UnmanagedType.U1)] public bool drawShapeWireframe;
-        public uint drawShapeColor;
+        public int drawShapeColor;
         [MarshalAs(UnmanagedType.U1)] public bool drawBoundingBox;
         [MarshalAs(UnmanagedType.U1)] public bool drawCenterOfMassTransform;
         [MarshalAs(UnmanagedType.U1)] public bool drawWorldTransform;
@@ -2515,7 +2494,7 @@ namespace JoltPhysics
         [MarshalAs(UnmanagedType.U1)] public bool drawSoftBodySkinConstraints;
         [MarshalAs(UnmanagedType.U1)] public bool drawSoftBodyLRAConstraints;
         [MarshalAs(UnmanagedType.U1)] public bool drawSoftBodyPredictedBounds;
-        public uint drawSoftBodyConstraintColor;
+        public int drawSoftBodyConstraintColor;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -3088,7 +3067,7 @@ namespace JoltPhysics
         public float mass;
         public float maxStrength;
         public JPH_Vec3 shapeOffset;
-        public uint backFaceMode;
+        public int backFaceMode;
         public float predictiveContactDistance;
         public uint maxCollisionIterations;
         public uint maxConstraintIterations;
@@ -3194,7 +3173,7 @@ namespace JoltPhysics
     [StructLayout(LayoutKind.Sequential)]
     public unsafe partial struct JPH_ContactListener_Procs
     {
-        public delegate* unmanaged[Cdecl]<void*, JPH_Body*, JPH_Body*, JPH_Vec3*, JPH_CollideShapeResult*, uint> OnContactValidate;
+        public delegate* unmanaged[Cdecl]<void*, JPH_Body*, JPH_Body*, JPH_Vec3*, JPH_CollideShapeResult*, int> OnContactValidate;
         public delegate* unmanaged[Cdecl]<void*, JPH_Body*, JPH_Body*, JPH_ContactManifold*, JPH_ContactSettings*, void> OnContactAdded;
         public delegate* unmanaged[Cdecl]<void*, JPH_Body*, JPH_Body*, JPH_ContactManifold*, JPH_ContactSettings*, void> OnContactPersisted;
         public delegate* unmanaged[Cdecl]<void*, JPH_SubShapeIDPair*, void> OnContactRemoved;
@@ -3226,7 +3205,7 @@ namespace JoltPhysics
     public unsafe partial struct JPH_DebugRenderer_Procs
     {
         public delegate* unmanaged[Cdecl]<void*, JPH_Vec3*, JPH_Vec3*, uint, void> DrawLine;
-        public delegate* unmanaged[Cdecl]<void*, JPH_Vec3*, JPH_Vec3*, JPH_Vec3*, uint, uint, void> DrawTriangle;
+        public delegate* unmanaged[Cdecl]<void*, JPH_Vec3*, JPH_Vec3*, JPH_Vec3*, uint, int, void> DrawTriangle;
         public delegate* unmanaged[Cdecl]<void*, JPH_Vec3*, byte*, uint, float, void> DrawText3D;
     }
 

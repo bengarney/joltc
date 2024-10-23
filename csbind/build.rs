@@ -1,5 +1,15 @@
 use std::error::Error;
 
+
+fn platform_switch() -> String
+{
+    if cfg!(target_os = "windows") {
+        return "/std:c++17".to_string()
+    } else {
+        return "-std=c++17".to_string()
+    };
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
     bindgen::Builder::default()
         .header("../include/joltc.h")
@@ -10,9 +20,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     cc::Build::new()
         .cpp(true)
-        // .shared_flag(true)
-        .flag("-std=c++17")
-        // .flag("/std:c++17")
+        .flag(platform_switch())
         .define("JPH_DEBUG_RENDERER", None)
         .define("JPH_DEBUG", None)
         .define("JPH_ENABLE_ASSERTS", None)
@@ -161,7 +169,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         ])
         .include("../include")
         .include("../build/_deps/joltphysics-src/")
-        .compile("joltc");
+        .compile("libjoltc");
+
 
     csbindgen::Builder::default()
         .input_bindgen_file("src/joltc.rs")

@@ -2,655 +2,268 @@
 
 pub const JOLT_C_H_: u32 = 1;
 pub const __bool_true_false_are_defined: u32 = 1;
-pub const true_: u32 = 1;
 pub const false_: u32 = 0;
-pub const __WORDSIZE: u32 = 64;
-pub const __has_safe_buffers: u32 = 1;
-pub const __DARWIN_ONLY_64_BIT_INO_T: u32 = 1;
-pub const __DARWIN_ONLY_UNIX_CONFORMANCE: u32 = 1;
-pub const __DARWIN_ONLY_VERS_1050: u32 = 1;
-pub const __DARWIN_UNIX03: u32 = 1;
-pub const __DARWIN_64_BIT_INO_T: u32 = 1;
-pub const __DARWIN_VERS_1050: u32 = 1;
-pub const __DARWIN_NON_CANCELABLE: u32 = 0;
-pub const __DARWIN_SUF_EXTSN: &[u8; 14] = b"$DARWIN_EXTSN\0";
-pub const __DARWIN_C_ANSI: u32 = 4096;
-pub const __DARWIN_C_FULL: u32 = 900000;
-pub const __DARWIN_C_LEVEL: u32 = 900000;
-pub const __STDC_WANT_LIB_EXT1__: u32 = 1;
-pub const __DARWIN_NO_LONG_LONG: u32 = 0;
-pub const _DARWIN_FEATURE_64_BIT_INODE: u32 = 1;
-pub const _DARWIN_FEATURE_ONLY_64_BIT_INODE: u32 = 1;
-pub const _DARWIN_FEATURE_ONLY_VERS_1050: u32 = 1;
-pub const _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE: u32 = 1;
-pub const _DARWIN_FEATURE_UNIX_CONFORMANCE: u32 = 3;
-pub const __has_ptrcheck: u32 = 0;
-pub const __PTHREAD_SIZE__: u32 = 8176;
-pub const __PTHREAD_ATTR_SIZE__: u32 = 56;
-pub const __PTHREAD_MUTEXATTR_SIZE__: u32 = 8;
-pub const __PTHREAD_MUTEX_SIZE__: u32 = 56;
-pub const __PTHREAD_CONDATTR_SIZE__: u32 = 8;
-pub const __PTHREAD_COND_SIZE__: u32 = 40;
-pub const __PTHREAD_ONCE_SIZE__: u32 = 8;
-pub const __PTHREAD_RWLOCK_SIZE__: u32 = 192;
-pub const __PTHREAD_RWLOCKATTR_SIZE__: u32 = 16;
-pub const INT8_MAX: u32 = 127;
-pub const INT16_MAX: u32 = 32767;
-pub const INT32_MAX: u32 = 2147483647;
-pub const INT64_MAX: u64 = 9223372036854775807;
-pub const INT8_MIN: i32 = -128;
-pub const INT16_MIN: i32 = -32768;
-pub const INT32_MIN: i32 = -2147483648;
-pub const INT64_MIN: i64 = -9223372036854775808;
-pub const UINT8_MAX: u32 = 255;
-pub const UINT16_MAX: u32 = 65535;
-pub const UINT32_MAX: u32 = 4294967295;
-pub const UINT64_MAX: i32 = -1;
-pub const INT_LEAST8_MIN: i32 = -128;
-pub const INT_LEAST16_MIN: i32 = -32768;
-pub const INT_LEAST32_MIN: i32 = -2147483648;
-pub const INT_LEAST64_MIN: i64 = -9223372036854775808;
-pub const INT_LEAST8_MAX: u32 = 127;
-pub const INT_LEAST16_MAX: u32 = 32767;
-pub const INT_LEAST32_MAX: u32 = 2147483647;
-pub const INT_LEAST64_MAX: u64 = 9223372036854775807;
-pub const UINT_LEAST8_MAX: u32 = 255;
-pub const UINT_LEAST16_MAX: u32 = 65535;
-pub const UINT_LEAST32_MAX: u32 = 4294967295;
-pub const UINT_LEAST64_MAX: i32 = -1;
-pub const INT_FAST8_MIN: i32 = -128;
-pub const INT_FAST16_MIN: i32 = -32768;
-pub const INT_FAST32_MIN: i32 = -2147483648;
-pub const INT_FAST64_MIN: i64 = -9223372036854775808;
-pub const INT_FAST8_MAX: u32 = 127;
-pub const INT_FAST16_MAX: u32 = 32767;
-pub const INT_FAST32_MAX: u32 = 2147483647;
-pub const INT_FAST64_MAX: u64 = 9223372036854775807;
-pub const UINT_FAST8_MAX: u32 = 255;
-pub const UINT_FAST16_MAX: u32 = 65535;
-pub const UINT_FAST32_MAX: u32 = 4294967295;
-pub const UINT_FAST64_MAX: i32 = -1;
-pub const INTPTR_MAX: u64 = 9223372036854775807;
-pub const INTPTR_MIN: i64 = -9223372036854775808;
-pub const UINTPTR_MAX: i32 = -1;
-pub const SIZE_MAX: i32 = -1;
-pub const RSIZE_MAX: i32 = -1;
-pub const WINT_MIN: i32 = -2147483648;
-pub const WINT_MAX: u32 = 2147483647;
-pub const SIG_ATOMIC_MIN: i32 = -2147483648;
-pub const SIG_ATOMIC_MAX: u32 = 2147483647;
+pub const true_: u32 = 1;
+pub const _VCRT_COMPILER_PREPROCESSOR: u32 = 1;
+pub const _SAL_VERSION: u32 = 20;
+pub const __SAL_H_VERSION: u32 = 180000000;
+pub const _USE_DECLSPECS_FOR_SAL: u32 = 0;
+pub const _USE_ATTRIBUTES_FOR_SAL: u32 = 0;
+pub const _CRT_PACKING: u32 = 8;
+pub const _HAS_EXCEPTIONS: u32 = 1;
+pub const _STL_LANG: u32 = 0;
+pub const _HAS_CXX17: u32 = 0;
+pub const _HAS_CXX20: u32 = 0;
+pub const _HAS_CXX23: u32 = 0;
+pub const _HAS_NODISCARD: u32 = 0;
+pub const WCHAR_MIN: u32 = 0;
+pub const WCHAR_MAX: u32 = 65535;
+pub const WINT_MIN: u32 = 0;
+pub const WINT_MAX: u32 = 65535;
+pub const _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE: u32 = 1;
+pub const _CRT_BUILD_DESKTOP_APP: u32 = 1;
+pub const _ARGMAX: u32 = 100;
+pub const _CRT_INT_MAX: u32 = 2147483647;
+pub const _CRT_FUNCTIONS_REQUIRED: u32 = 1;
+pub const _CRT_HAS_CXX17: u32 = 0;
+pub const _CRT_HAS_C11: u32 = 1;
+pub const _CRT_INTERNAL_NONSTDC_NAMES: u32 = 1;
+pub const __STDC_SECURE_LIB__: u32 = 200411;
+pub const __GOT_SECURE_LIB__: u32 = 200411;
+pub const __STDC_WANT_SECURE_LIB__: u32 = 1;
+pub const _SECURECRT_FILL_BUFFER_PATTERN: u32 = 254;
+pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES: u32 = 0;
+pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_COUNT: u32 = 0;
+pub const _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES: u32 = 1;
+pub const _CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES_MEMORY: u32 = 0;
+pub const _CRT_SECURE_CPP_OVERLOAD_SECURE_NAMES_MEMORY: u32 = 0;
 pub const JPH_DEFAULT_CONVEX_RADIUS: f64 = 0.05;
 pub const JPH_CAPSULE_PROJECTION_SLOP: f64 = 0.02;
 pub const JPH_MAX_PHYSICS_JOBS: u32 = 2048;
 pub const JPH_MAX_PHYSICS_BARRIERS: u32 = 2048;
-pub type int_least8_t = i8;
-pub type int_least16_t = i16;
-pub type int_least32_t = i32;
-pub type int_least64_t = i64;
-pub type uint_least8_t = u8;
-pub type uint_least16_t = u16;
-pub type uint_least32_t = u32;
-pub type uint_least64_t = u64;
-pub type int_fast8_t = i8;
-pub type int_fast16_t = i16;
-pub type int_fast32_t = i32;
-pub type int_fast64_t = i64;
-pub type uint_fast8_t = u8;
-pub type uint_fast16_t = u16;
-pub type uint_fast32_t = u32;
-pub type uint_fast64_t = u64;
-pub type __int8_t = ::std::os::raw::c_schar;
-pub type __uint8_t = ::std::os::raw::c_uchar;
-pub type __int16_t = ::std::os::raw::c_short;
-pub type __uint16_t = ::std::os::raw::c_ushort;
-pub type __int32_t = ::std::os::raw::c_int;
-pub type __uint32_t = ::std::os::raw::c_uint;
-pub type __int64_t = ::std::os::raw::c_longlong;
-pub type __uint64_t = ::std::os::raw::c_ulonglong;
-pub type __darwin_intptr_t = ::std::os::raw::c_long;
-pub type __darwin_natural_t = ::std::os::raw::c_uint;
-pub type __darwin_ct_rune_t = ::std::os::raw::c_int;
-#[repr(C)]
-#[derive(Copy, Clone)]
-pub union __mbstate_t {
-    pub __mbstate8: [::std::os::raw::c_char; 128usize],
-    pub _mbstateL: ::std::os::raw::c_longlong,
+pub type va_list = *mut ::std::os::raw::c_char;
+extern "C" {
+    pub fn __va_start(arg1: *mut *mut ::std::os::raw::c_char, ...);
 }
-#[test]
-fn bindgen_test_layout___mbstate_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__mbstate_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__mbstate_t>(),
-        128usize,
-        concat!("Size of: ", stringify!(__mbstate_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__mbstate_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__mbstate_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__mbstate8) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__mbstate_t),
-            "::",
-            stringify!(__mbstate8)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._mbstateL) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__mbstate_t),
-            "::",
-            stringify!(_mbstateL)
-        )
-    );
+pub type __vcrt_bool = bool;
+pub type wchar_t = ::std::os::raw::c_ushort;
+extern "C" {
+    pub fn __security_init_cookie();
 }
-pub type __darwin_mbstate_t = __mbstate_t;
-pub type __darwin_ptrdiff_t = ::std::os::raw::c_long;
-pub type __darwin_size_t = ::std::os::raw::c_ulong;
-pub type __darwin_va_list = __builtin_va_list;
-pub type __darwin_wchar_t = ::std::os::raw::c_int;
-pub type __darwin_rune_t = __darwin_wchar_t;
-pub type __darwin_wint_t = ::std::os::raw::c_int;
-pub type __darwin_clock_t = ::std::os::raw::c_ulong;
-pub type __darwin_socklen_t = __uint32_t;
-pub type __darwin_ssize_t = ::std::os::raw::c_long;
-pub type __darwin_time_t = ::std::os::raw::c_long;
-pub type __darwin_blkcnt_t = __int64_t;
-pub type __darwin_blksize_t = __int32_t;
-pub type __darwin_dev_t = __int32_t;
-pub type __darwin_fsblkcnt_t = ::std::os::raw::c_uint;
-pub type __darwin_fsfilcnt_t = ::std::os::raw::c_uint;
-pub type __darwin_gid_t = __uint32_t;
-pub type __darwin_id_t = __uint32_t;
-pub type __darwin_ino64_t = __uint64_t;
-pub type __darwin_ino_t = __darwin_ino64_t;
-pub type __darwin_mach_port_name_t = __darwin_natural_t;
-pub type __darwin_mach_port_t = __darwin_mach_port_name_t;
-pub type __darwin_mode_t = __uint16_t;
-pub type __darwin_off_t = __int64_t;
-pub type __darwin_pid_t = __int32_t;
-pub type __darwin_sigset_t = __uint32_t;
-pub type __darwin_suseconds_t = __int32_t;
-pub type __darwin_uid_t = __uint32_t;
-pub type __darwin_useconds_t = __uint32_t;
-pub type __darwin_uuid_t = [::std::os::raw::c_uchar; 16usize];
-pub type __darwin_uuid_string_t = [::std::os::raw::c_char; 37usize];
+extern "C" {
+    pub fn __security_check_cookie(_StackCookie: usize);
+}
+extern "C" {
+    pub fn __report_gsfailure(_StackCookie: usize) -> !;
+}
+extern "C" {
+    pub static mut __security_cookie: usize;
+}
+pub type int_least8_t = ::std::os::raw::c_schar;
+pub type int_least16_t = ::std::os::raw::c_short;
+pub type int_least32_t = ::std::os::raw::c_int;
+pub type int_least64_t = ::std::os::raw::c_longlong;
+pub type uint_least8_t = ::std::os::raw::c_uchar;
+pub type uint_least16_t = ::std::os::raw::c_ushort;
+pub type uint_least32_t = ::std::os::raw::c_uint;
+pub type uint_least64_t = ::std::os::raw::c_ulonglong;
+pub type int_fast8_t = ::std::os::raw::c_schar;
+pub type int_fast16_t = ::std::os::raw::c_int;
+pub type int_fast32_t = ::std::os::raw::c_int;
+pub type int_fast64_t = ::std::os::raw::c_longlong;
+pub type uint_fast8_t = ::std::os::raw::c_uchar;
+pub type uint_fast16_t = ::std::os::raw::c_uint;
+pub type uint_fast32_t = ::std::os::raw::c_uint;
+pub type uint_fast64_t = ::std::os::raw::c_ulonglong;
+pub type intmax_t = ::std::os::raw::c_longlong;
+pub type uintmax_t = ::std::os::raw::c_ulonglong;
+pub type __crt_bool = bool;
+extern "C" {
+    pub fn _invalid_parameter_noinfo();
+}
+extern "C" {
+    pub fn _invalid_parameter_noinfo_noreturn() -> !;
+}
+extern "C" {
+    pub fn _invoke_watson(
+        _Expression: *const wchar_t,
+        _FunctionName: *const wchar_t,
+        _FileName: *const wchar_t,
+        _LineNo: ::std::os::raw::c_uint,
+        _Reserved: usize,
+    ) -> !;
+}
+pub type errno_t = ::std::os::raw::c_int;
+pub type wint_t = ::std::os::raw::c_ushort;
+pub type wctype_t = ::std::os::raw::c_ushort;
+pub type __time32_t = ::std::os::raw::c_long;
+pub type __time64_t = ::std::os::raw::c_longlong;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct __darwin_pthread_handler_rec {
-    pub __routine: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
-    pub __arg: *mut ::std::os::raw::c_void,
-    pub __next: *mut __darwin_pthread_handler_rec,
+pub struct __crt_locale_data_public {
+    pub _locale_pctype: *const ::std::os::raw::c_ushort,
+    pub _locale_mb_cur_max: ::std::os::raw::c_int,
+    pub _locale_lc_codepage: ::std::os::raw::c_uint,
 }
 #[test]
-fn bindgen_test_layout___darwin_pthread_handler_rec() {
-    const UNINIT: ::std::mem::MaybeUninit<__darwin_pthread_handler_rec> =
+fn bindgen_test_layout___crt_locale_data_public() {
+    const UNINIT: ::std::mem::MaybeUninit<__crt_locale_data_public> =
         ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__darwin_pthread_handler_rec>(),
-        24usize,
-        concat!("Size of: ", stringify!(__darwin_pthread_handler_rec))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__darwin_pthread_handler_rec>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__darwin_pthread_handler_rec))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__routine) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__darwin_pthread_handler_rec),
-            "::",
-            stringify!(__routine)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__arg) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__darwin_pthread_handler_rec),
-            "::",
-            stringify!(__arg)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__next) as usize - ptr as usize },
+        ::std::mem::size_of::<__crt_locale_data_public>(),
         16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__darwin_pthread_handler_rec),
-            "::",
-            stringify!(__next)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_attr_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 56usize],
-}
-#[test]
-fn bindgen_test_layout__opaque_pthread_attr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_attr_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_attr_t>(),
-        64usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_attr_t))
+        concat!("Size of: ", stringify!(__crt_locale_data_public))
     );
     assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_attr_t>(),
+        ::std::mem::align_of::<__crt_locale_data_public>(),
         8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_attr_t))
+        concat!("Alignment of ", stringify!(__crt_locale_data_public))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr)._locale_pctype) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_attr_t),
+            stringify!(__crt_locale_data_public),
             "::",
-            stringify!(__sig)
+            stringify!(_locale_pctype)
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr)._locale_mb_cur_max) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_attr_t),
+            stringify!(__crt_locale_data_public),
             "::",
-            stringify!(__opaque)
+            stringify!(_locale_mb_cur_max)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr)._locale_lc_codepage) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(__crt_locale_data_public),
+            "::",
+            stringify!(_locale_lc_codepage)
         )
     );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_cond_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 40usize],
+pub struct __crt_locale_pointers {
+    pub locinfo: *mut __crt_locale_data,
+    pub mbcinfo: *mut __crt_multibyte_data,
 }
 #[test]
-fn bindgen_test_layout__opaque_pthread_cond_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_cond_t> =
+fn bindgen_test_layout___crt_locale_pointers() {
+    const UNINIT: ::std::mem::MaybeUninit<__crt_locale_pointers> =
         ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_cond_t>(),
-        48usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_cond_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_cond_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_cond_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_cond_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_cond_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_condattr_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 8usize],
-}
-#[test]
-fn bindgen_test_layout__opaque_pthread_condattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_condattr_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_condattr_t>(),
+        ::std::mem::size_of::<__crt_locale_pointers>(),
         16usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_condattr_t))
+        concat!("Size of: ", stringify!(__crt_locale_pointers))
     );
     assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_condattr_t>(),
+        ::std::mem::align_of::<__crt_locale_pointers>(),
         8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_condattr_t))
+        concat!("Alignment of ", stringify!(__crt_locale_pointers))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).locinfo) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_condattr_t),
+            stringify!(__crt_locale_pointers),
             "::",
-            stringify!(__sig)
+            stringify!(locinfo)
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).mbcinfo) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_condattr_t),
+            stringify!(__crt_locale_pointers),
             "::",
-            stringify!(__opaque)
+            stringify!(mbcinfo)
         )
     );
 }
+pub type _locale_t = *mut __crt_locale_pointers;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_mutex_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 56usize],
+pub struct _Mbstatet {
+    pub _Wchar: ::std::os::raw::c_ulong,
+    pub _Byte: ::std::os::raw::c_ushort,
+    pub _State: ::std::os::raw::c_ushort,
 }
 #[test]
-fn bindgen_test_layout__opaque_pthread_mutex_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_mutex_t> =
-        ::std::mem::MaybeUninit::uninit();
+fn bindgen_test_layout__Mbstatet() {
+    const UNINIT: ::std::mem::MaybeUninit<_Mbstatet> = ::std::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_mutex_t>(),
-        64usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_mutex_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_mutex_t>(),
+        ::std::mem::size_of::<_Mbstatet>(),
         8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_mutex_t))
+        concat!("Size of: ", stringify!(_Mbstatet))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
+        ::std::mem::align_of::<_Mbstatet>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_Mbstatet))
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr)._Wchar) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_mutex_t),
+            stringify!(_Mbstatet),
             "::",
-            stringify!(__sig)
+            stringify!(_Wchar)
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
+        unsafe { ::std::ptr::addr_of!((*ptr)._Byte) as usize - ptr as usize },
+        4usize,
         concat!(
             "Offset of field: ",
-            stringify!(_opaque_pthread_mutex_t),
+            stringify!(_Mbstatet),
             "::",
-            stringify!(__opaque)
+            stringify!(_Byte)
+        )
+    );
+    assert_eq!(
+        unsafe { ::std::ptr::addr_of!((*ptr)._State) as usize - ptr as usize },
+        6usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_Mbstatet),
+            "::",
+            stringify!(_State)
         )
     );
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_mutexattr_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 8usize],
+pub type mbstate_t = _Mbstatet;
+pub type time_t = __time64_t;
+pub type rsize_t = usize;
+extern "C" {
+    pub fn _errno() -> *mut ::std::os::raw::c_int;
 }
-#[test]
-fn bindgen_test_layout__opaque_pthread_mutexattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_mutexattr_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_mutexattr_t>(),
-        16usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_mutexattr_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_mutexattr_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_mutexattr_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_mutexattr_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_mutexattr_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
+extern "C" {
+    pub fn _set_errno(_Value: ::std::os::raw::c_int) -> errno_t;
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_once_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 8usize],
+extern "C" {
+    pub fn _get_errno(_Value: *mut ::std::os::raw::c_int) -> errno_t;
 }
-#[test]
-fn bindgen_test_layout__opaque_pthread_once_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_once_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_once_t>(),
-        16usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_once_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_once_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_once_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_once_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_once_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
+extern "C" {
+    pub fn __threadid() -> ::std::os::raw::c_ulong;
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_rwlock_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 192usize],
+extern "C" {
+    pub fn __threadhandle() -> usize;
 }
-#[test]
-fn bindgen_test_layout__opaque_pthread_rwlock_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_rwlock_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_rwlock_t>(),
-        200usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_rwlock_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_rwlock_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_rwlock_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_rwlock_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_rwlock_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_rwlockattr_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __opaque: [::std::os::raw::c_char; 16usize],
-}
-#[test]
-fn bindgen_test_layout__opaque_pthread_rwlockattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_rwlockattr_t> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_rwlockattr_t>(),
-        24usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_rwlockattr_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_rwlockattr_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_rwlockattr_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_rwlockattr_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_rwlockattr_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct _opaque_pthread_t {
-    pub __sig: ::std::os::raw::c_long,
-    pub __cleanup_stack: *mut __darwin_pthread_handler_rec,
-    pub __opaque: [::std::os::raw::c_char; 8176usize],
-}
-#[test]
-fn bindgen_test_layout__opaque_pthread_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_opaque_pthread_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_opaque_pthread_t>(),
-        8192usize,
-        concat!("Size of: ", stringify!(_opaque_pthread_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_opaque_pthread_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_opaque_pthread_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__sig) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_t),
-            "::",
-            stringify!(__sig)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cleanup_stack) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_t),
-            "::",
-            stringify!(__cleanup_stack)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__opaque) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_opaque_pthread_t),
-            "::",
-            stringify!(__opaque)
-        )
-    );
-}
-pub type __darwin_pthread_attr_t = _opaque_pthread_attr_t;
-pub type __darwin_pthread_cond_t = _opaque_pthread_cond_t;
-pub type __darwin_pthread_condattr_t = _opaque_pthread_condattr_t;
-pub type __darwin_pthread_key_t = ::std::os::raw::c_ulong;
-pub type __darwin_pthread_mutex_t = _opaque_pthread_mutex_t;
-pub type __darwin_pthread_mutexattr_t = _opaque_pthread_mutexattr_t;
-pub type __darwin_pthread_once_t = _opaque_pthread_once_t;
-pub type __darwin_pthread_rwlock_t = _opaque_pthread_rwlock_t;
-pub type __darwin_pthread_rwlockattr_t = _opaque_pthread_rwlockattr_t;
-pub type __darwin_pthread_t = *mut _opaque_pthread_t;
-pub type u_int8_t = ::std::os::raw::c_uchar;
-pub type u_int16_t = ::std::os::raw::c_ushort;
-pub type u_int32_t = ::std::os::raw::c_uint;
-pub type u_int64_t = ::std::os::raw::c_ulonglong;
-pub type register_t = i64;
-pub type user_addr_t = u_int64_t;
-pub type user_size_t = u_int64_t;
-pub type user_ssize_t = i64;
-pub type user_long_t = i64;
-pub type user_ulong_t = u_int64_t;
-pub type user_time_t = i64;
-pub type user_off_t = i64;
-pub type syscall_arg_t = u_int64_t;
-pub type intmax_t = ::std::os::raw::c_long;
-pub type uintmax_t = ::std::os::raw::c_ulong;
-pub type rsize_t = ::std::os::raw::c_ulong;
-pub type wchar_t = ::std::os::raw::c_int;
-pub type max_align_t = f64;
 pub type JPH_BodyID = u32;
 pub type JPH_SubShapeID = u32;
 pub type JPH_ObjectLayer = u16;
@@ -665,23 +278,23 @@ pub const JPH_PhysicsUpdateError_JPH_PhysicsUpdateError_ContactConstraintsFull:
 pub const JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Count: JPH_PhysicsUpdateError = 5;
 pub const JPH_PhysicsUpdateError__JPH_PhysicsUpdateError_Force32: JPH_PhysicsUpdateError =
     2147483647;
-pub type JPH_PhysicsUpdateError = ::std::os::raw::c_uint;
+pub type JPH_PhysicsUpdateError = ::std::os::raw::c_int;
 pub const JPH_BodyType_JPH_BodyType_Rigid: JPH_BodyType = 0;
 pub const JPH_BodyType_JPH_BodyType_Soft: JPH_BodyType = 1;
 pub const JPH_BodyType__JPH_BodyType_Count: JPH_BodyType = 2;
 pub const JPH_BodyType__JPH_BodyType_Force32: JPH_BodyType = 2147483647;
-pub type JPH_BodyType = ::std::os::raw::c_uint;
+pub type JPH_BodyType = ::std::os::raw::c_int;
 pub const JPH_MotionType_JPH_MotionType_Static: JPH_MotionType = 0;
 pub const JPH_MotionType_JPH_MotionType_Kinematic: JPH_MotionType = 1;
 pub const JPH_MotionType_JPH_MotionType_Dynamic: JPH_MotionType = 2;
 pub const JPH_MotionType__JPH_MotionType_Count: JPH_MotionType = 3;
 pub const JPH_MotionType__JPH_MotionType_Force32: JPH_MotionType = 2147483647;
-pub type JPH_MotionType = ::std::os::raw::c_uint;
+pub type JPH_MotionType = ::std::os::raw::c_int;
 pub const JPH_Activation_JPH_Activation_Activate: JPH_Activation = 0;
 pub const JPH_Activation_JPH_Activation_DontActivate: JPH_Activation = 1;
 pub const JPH_Activation__JPH_Activation_Count: JPH_Activation = 2;
 pub const JPH_Activation__JPH_Activation_Force32: JPH_Activation = 2147483647;
-pub type JPH_Activation = ::std::os::raw::c_uint;
+pub type JPH_Activation = ::std::os::raw::c_int;
 pub const JPH_ValidateResult_JPH_ValidateResult_AcceptAllContactsForThisBodyPair:
     JPH_ValidateResult = 0;
 pub const JPH_ValidateResult_JPH_ValidateResult_AcceptContact: JPH_ValidateResult = 1;
@@ -690,7 +303,7 @@ pub const JPH_ValidateResult_JPH_ValidateResult_RejectAllContactsForThisBodyPair
     JPH_ValidateResult = 3;
 pub const JPH_ValidateResult__JPH_ValidateResult_Count: JPH_ValidateResult = 4;
 pub const JPH_ValidateResult__JPH_ValidateResult_Force32: JPH_ValidateResult = 2147483647;
-pub type JPH_ValidateResult = ::std::os::raw::c_uint;
+pub type JPH_ValidateResult = ::std::os::raw::c_int;
 pub const JPH_ShapeType_JPH_ShapeType_Convex: JPH_ShapeType = 0;
 pub const JPH_ShapeType_JPH_ShapeType_Compound: JPH_ShapeType = 1;
 pub const JPH_ShapeType_JPH_ShapeType_Decorated: JPH_ShapeType = 2;
@@ -703,7 +316,7 @@ pub const JPH_ShapeType_JPH_ShapeType_User3: JPH_ShapeType = 8;
 pub const JPH_ShapeType_JPH_ShapeType_User4: JPH_ShapeType = 9;
 pub const JPH_ShapeType__JPH_ShapeType_Count: JPH_ShapeType = 10;
 pub const JPH_ShapeType__JPH_ShapeType_Force32: JPH_ShapeType = 2147483647;
-pub type JPH_ShapeType = ::std::os::raw::c_uint;
+pub type JPH_ShapeType = ::std::os::raw::c_int;
 pub const JPH_ShapeSubType_JPH_ShapeSubType_Sphere: JPH_ShapeSubType = 0;
 pub const JPH_ShapeSubType_JPH_ShapeSubType_Box: JPH_ShapeSubType = 1;
 pub const JPH_ShapeSubType_JPH_ShapeSubType_Triangle: JPH_ShapeSubType = 2;
@@ -721,12 +334,12 @@ pub const JPH_ShapeSubType_JPH_ShapeSubType_HeightField: JPH_ShapeSubType = 13;
 pub const JPH_ShapeSubType_JPH_ShapeSubType_SoftBody: JPH_ShapeSubType = 14;
 pub const JPH_ShapeSubType__JPH_ShapeSubType_Count: JPH_ShapeSubType = 15;
 pub const JPH_ShapeSubType__JPH_ShapeSubType_Force32: JPH_ShapeSubType = 2147483647;
-pub type JPH_ShapeSubType = ::std::os::raw::c_uint;
+pub type JPH_ShapeSubType = ::std::os::raw::c_int;
 pub const JPH_ConstraintType_JPH_ConstraintType_Constraint: JPH_ConstraintType = 0;
 pub const JPH_ConstraintType_JPH_ConstraintType_TwoBodyConstraint: JPH_ConstraintType = 1;
 pub const JPH_ConstraintType__JPH_ConstraintType_Count: JPH_ConstraintType = 2;
 pub const JPH_ConstraintType__JPH_ConstraintType_Force32: JPH_ConstraintType = 2147483647;
-pub type JPH_ConstraintType = ::std::os::raw::c_uint;
+pub type JPH_ConstraintType = ::std::os::raw::c_int;
 pub const JPH_ConstraintSubType_JPH_ConstraintSubType_Fixed: JPH_ConstraintSubType = 0;
 pub const JPH_ConstraintSubType_JPH_ConstraintSubType_Point: JPH_ConstraintSubType = 1;
 pub const JPH_ConstraintSubType_JPH_ConstraintSubType_Hinge: JPH_ConstraintSubType = 2;
@@ -746,17 +359,17 @@ pub const JPH_ConstraintSubType_JPH_ConstraintSubType_User3: JPH_ConstraintSubTy
 pub const JPH_ConstraintSubType_JPH_ConstraintSubType_User4: JPH_ConstraintSubType = 16;
 pub const JPH_ConstraintSubType__JPH_ConstraintSubType_Count: JPH_ConstraintSubType = 17;
 pub const JPH_ConstraintSubType__JPH_ConstraintSubType_Force32: JPH_ConstraintSubType = 2147483647;
-pub type JPH_ConstraintSubType = ::std::os::raw::c_uint;
+pub type JPH_ConstraintSubType = ::std::os::raw::c_int;
 pub const JPH_ConstraintSpace_JPH_ConstraintSpace_LocalToBodyCOM: JPH_ConstraintSpace = 0;
 pub const JPH_ConstraintSpace_JPH_ConstraintSpace_WorldSpace: JPH_ConstraintSpace = 1;
 pub const JPH_ConstraintSpace__JPH_ConstraintSpace_Count: JPH_ConstraintSpace = 2;
 pub const JPH_ConstraintSpace__JPH_ConstraintSpace_Force32: JPH_ConstraintSpace = 2147483647;
-pub type JPH_ConstraintSpace = ::std::os::raw::c_uint;
+pub type JPH_ConstraintSpace = ::std::os::raw::c_int;
 pub const JPH_MotionQuality_JPH_MotionQuality_Discrete: JPH_MotionQuality = 0;
 pub const JPH_MotionQuality_JPH_MotionQuality_LinearCast: JPH_MotionQuality = 1;
 pub const JPH_MotionQuality__JPH_MotionQuality_Count: JPH_MotionQuality = 2;
 pub const JPH_MotionQuality__JPH_MotionQuality_Force32: JPH_MotionQuality = 2147483647;
-pub type JPH_MotionQuality = ::std::os::raw::c_uint;
+pub type JPH_MotionQuality = ::std::os::raw::c_int;
 pub const JPH_AllowedDOFs_JPH_AllowedDOFs_All: JPH_AllowedDOFs = 63;
 pub const JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationX: JPH_AllowedDOFs = 1;
 pub const JPH_AllowedDOFs_JPH_AllowedDOFs_TranslationY: JPH_AllowedDOFs = 2;
@@ -767,35 +380,35 @@ pub const JPH_AllowedDOFs_JPH_AllowedDOFs_RotationZ: JPH_AllowedDOFs = 32;
 pub const JPH_AllowedDOFs_JPH_AllowedDOFs_Plane2D: JPH_AllowedDOFs = 35;
 pub const JPH_AllowedDOFs__JPH_AllowedDOFs_Count: JPH_AllowedDOFs = 36;
 pub const JPH_AllowedDOFs__JPH_AllowedDOFs_Force32: JPH_AllowedDOFs = 2147483647;
-pub type JPH_AllowedDOFs = ::std::os::raw::c_uint;
+pub type JPH_AllowedDOFs = ::std::os::raw::c_int;
 pub const JPH_GroundState_JPH_GroundState_OnGround: JPH_GroundState = 0;
 pub const JPH_GroundState_JPH_GroundState_OnSteepGround: JPH_GroundState = 1;
 pub const JPH_GroundState_JPH_GroundState_NotSupported: JPH_GroundState = 2;
 pub const JPH_GroundState_JPH_GroundState_InAir: JPH_GroundState = 3;
 pub const JPH_GroundState__JPH_GroundState_Count: JPH_GroundState = 4;
 pub const JPH_GroundState__JPH_GroundState_Force32: JPH_GroundState = 2147483647;
-pub type JPH_GroundState = ::std::os::raw::c_uint;
+pub type JPH_GroundState = ::std::os::raw::c_int;
 pub const JPH_BackFaceMode_JPH_BackFaceMode_IgnoreBackFaces: JPH_BackFaceMode = 0;
 pub const JPH_BackFaceMode_JPH_BackFaceMode_CollideWithBackFaces: JPH_BackFaceMode = 1;
 pub const JPH_BackFaceMode__JPH_BackFaceMode_Count: JPH_BackFaceMode = 2;
 pub const JPH_BackFaceMode__JPH_BackFaceMode_Force32: JPH_BackFaceMode = 2147483647;
-pub type JPH_BackFaceMode = ::std::os::raw::c_uint;
+pub type JPH_BackFaceMode = ::std::os::raw::c_int;
 pub const JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideOnlyWithActive: JPH_ActiveEdgeMode = 0;
 pub const JPH_ActiveEdgeMode_JPH_ActiveEdgeMode_CollideWithAll: JPH_ActiveEdgeMode = 1;
 pub const JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Count: JPH_ActiveEdgeMode = 2;
 pub const JPH_ActiveEdgeMode__JPH_ActiveEdgeMode_Force32: JPH_ActiveEdgeMode = 2147483647;
-pub type JPH_ActiveEdgeMode = ::std::os::raw::c_uint;
+pub type JPH_ActiveEdgeMode = ::std::os::raw::c_int;
 pub const JPH_CollectFacesMode_JPH_CollectFacesMode_CollectFaces: JPH_CollectFacesMode = 0;
 pub const JPH_CollectFacesMode_JPH_CollectFacesMode_NoFaces: JPH_CollectFacesMode = 1;
 pub const JPH_CollectFacesMode__JPH_CollectFacesMode_Count: JPH_CollectFacesMode = 2;
 pub const JPH_CollectFacesMode__JPH_CollectFacesMode_Force32: JPH_CollectFacesMode = 2147483647;
-pub type JPH_CollectFacesMode = ::std::os::raw::c_uint;
+pub type JPH_CollectFacesMode = ::std::os::raw::c_int;
 pub const JPH_MotorState_JPH_MotorState_Off: JPH_MotorState = 0;
 pub const JPH_MotorState_JPH_MotorState_Velocity: JPH_MotorState = 1;
 pub const JPH_MotorState_JPH_MotorState_Position: JPH_MotorState = 2;
 pub const JPH_MotorState__JPH_MotorState_Count: JPH_MotorState = 3;
 pub const JPH_MotorState__JPH_MotorState_Force32: JPH_MotorState = 2147483647;
-pub type JPH_MotorState = ::std::os::raw::c_uint;
+pub type JPH_MotorState = ::std::os::raw::c_int;
 pub const JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHit: JPH_CollisionCollectorType =
     0;
 pub const JPH_CollisionCollectorType_JPH_CollisionCollectorType_AllHitSorted:
@@ -808,7 +421,7 @@ pub const JPH_CollisionCollectorType__JPH_CollisionCollectorType_Count: JPH_Coll
     4;
 pub const JPH_CollisionCollectorType__JPH_CollisionCollectorType_Force32:
     JPH_CollisionCollectorType = 2147483647;
-pub type JPH_CollisionCollectorType = ::std::os::raw::c_uint;
+pub type JPH_CollisionCollectorType = ::std::os::raw::c_int;
 pub const JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationX: JPH_SixDOFConstraintAxis =
     0;
 pub const JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_TranslationY: JPH_SixDOFConstraintAxis =
@@ -821,12 +434,12 @@ pub const JPH_SixDOFConstraintAxis_JPH_SixDOFConstraintAxis_RotationZ: JPH_SixDO
 pub const JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Count: JPH_SixDOFConstraintAxis = 6;
 pub const JPH_SixDOFConstraintAxis__JPH_SixDOFConstraintAxis_Force32: JPH_SixDOFConstraintAxis =
     2147483647;
-pub type JPH_SixDOFConstraintAxis = ::std::os::raw::c_uint;
+pub type JPH_SixDOFConstraintAxis = ::std::os::raw::c_int;
 pub const JPH_SpringMode_JPH_SpringMode_FrequencyAndDamping: JPH_SpringMode = 0;
 pub const JPH_SpringMode_JPH_SpringMode_StiffnessAndDamping: JPH_SpringMode = 1;
 pub const JPH_SpringMode__JPH_SpringMode_Count: JPH_SpringMode = 2;
 pub const JPH_SpringMode__JPH_SpringMode_Force32: JPH_SpringMode = 2147483647;
-pub type JPH_SpringMode = ::std::os::raw::c_uint;
+pub type JPH_SpringMode = ::std::os::raw::c_int;
 pub const JPH_SoftBodyConstraintColor_JPH_SoftBodyConstraintColor_ConstraintType:
     JPH_SoftBodyConstraintColor = 0;
 #[doc = " Draw different types of constraints in different colors"]
@@ -842,7 +455,7 @@ pub const JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Count:
 pub const JPH_SoftBodyConstraintColor__JPH_SoftBodyConstraintColor_Force32:
     JPH_SoftBodyConstraintColor = 2147483647;
 #[doc = " Defines how to color soft body constraints"]
-pub type JPH_SoftBodyConstraintColor = ::std::os::raw::c_uint;
+pub type JPH_SoftBodyConstraintColor = ::std::os::raw::c_int;
 #[doc = "< Random color per instance"]
 pub const JPH_BodyManager_ShapeColor_JPH_BodyManager_ShapeColor_InstanceColor:
     JPH_BodyManager_ShapeColor = 0;
@@ -865,7 +478,7 @@ pub const JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Count: JPH_Body
     6;
 pub const JPH_BodyManager_ShapeColor__JPH_BodyManager_ShapeColor_Force32:
     JPH_BodyManager_ShapeColor = 2147483647;
-pub type JPH_BodyManager_ShapeColor = ::std::os::raw::c_uint;
+pub type JPH_BodyManager_ShapeColor = ::std::os::raw::c_int;
 #[doc = "< This shape should cast a shadow"]
 pub const JPH_DebugRenderer_CastShadow_JPH_DebugRenderer_CastShadow_On:
     JPH_DebugRenderer_CastShadow = 0;
@@ -876,7 +489,7 @@ pub const JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Count:
     JPH_DebugRenderer_CastShadow = 2;
 pub const JPH_DebugRenderer_CastShadow__JPH_DebugRenderer_CastShadow_Force32:
     JPH_DebugRenderer_CastShadow = 2147483647;
-pub type JPH_DebugRenderer_CastShadow = ::std::os::raw::c_uint;
+pub type JPH_DebugRenderer_CastShadow = ::std::os::raw::c_int;
 #[doc = "< Draw as a solid shape"]
 pub const JPH_DebugRenderer_DrawMode_JPH_DebugRenderer_DrawMode_Solid: JPH_DebugRenderer_DrawMode =
     0;
@@ -887,7 +500,7 @@ pub const JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMo
     JPH_DebugRenderer_DrawMode = 2;
 pub const JPH_DebugRenderer_DrawMode__JPH_DebugRenderer_JPH_DebugRenderer_DrawMode_Force32:
     JPH_DebugRenderer_DrawMode = 2147483647;
-pub type JPH_DebugRenderer_DrawMode = ::std::os::raw::c_uint;
+pub type JPH_DebugRenderer_DrawMode = ::std::os::raw::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct JPH_Vec3 {
@@ -8228,4 +7841,13 @@ extern "C" {
 extern "C" {
     pub fn JPH_DebugRenderer_NextFrame(renderer: *mut JPH_DebugRenderer);
 }
-pub type __builtin_va_list = *mut ::std::os::raw::c_char;
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __crt_locale_data {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct __crt_multibyte_data {
+    pub _address: u8,
+}
