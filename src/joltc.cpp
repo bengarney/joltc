@@ -6923,13 +6923,24 @@ JPH_CAPI JPH_DebugRenderer* JPH_DebugRenderer_Create(JPH_DebugRenderer_Procs pro
 	return reinterpret_cast<JPH_DebugRenderer*>(impl);
 }
 
-void JPH_DebugRenderer_Destroy(JPH_DebugRenderer* renderer)
+JPH_CAPI void JPH_DebugRenderer_SetCameraPos(JPH_DebugRenderer* renderer, JPH_Vec3 *cameraPos)
+{
+    JPH_ASSERT(renderer);
+    JPH_ASSERT(cameraPos);
+
+	auto dbr = reinterpret_cast<ManagedDebugRendererSimple*>(renderer);
+    auto cameraPosJolt = JPH::RVec3Arg(cameraPos->x, cameraPos->y, cameraPos->z);
+
+    dbr->SetCameraPos(cameraPosJolt);
+}
+
+JPH_CAPI void JPH_DebugRenderer_Destroy(JPH_DebugRenderer* renderer)
 {
 	if (renderer)
 		delete reinterpret_cast<ManagedDebugRendererSimple*>(renderer);
 }
 
-void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer)
+JPH_CAPI void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer)
 {
 	reinterpret_cast<DebugRenderer*>(renderer)->NextFrame();
 }

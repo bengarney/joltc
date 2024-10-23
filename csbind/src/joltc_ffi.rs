@@ -8163,6 +8163,18 @@ pub unsafe extern "C" fn jpc_JPH_DebugRenderer_Create(
 }
 
 #[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_DebugRenderer_SetCameraPos(
+    renderer: *mut JPH_DebugRenderer,
+    cameraPos: *mut JPH_Vec3
+)
+{
+    JPH_DebugRenderer_SetCameraPos(
+        renderer,
+        cameraPos
+    )
+}
+
+#[no_mangle]
 pub unsafe extern "C" fn jpc_JPH_DebugRenderer_Destroy(
     renderer: *mut JPH_DebugRenderer
 )

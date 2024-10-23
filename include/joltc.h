@@ -1895,6 +1895,7 @@ typedef struct JPH_DebugRenderer_Procs {
 } JPH_DebugRenderer_Procs;
 
 JPH_CAPI JPH_DebugRenderer* JPH_DebugRenderer_Create(JPH_DebugRenderer_Procs procs, void* userData);
+JPH_CAPI void JPH_DebugRenderer_SetCameraPos(JPH_DebugRenderer* renderer, JPH_Vec3 *cameraPos);
 JPH_CAPI void JPH_DebugRenderer_Destroy(JPH_DebugRenderer* renderer);
 JPH_CAPI void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer);
 

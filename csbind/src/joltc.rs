@@ -7836,6 +7836,12 @@ extern "C" {
     ) -> *mut JPH_DebugRenderer;
 }
 extern "C" {
+    pub fn JPH_DebugRenderer_SetCameraPos(
+        renderer: *mut JPH_DebugRenderer,
+        cameraPos: *mut JPH_Vec3,
+    );
+}
+extern "C" {
     pub fn JPH_DebugRenderer_Destroy(renderer: *mut JPH_DebugRenderer);
 }
 extern "C" {
