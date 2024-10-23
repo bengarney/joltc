@@ -1406,6 +1406,14 @@ JPH_CAPI void JPH_BodyLockInterface_UnlockRead(const JPH_BodyLockInterface* lock
 JPH_CAPI void JPH_BodyLockInterface_LockWrite(const JPH_BodyLockInterface* lockInterface, JPH_BodyID bodyID, JPH_BodyLockWrite* outLock);
 JPH_CAPI void JPH_BodyLockInterface_UnlockWrite(const JPH_BodyLockInterface* lockInterface, JPH_BodyLockWrite* ioLock);
 
+JPH_CAPI uint64_t JPH_BodyLockInterface_GetMutexMask(const JPH_BodyLockInterface* lockInterface, const uint32_t *inBodies, uint32_t inNumber);
+
+JPH_CAPI void JPH_BodyLockInterface_MultiUnlockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
+JPH_CAPI void JPH_BodyLockInterface_MultiLockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
+
+JPH_CAPI void JPH_BodyLockInterface_MultiUnlockWrite(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
+JPH_CAPI void JPH_BodyLockInterface_MultiLockWrite(const JPH_BodyLockInterface* lockInterface, uint64_t mask);
+
 //--------------------------------------------------------------------------------------------------
 // JPH_MotionProperties
 //--------------------------------------------------------------------------------------------------

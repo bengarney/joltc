@@ -232,6 +232,27 @@ namespace JoltPhysics
         [DllImport(__DllName, EntryPoint = "jpc_JPH_SetAssertFailureHandler", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_SetAssertFailureHandler(delegate* unmanaged[Cdecl]<byte*, byte*, byte*, uint, bool> handler);
 
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ContactConstraintManager_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_ContactConstraintManager_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool contactPoints, [MarshalAs(UnmanagedType.U1)] bool supportingFaces, [MarshalAs(UnmanagedType.U1)] bool pointReduction, [MarshalAs(UnmanagedType.U1)] bool manifolds);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_PhysicsSystem_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_PhysicsSystem_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool motionQualityLinearCast);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_CharacterVirtual_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_CharacterVirtual_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool constraints, [MarshalAs(UnmanagedType.U1)] bool walkStairs, [MarshalAs(UnmanagedType.U1)] bool stickToFloor);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_ConvexHullShape_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_ConvexHullShape_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool faceOutlines);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_HeightFieldShape_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_HeightFieldShape_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool triangleOutlines);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_MeshShape_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_MeshShape_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool triangleGroups, [MarshalAs(UnmanagedType.U1)] bool triangleOutlines);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_Shape_SetDebugDraws", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_Shape_SetDebugDraws([MarshalAs(UnmanagedType.U1)] bool submergedVolumes);
+
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BroadPhaseLayerInterfaceMask_Create", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern JPH_BroadPhaseLayerInterface* JPH_BroadPhaseLayerInterfaceMask_Create(uint numBroadPhaseLayers);
 
@@ -1608,6 +1629,21 @@ namespace JoltPhysics
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_UnlockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void JPH_BodyLockInterface_UnlockWrite(JPH_BodyLockInterface* lockInterface, JPH_BodyLockWrite* ioLock);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_GetMutexMask", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern ulong JPH_BodyLockInterface_GetMutexMask(JPH_BodyLockInterface* lockInterface, uint* inBodies, uint inNumber);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_MultiUnlockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_BodyLockInterface_MultiUnlockRead(JPH_BodyLockInterface* lockInterface, ulong mask);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_MultiLockRead", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_BodyLockInterface_MultiLockRead(JPH_BodyLockInterface* lockInterface, ulong mask);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_MultiUnlockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_BodyLockInterface_MultiUnlockWrite(JPH_BodyLockInterface* lockInterface, ulong mask);
+
+        [DllImport(__DllName, EntryPoint = "jpc_JPH_BodyLockInterface_MultiLockWrite", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        public static extern void JPH_BodyLockInterface_MultiLockWrite(JPH_BodyLockInterface* lockInterface, ulong mask);
 
         [DllImport(__DllName, EntryPoint = "jpc_JPH_MotionProperties_GetAllowedDOFs", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int JPH_MotionProperties_GetAllowedDOFs(JPH_MotionProperties* properties);

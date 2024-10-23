@@ -4556,6 +4556,46 @@ void JPH_BodyLockInterface_UnlockWrite(const JPH_BodyLockInterface* lockInterfac
 	reinterpret_cast<const JPH::BodyLockWrite*>(ioLock)->~BodyLockWrite();
 }
 
+uint64_t JPH_BodyLockInterface_GetMutexMask(const JPH_BodyLockInterface* lockInterface, const uint32_t *inBodies, uint32_t inNumber)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    return joltBodyLockInterface->GetMutexMask((const JPH::BodyID *)inBodies, inNumber);
+}
+
+void JPH_BodyLockInterface_MultiUnlockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    joltBodyLockInterface->UnlockRead(mask);
+}
+
+void JPH_BodyLockInterface_MultiLockRead(const JPH_BodyLockInterface* lockInterface, uint64_t mask)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    joltBodyLockInterface->LockRead(mask);
+}
+
+void JPH_BodyLockInterface_MultiUnlockWrite(const JPH_BodyLockInterface* lockInterface, uint64_t mask)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    joltBodyLockInterface->UnlockWrite(mask);
+}
+
+void JPH_BodyLockInterface_MultiLockWrite(const JPH_BodyLockInterface* lockInterface, uint64_t mask)
+{
+	JPH_ASSERT(lockInterface != nullptr);
+	auto joltBodyLockInterface = reinterpret_cast<const JPH::BodyLockInterface*>(lockInterface);
+
+    joltBodyLockInterface->LockWrite(mask);
+}
+
 //--------------------------------------------------------------------------------------------------
 // JPH_CollideSettingsBase
 //--------------------------------------------------------------------------------------------------

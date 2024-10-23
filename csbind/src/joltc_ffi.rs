@@ -47,6 +47,88 @@ pub unsafe extern "C" fn jpc_JPH_SetAssertFailureHandler(
 }
 
 #[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_ContactConstraintManager_SetDebugDraws(
+    contactPoints: bool,
+    supportingFaces: bool,
+    pointReduction: bool,
+    manifolds: bool
+)
+{
+    JPH_ContactConstraintManager_SetDebugDraws(
+        contactPoints,
+        supportingFaces,
+        pointReduction,
+        manifolds
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_PhysicsSystem_SetDebugDraws(
+    motionQualityLinearCast: bool
+)
+{
+    JPH_PhysicsSystem_SetDebugDraws(
+        motionQualityLinearCast
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_CharacterVirtual_SetDebugDraws(
+    constraints: bool,
+    walkStairs: bool,
+    stickToFloor: bool
+)
+{
+    JPH_CharacterVirtual_SetDebugDraws(
+        constraints,
+        walkStairs,
+        stickToFloor
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_ConvexHullShape_SetDebugDraws(
+    faceOutlines: bool
+)
+{
+    JPH_ConvexHullShape_SetDebugDraws(
+        faceOutlines
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_HeightFieldShape_SetDebugDraws(
+    triangleOutlines: bool
+)
+{
+    JPH_HeightFieldShape_SetDebugDraws(
+        triangleOutlines
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_MeshShape_SetDebugDraws(
+    triangleGroups: bool,
+    triangleOutlines: bool
+)
+{
+    JPH_MeshShape_SetDebugDraws(
+        triangleGroups,
+        triangleOutlines
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_Shape_SetDebugDraws(
+    submergedVolumes: bool
+)
+{
+    JPH_Shape_SetDebugDraws(
+        submergedVolumes
+    )
+}
+
+#[no_mangle]
 pub unsafe extern "C" fn jpc_JPH_BroadPhaseLayerInterfaceMask_Create(
     numBroadPhaseLayers: u32
 ) -> *mut JPH_BroadPhaseLayerInterface
@@ -5531,6 +5613,68 @@ pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_UnlockWrite(
     JPH_BodyLockInterface_UnlockWrite(
         lockInterface,
         ioLock
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_GetMutexMask(
+    lockInterface: *const JPH_BodyLockInterface,
+    inBodies: *const u32,
+    inNumber: u32
+) -> u64
+{
+    JPH_BodyLockInterface_GetMutexMask(
+        lockInterface,
+        inBodies,
+        inNumber
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_MultiUnlockRead(
+    lockInterface: *const JPH_BodyLockInterface,
+    mask: u64
+)
+{
+    JPH_BodyLockInterface_MultiUnlockRead(
+        lockInterface,
+        mask
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_MultiLockRead(
+    lockInterface: *const JPH_BodyLockInterface,
+    mask: u64
+)
+{
+    JPH_BodyLockInterface_MultiLockRead(
+        lockInterface,
+        mask
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_MultiUnlockWrite(
+    lockInterface: *const JPH_BodyLockInterface,
+    mask: u64
+)
+{
+    JPH_BodyLockInterface_MultiUnlockWrite(
+        lockInterface,
+        mask
+    )
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_BodyLockInterface_MultiLockWrite(
+    lockInterface: *const JPH_BodyLockInterface,
+    mask: u64
+)
+{
+    JPH_BodyLockInterface_MultiLockWrite(
+        lockInterface,
+        mask
     )
 }
 

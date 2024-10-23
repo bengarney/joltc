@@ -6296,6 +6296,37 @@ extern "C" {
     );
 }
 extern "C" {
+    pub fn JPH_BodyLockInterface_GetMutexMask(
+        lockInterface: *const JPH_BodyLockInterface,
+        inBodies: *const u32,
+        inNumber: u32,
+    ) -> u64;
+}
+extern "C" {
+    pub fn JPH_BodyLockInterface_MultiUnlockRead(
+        lockInterface: *const JPH_BodyLockInterface,
+        mask: u64,
+    );
+}
+extern "C" {
+    pub fn JPH_BodyLockInterface_MultiLockRead(
+        lockInterface: *const JPH_BodyLockInterface,
+        mask: u64,
+    );
+}
+extern "C" {
+    pub fn JPH_BodyLockInterface_MultiUnlockWrite(
+        lockInterface: *const JPH_BodyLockInterface,
+        mask: u64,
+    );
+}
+extern "C" {
+    pub fn JPH_BodyLockInterface_MultiLockWrite(
+        lockInterface: *const JPH_BodyLockInterface,
+        mask: u64,
+    );
+}
+extern "C" {
     pub fn JPH_MotionProperties_GetAllowedDOFs(
         properties: *const JPH_MotionProperties,
     ) -> JPH_AllowedDOFs;
