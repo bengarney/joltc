@@ -25,6 +25,7 @@ JPH_SUPPRESS_WARNINGS
 #include "Jolt/Physics/Collision/CastResult.h"
 #include "Jolt/Physics/Collision/CollidePointResult.h"
 #include "Jolt/Physics/Collision/CollideShape.h"
+#include "Jolt/Physics/Collision/EstimateCollisionResponse.h"
 #include <Jolt/Physics/Collision/CollisionCollectorImpl.h>
 #include <Jolt/Physics/Collision/ShapeCast.h>
 #include "Jolt/Physics/Collision/Shape/PlaneShape.h"
@@ -6945,5 +6946,36 @@ JPH_CAPI void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer)
 	reinterpret_cast<DebugRenderer*>(renderer)->NextFrame();
 }
 #endif
+
+JPH_CAPI void JPH_EstimateCollisionResponse(JPH_Body *a, JPH_Body *b, JPH_ContactManifold *manifold, JPH_CollisionEstimationResult *result,  float inCombinedFriction, float inCombinedRestitution, float inMinVelocityForRestitution, int inNumIterations)
+{
+    ContactManifold *cm = (ContactManifold*)manifold;
+    CollisionEstimationResult cer;
+
+    EstimateCollisionResponse((const Body&)a, (const Body&)b, (const ContactManifold&)manifold, cer, inCombinedFriction, inCombinedRestitution, inMinVelocityForRestitution, inNumIterations);
+
+    // Copy everything out...
+    FromJolt(cer.mLinearVelocity1, &result->mLinearVelocity1);
+    FromJolt(cer.mAngularVelocity1, &result->mAngularVelocity1);
+    FromJolt(cer.mLinearVelocity2, &result->mLinearVelocity2);
+    FromJolt(cer.mAngularVelocity2, &result->mAngularVelocity2);
+
+    FromJolt(cer.mTangent1, &result->mTangent1);
+    FromJolt(cer.mTangent2, &result->mTangent2);
+
+    result->ImpulseCount = cm->mRelativeContactPointsOn1.size();
+
+    // sanity 
+    // TODO: Better way to signal this?
+    if(result->ImpulseCount > 64) result->ImpulseCount = 64;
+
+    for(int i=0; i<result->ImpulseCount; i++)
+    {
+        result->ContactImpulse[i] = cer.mImpulses[i].mContactImpulse;
+        result->FrictionImpulse1[i] = cer.mImpulses[i].mFrictionImpulse1;
+        result->FrictionImpulse2[i] = cer.mImpulses[i].mFrictionImpulse2;
+    }
+
+}
 
 JPH_SUPPRESS_WARNING_POP

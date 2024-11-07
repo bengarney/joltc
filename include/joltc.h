@@ -1899,4 +1899,23 @@ JPH_CAPI void JPH_DebugRenderer_SetCameraPos(JPH_DebugRenderer* renderer, JPH_Ve
 JPH_CAPI void JPH_DebugRenderer_Destroy(JPH_DebugRenderer* renderer);
 JPH_CAPI void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer);
 
+typedef struct JPH_CollisionEstimationResult {
+
+    JPH_Vec3			mLinearVelocity1;				///< The estimated linear velocity of body 1 after collision
+	JPH_Vec3			mAngularVelocity1;				///< The estimated angular velocity of body 1 after collision
+	JPH_Vec3			mLinearVelocity2;				///< The estimated linear velocity of body 2 after collision
+	JPH_Vec3			mAngularVelocity2;				///< The estimated angular velocity of body 2 after collision
+
+	JPH_Vec3			mTangent1;						///< Normalized tangent of contact normal
+	JPH_Vec3			mTangent2;						///< Second normalized tangent of contact normal (forms a basis with mTangent1 and mWorldSpaceNormal)
+
+    int ImpulseCount;
+    float ContactImpulse[64];
+    float FrictionImpulse1[64];
+    float FrictionImpulse2[64];
+
+} JPH_CollisionEstimationResult;
+
+JPH_CAPI void JPH_EstimateCollisionResponse(JPH_Body *a, JPH_Body *b, JPH_ContactManifold *manifold, JPH_CollisionEstimationResult *result,  float inCombinedFriction, float inCombinedRestitution, float inMinVelocityForRestitution, int inNumIterations);
+
 #endif /* JOLT_C_H_ */

@@ -8194,4 +8194,28 @@ pub unsafe extern "C" fn jpc_JPH_DebugRenderer_NextFrame(
     )
 }
 
+#[no_mangle]
+pub unsafe extern "C" fn jpc_JPH_EstimateCollisionResponse(
+    a: *mut JPH_Body,
+    b: *mut JPH_Body,
+    manifold: *mut JPH_ContactManifold,
+    result: *mut JPH_CollisionEstimationResult,
+    inCombinedFriction: f32,
+    inCombinedRestitution: f32,
+    inMinVelocityForRestitution: f32,
+    inNumIterations: c_int
+)
+{
+    JPH_EstimateCollisionResponse(
+        a,
+        b,
+        manifold,
+        result,
+        inCombinedFriction,
+        inCombinedRestitution,
+        inMinVelocityForRestitution,
+        inNumIterations
+    )
+}
+
     
