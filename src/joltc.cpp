@@ -6952,7 +6952,7 @@ JPH_CAPI void JPH_EstimateCollisionResponse(JPH_Body *a, JPH_Body *b, JPH_Contac
     ContactManifold *cm = (ContactManifold*)manifold;
     CollisionEstimationResult cer;
 
-    EstimateCollisionResponse((const Body&)a, (const Body&)b, (const ContactManifold&)manifold, cer, inCombinedFriction, inCombinedRestitution, inMinVelocityForRestitution, inNumIterations);
+    EstimateCollisionResponse((const Body&)*a, (const Body&)*b, (const ContactManifold&)*manifold, cer, inCombinedFriction, inCombinedRestitution, inMinVelocityForRestitution, inNumIterations);
 
     // Copy everything out...
     FromJolt(cer.mLinearVelocity1, &result->mLinearVelocity1);
