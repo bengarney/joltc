@@ -44,6 +44,7 @@ namespace JoltPhysics
         public const uint _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1;
         public const uint _DARWIN_FEATURE_UNIX_CONFORMANCE = 3;
         public const uint __has_ptrcheck = 0;
+        public const uint USE_CLANG_TYPES = 0;
         public const uint __PTHREAD_SIZE__ = 8176;
         public const uint __PTHREAD_ATTR_SIZE__ = 56;
         public const uint __PTHREAD_MUTEXATTR_SIZE__ = 8;
