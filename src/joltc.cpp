@@ -6947,17 +6947,12 @@ JPH_CAPI void JPH_DebugRenderer_NextFrame(JPH_DebugRenderer* renderer)
 }
 #endif
 
-JPH_CAPI void JPH_EstimateCollisionResponse(JPH_Body *a, JPH_Body *b, JPH_ContactManifold *manifold, JPH_CollisionEstimationResult *result, float inCombinedFriction, float inCombinedRestitution, float inMinVelocityForRestitution, int inNumIterations)
+JPH_CAPI void JPH_EstimateCollisionResponse(JPH_Body *a, JPH_Body *b, JPH_ContactManifold *manifold, JPH_CollisionEstimationResult *result,  float inCombinedFriction, float inCombinedRestitution, float inMinVelocityForRestitution, int inNumIterations)
 {
-    Body *bodyA = (Body*)a;
-    Body *bodyB = (Body*)b;
     ContactManifold *cm = (ContactManifold*)manifold;
     CollisionEstimationResult cer;
 
-    EstimateCollisionResponse(
-        *bodyA, *bodyB, *cm, cer, 
-        inCombinedFriction, inCombinedRestitution, 
-        inMinVelocityForRestitution, inNumIterations);
+    EstimateCollisionResponse((const Body&)*a, (const Body&)*b, (const ContactManifold&)*manifold, cer, inCombinedFriction, inCombinedRestitution, inMinVelocityForRestitution, inNumIterations);
 
     // Copy everything out...
     FromJolt(cer.mLinearVelocity1, &result->mLinearVelocity1);
