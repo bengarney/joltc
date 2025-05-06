@@ -36,6 +36,8 @@ int main(void)
 	JPH_SetTraceHandler(TraceImpl);
 	//JPH_SetAssertFailureHandler(JPH_AssertFailureFunc handler);
 
+	JPH_JobSystem* jobSystem = JPH_JobSystemThreadPool_Create(nullptr);
+
 	// We use only 2 layers: one for non-moving objects and one for moving objects
 	JPH_ObjectLayerPairFilter* objectLayerPairFilterTable = JPH_ObjectLayerPairFilterTable_Create(2);
 	JPH_ObjectLayerPairFilterTable_EnableCollision(objectLayerPairFilterTable, Layers::NON_MOVING, Layers::MOVING);
@@ -110,17 +112,19 @@ int main(void)
 
 		JPH_CapsuleShape* capsuleShape = JPH_CapsuleShape_Create(0.5f * cCharacterHeightStanding, cCharacterRadiusStanding);
 		JPH_Vec3 position = { 0, 0.5f * cCharacterHeightStanding + cCharacterRadiusStanding, 0 };
-		auto mStandingShape = JPH_RotatedTranslatedShape_Create(&position, nullptr, (JPH_Shape*) capsuleShape);
+		auto mStandingShape = JPH_RotatedTranslatedShape_Create(&position, nullptr, (JPH_Shape*)capsuleShape);
 
 		JPH_CharacterVirtualSettings characterSettings{};
 		JPH_CharacterVirtualSettings_Init(&characterSettings);
 		characterSettings.base.shape = (const JPH_Shape*)mStandingShape;
-		characterSettings.base.supportingVolume = { {0, 1, 0}, -cCharacterRadiusStanding}; // Accept contacts that touch the lower sphere of the capsule
-		static const JPH_RVec3 characterVirtualPosition = {-5.0f, 0, 3.0f};
+		characterSettings.base.supportingVolume = { {0, 1, 0}, -cCharacterRadiusStanding }; // Accept contacts that touch the lower sphere of the capsule
+		static const JPH_RVec3 characterVirtualPosition = { -5.0f, 0, 3.0f };
 
 		auto mAnimatedCharacterVirtual = JPH_CharacterVirtual_Create(&characterSettings, &characterVirtualPosition, nullptr, 0, system);
 	}
 
+	JPH_SixDOFConstraintSettings jointSettings;
+	JPH_SixDOFConstraintSettings_Init(&jointSettings);
 
 	// We simulate the physics world in discrete time steps. 60 Hz is a good rate to update the physics system.
 	const float cDeltaTime = 1.0f / 60.0f;
@@ -149,7 +153,7 @@ int main(void)
 		const int cCollisionSteps = 1;
 
 		// Step the world
-		JPH_PhysicsSystem_Update(system, cDeltaTime, cCollisionSteps);
+		JPH_PhysicsSystem_Update(system, cDeltaTime, cCollisionSteps, jobSystem);
 	}
 
 	// Remove the destroy sphere from the physics system. Note that the sphere itself keeps all of its state and can be re-added at any time.
@@ -157,6 +161,8 @@ int main(void)
 
 	// Remove and destroy the floor
 	JPH_BodyInterface_RemoveAndDestroyBody(bodyInterface, floorId);
+
+	JPH_JobSystem_Destroy(jobSystem);
 
 	JPH_PhysicsSystem_Destroy(system);
 	JPH_Shutdown();
