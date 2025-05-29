@@ -4523,6 +4523,10 @@ uint64_t JPH_BodyInterface_GetUserData(JPH_BodyInterface* interface, JPH_BodyID 
 //--------------------------------------------------------------------------------------------------
 // JPH_BodyLockInterface
 //--------------------------------------------------------------------------------------------------
+
+// TODO: These in-place lock struct versions deadlock on Windows; but the multi
+// versions are fine so we are using those for now. These should be fixed to 
+// work without in-place.
 void JPH_BodyLockInterface_LockRead(const JPH_BodyLockInterface* lockInterface, JPH_BodyID bodyID, JPH_BodyLockRead* outLock)
 {
 	JPH_ASSERT(outLock != nullptr);
